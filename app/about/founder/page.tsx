@@ -135,7 +135,7 @@ export default function FounderPage() {
                     documented for independent reproduction.
                   </p>
                   <a
-                    href={siteConfig.links.founderGithub}
+                    href={siteConfig.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group mt-5 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"

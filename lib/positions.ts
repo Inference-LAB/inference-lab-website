@@ -39,7 +39,7 @@ export const positions: Position[] = [
       'Research exposure and co-authorship opportunities',
     ],
     href: '/join/engineering-fellowship',
-    applyHref: 'https://forms.gle/ZUMht8VUfPwepPSW6',  // ← replace with your Tally/Fillout URL
+    applyHref: 'https://forms.gle/ZUMht8VUfPwepPSW6',  // replace with the updated form url 
   },
   {
     id: 'research-internship',

@@ -12,7 +12,7 @@ export const siteConfig = {
     founderGithub: 'https://github.com/Khubaib8281',
     founderHuggingface: 'https://huggingface.co/Khubaib01',
     founderLinkedin: 'https://linkedin.com/in/muhammad-khubaib-ahmad-',
-    applicationForm: 'https://tally.so/r/inferencelab', // ← replace with your Tally/Fillout URL
+    applicationForm: 'https://forms.gle/ZUMht8VUfPwepPSW6', // updated form link
   },
 }
 
