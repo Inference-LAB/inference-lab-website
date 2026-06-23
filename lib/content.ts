@@ -14,7 +14,7 @@ export const tracks: Track[] = [
     summary:
       'Original research in low-resource NLP and speech intelligence — conducted independently and through international academic collaboration.',
     points: [
-      'King Saud University · EPU Kuwait · Doane University (USA)',
+      'King Saud University · EPU Kuwait · Doane University (USA) · Hanyang University (Korea)',
       'Every release ships reproducible pipelines + a permanent DOI',
       'Deployable inference code, not leaderboard numbers',
     ],
@@ -63,7 +63,7 @@ export const publications: Publication[] = [
     year: '2026',
     doi: '10.5281/zenodo.18305757',
     highlight:
-      'ECAPA-TDNN-VHE designed from scratch with supervised contrastive loss — 2.5× accuracy over baseline (78% vs 36%).',
+      'ECAPA-TDNN-VHE designed from scratch with supervised contrastive loss — 2.5× accuracy over baseline (78% vs 36%), F1 scores 0.85 / 0.78 / 0.70 across three fatigue classes.',
   },
   {
     title: 'Continuous Vocal Load Monitoring in Professional Voice Users',
@@ -71,7 +71,7 @@ export const publications: Publication[] = [
     status: 'Under Review',
     year: '2026',
     highlight:
-      'Development and occupational validation of an automated vocal load assessment tool for professional voice users.',
+      'Development and occupational validation of an automated vocal load assessment tool for professional voice users — clinical-grade speech analysis in production.',
   },
   {
     title:
@@ -81,7 +81,17 @@ export const publications: Publication[] = [
     year: '2026',
     doi: '10.21203/rs.3.rs-9759243/v1',
     highlight:
-      'First large-scale Roman Urdu emotion corpus — 134K labeled samples, Fleiss κ = 0.658 (substantial), fully open-source.',
+      'First large-scale Roman Urdu emotion corpus — 134K labeled samples with Fleiss κ = 0.658 (substantial agreement), multi-institute annotation, fully open-source on HuggingFace and Harvard Dataverse.',
+  },
+  {
+    title:
+      'RUDaSA: Roman Urdu Dataset for Sentiment Analysis — A Large-Scale, Curated Corpus with Privacy-Preserving Embeddings and Competitive Benchmarking of Transformer Models',
+    venue: 'Research Square · Preprint',
+    status: 'Published Preprint',
+    year: '2026',
+    doi: '10.21203/rs.3.rs-9827763/v1',
+    highlight:
+      'Large-scale Roman Urdu sentiment corpus built via privacy-preserving embedding pipelines. Benchmarks state-of-the-art Transformer models — addressing a critical gap in low-resource South Asian NLP.',
   },
   {
     title: 'Data-Centric Roman Urdu NLP: Dataset Curation & Model Benchmarking',
@@ -90,7 +100,7 @@ export const publications: Publication[] = [
     year: '2025',
     doi: '10.5281/zenodo.18080524',
     highlight:
-      'Largest high-quality Roman Urdu sentiment dataset via privacy-preserving embedding pipelines — SOTA 0.84 accuracy.',
+      'Largest high-quality Roman Urdu sentiment dataset via privacy-preserving embedding pipelines — SOTA 0.84 accuracy, 0.83 Macro-F1.',
   },
   {
     title: 'Forecast-Based Decision Support System for Mango Malformation',
@@ -102,12 +112,14 @@ export const publications: Publication[] = [
       'Time-series forecasting and smart-agriculture DSS — demonstrated 50–60% yield improvement through data-driven intervention.',
   },
   {
-    title: 'Ergonomic Interventions & Cognitive Workload in Healthcare',
-    venue: 'King Saud University · EPU Kuwait · Doane University (USA)',
+    title:
+      'Ergonomic Interventions and Cognitive Workload in Healthcare Settings: A Qualitative Case Study Using Cognitive Systems Engineering',
+    venue:
+      'Hanyang University (Korea) · King Saud University (Saudi Arabia) · Doane University (USA)',
     status: 'In Progress',
     year: '2026',
     highlight:
-      'Cognitive Systems Engineering framework applied to healthcare ergonomics — multi-institutional international collaboration.',
+      'Multi-institutional international study applying Cognitive Systems Engineering to healthcare ergonomics — systematic analysis of workload, safety, and intervention efficacy.',
   },
 ]
 
@@ -116,49 +128,59 @@ export type Software = {
   category: string
   description: string
   tags: string[]
+  pypi?: boolean
 }
 
 export const software: Software[] = [
   {
-    name: 'Auralis Ecosystem',
-    category: 'Speech AI Suite',
+    name: 'auralis-vfs',
+    category: 'Speech AI · Library',
     description:
-      'Vocal fatigue scoring from raw speech. Includes auralis-vfs (pip), voiceMonitor (real-time), VocalID (speaker verification) and a containerized production REST API.',
-    tags: ['PyPI', 'HuggingFace Spaces', 'ECAPA-TDNN'],
+      'Pip-installable Python library for vocal fatigue scoring from raw speech. Built on ECAPA-TDNN-VHE — returns a normalized fatigue score from any audio input.',
+    tags: ['PyPI', 'ECAPA-TDNN', 'Speech'],
+    pypi: true,
+  },
+  {
+    name: 'voiceMonitor',
+    category: 'Speech AI · Real-Time',
+    description:
+      'Real-time vocal health monitoring tool — streams microphone input, runs auralis-vfs, and surfaces fatigue level and vocal load over a session.',
+    tags: ['Real-Time', 'Monitoring', 'CLI'],
+  },
+  {
+    name: 'VocalID',
+    category: 'Speech AI · Verification',
+    description:
+      'Open-source speaker verification framework using embedding cosine similarity on ECAPA-TDNN representations. Lightweight, no external APIs required.',
+    tags: ['Speaker Verification', 'Embeddings', 'Open Source'],
+  },
+  {
+    name: 'faker-pk',
+    category: 'Open Source · Library',
+    description:
+      'Pakistani synthetic data library for realistic test fixtures — Urdu and Roman Urdu names, CNIC numbers, phone formats, addresses, and locale-aware records.',
+    tags: ['PyPI', 'Synthetic Data', 'Pakistan'],
+    pypi: true,
   },
   {
     name: 'QueryVault',
     category: 'LLM Observability',
     description:
-      'End-to-end LLM platform with real-time hallucination detection, structured logging and a developer dashboard — hallucination rate, latency, P50/P95.',
+      'End-to-end LLM platform with real-time hallucination detection, structured logging, and a developer dashboard — hallucination rate, latency, P50/P95.',
     tags: ['Streamlit', 'Few-Shot', 'Observability'],
   },
   {
     name: 'DataForge',
     category: 'Multi-Agent System',
     description:
-      'Multi-agent system for automated EDA, cleaning, visualization and report generation — autonomous data analysis pipelines.',
+      'Multi-agent system for automated EDA, cleaning, visualization, and report generation — autonomous data analysis pipelines built on CrewAI.',
     tags: ['CrewAI', 'EDA', 'Agents'],
-  },
-  {
-    name: 'LLM Knowledge Base',
-    category: 'RAG Pipeline',
-    description:
-      'Retrieval-augmented generation pipeline built on LangChain with Pinecone / Qdrant vector search and a FastAPI serving layer.',
-    tags: ['LangChain', 'Qdrant', 'FastAPI'],
-  },
-  {
-    name: 'faker-pk',
-    category: 'Open Source Library',
-    description:
-      'Pakistani synthetic data library for realistic test fixtures — names, addresses, identifiers and locale-aware records.',
-    tags: ['PyPI', 'Synthetic Data'],
   },
   {
     name: 'SecureCipher v2.0',
     category: 'Image Encryption',
     description:
-      'Image encryption scheme that scored 100/100 against 14 benchmark algorithms across standard cryptographic security tests.',
+      'Image encryption scheme scoring 100/100 against 14 benchmark algorithms across standard cryptographic security tests.',
     tags: ['Cryptography', 'Benchmarked'],
   },
 ]

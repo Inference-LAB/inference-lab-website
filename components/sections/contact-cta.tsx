@@ -26,7 +26,7 @@ export function ContactCta() {
               className="group inline-flex items-center justify-center gap-2 rounded-md bg-brand px-5 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-brand-foreground transition-opacity hover:opacity-90"
             >
               <Mail className="h-4 w-4" />
-              Get in touch
+              Contact Us
             </a>
             <a
               href={siteConfig.links.linkedin}

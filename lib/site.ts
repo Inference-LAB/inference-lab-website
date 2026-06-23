@@ -4,22 +4,22 @@ export const siteConfig = {
   location: 'Multan, Punjab, Pakistan',
   tagline: 'Applied AI research, engineering & education.',
   founder: 'Muhammad Khubaib Ahmad',
-  email: 'muhammadkhubaibahmad854@gmail.com',
+  email: 'inferencelab.ai@gmail.com',
   links: {
     github: 'https://github.com/Inference-LAB',
     huggingface: 'https://huggingface.co/Inferencelab',
     linkedin: 'https://linkedin.com/company/inference-lab',
     founderGithub: 'https://github.com/Khubaib8281',
     founderHuggingface: 'https://huggingface.co/Khubaib01',
-    founderLinkedin:
-      'https://linkedin.com/in/muhammad-khubaib-ahmad-',
+    founderLinkedin: 'https://linkedin.com/in/muhammad-khubaib-ahmad-',
+    applicationForm: 'https://tally.so/r/inferencelab', // ← replace with your Tally/Fillout URL
   },
 }
 
 export const nav = [
-  { label: 'Research', href: '/#research' },
-  { label: 'Engineering', href: '/#engineering' },
-  { label: 'Education', href: '/#education' },
-  { label: 'Curriculum', href: '/curriculum' },
-  { label: 'Founder', href: '/#founder' },
+  { label: 'Research', href: '/research' },
+  { label: 'Engineering', href: '/engineering' },
+  { label: 'Education', href: '/curriculum' },
+  { label: 'Work With Us', href: '/#contact' },
+  { label: 'Join the Lab', href: '/join' },
 ]
