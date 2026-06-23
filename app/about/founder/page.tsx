@@ -10,7 +10,7 @@ import { siteConfig } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Founder & Director',
   description:
-    'Inference Lab was founded on the premise that AI research and production engineering should not be treated as separate disciplines.',
+    'INFERENCE Lab was founded on the premise that AI research and production engineering should not be treated as separate disciplines.',
 }
 
 const profile = [
@@ -140,7 +140,7 @@ export default function FounderPage() {
                     rel="noopener noreferrer"
                     className="group mt-5 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    github.com/Khubaib8281
+                    github.com/Inference-LAB
                     <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>
