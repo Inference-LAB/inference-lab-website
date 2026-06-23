@@ -11,7 +11,7 @@ import { siteConfig } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Join the Lab',
   description:
-    'Work on real AI systems, contribute to published research, and build production-grade ML solutions alongside the Inference Lab team.',
+    'Work on real AI systems, contribute to published research, and build production-grade ML solutions alongside the INFERENCE Lab team.',
 }
 
 const whyJoin = [
@@ -59,7 +59,7 @@ export default function JoinPage() {
               Back home
             </Link>
             <div className="mt-8">
-              <SectionLabel>Join Inference Lab</SectionLabel>
+              <SectionLabel>Join INFERENCE Lab</SectionLabel>
             </div>
             <h1 className="mt-5 max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
               Work on real AI systems, research, and open-source.
