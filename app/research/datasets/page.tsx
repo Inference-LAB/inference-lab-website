@@ -8,7 +8,7 @@ import { SectionLabel } from '@/components/section-label'
 export const metadata: Metadata = {
   title: 'Datasets',
   description:
-    'Open datasets released by Inference Lab — Roman Urdu Sentiment Corpus and RUEmoCorp, published on Harvard Dataverse and HuggingFace.',
+    'Open datasets released by INFERENCE Lab — Roman Urdu Sentiment Corpus and RUEmoCorp, published on Harvard Dataverse and HuggingFace.',
 }
 
 const datasets = [

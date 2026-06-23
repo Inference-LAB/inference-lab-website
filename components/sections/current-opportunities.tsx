@@ -12,7 +12,7 @@ export function CurrentOpportunities() {
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
-            <SectionLabel>Join Inference Lab</SectionLabel>
+            <SectionLabel>Join INFERENCE Lab</SectionLabel>
             <h2 className="mt-5 max-w-2xl text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
               Work on real AI systems, research, and open-source.
             </h2>

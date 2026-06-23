@@ -8,7 +8,7 @@ import { SectionLabel } from '@/components/section-label'
 export const metadata: Metadata = {
   title: 'Engineering',
   description:
-    'Inference Lab engineering — open-source projects, client services, and the philosophy behind how we build AI systems.',
+    'INFERENCE Lab engineering — open-source projects, client services, and the philosophy behind how we build AI systems.',
 }
 
 const sections = [

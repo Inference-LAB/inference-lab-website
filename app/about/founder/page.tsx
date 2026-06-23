@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 }
 
 const profile = [
-  { k: 'Role',       v: 'Founder & Director, Inference Lab' },
-  { k: 'Background', v: 'Artificial Intelligence — Emerson University, Multan' },
+  { k: 'Role',       v: 'Founder & Director, INFERENCE Lab' },
+  // { k: 'Background', v: 'Artificial Intelligence — Emerson University, Multan' },
   { k: 'Location',   v: 'Multan, Punjab, Pakistan' },
-  { k: 'Research',   v: 'Low-Resource NLP, Speech Intelligence, LLM Engineering' },
+  { k: 'Research',   v: 'Low-Resource NLP, Speech Intelligence, LLM Engineering, Human Ergonomics' },
   { k: 'Method',     v: 'Architecture-first design, reproducible benchmarks, open release' },
-  { k: 'Network',    v: 'Hanyang University (Korea), King Saud University, EPU Kuwait, Doane University (USA)' },
+  { k: 'Network',    v: 'Hanyang University (Republic of Korea), King Saud University (Kingdom of Saudia-Arabia), EPU Kuwait, Doane University (USA)' },
 ]
 
 const focusAreas = [

@@ -11,10 +11,10 @@ const focus = [
 ]
 
 const facts = [
-  { k: 'Role', v: 'Founder & Director, Inference Lab' },
-  { k: 'Education', v: 'B.S. Artificial Intelligence — Emerson University' },
-  { k: 'Standing', v: 'GPA 3.97 / 4.0 · Highest Achiever in Program' },
-  { k: 'Collaborations', v: 'King Saud University · EPU Kuwait · Doane (USA)' },
+  { k: 'Role', v: 'Founder & Director, INFERENCE Lab' },
+  // { k: 'Education', v: 'B.S. Artificial Intelligence — Emerson University' },
+  // { k: 'Standing', v: 'GPA 3.97 / 4.0 · Highest Achiever in Program' },
+  { k: 'Collaborations', v: 'King Saud University · EPU Kuwait · Doane (USA) · Hanyang University (Republic of Korea)' },
 ]
 
 export function Founder() {

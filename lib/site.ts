@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'Inference Lab',
+  name: 'INFERENCE Lab',
   shortName: 'INFERENCE LAB',
   location: 'Multan, Punjab, Pakistan',
   tagline: 'Applied AI research, engineering & education.',
