@@ -27,7 +27,7 @@ export const positions: Position[] = [
   {
     id: 'engineering-fellowship',
     title: 'Engineering Fellowship',
-    type: '6-Month · Remote · Flexible',
+    type: '3-Month · Remote · Flexible',
     status: 'open',
     applicationsOpen: true,
     summary:
@@ -39,13 +39,13 @@ export const positions: Position[] = [
       'Research exposure and co-authorship opportunities',
     ],
     href: '/join/engineering-fellowship',
-    applyHref: 'https://tally.so/r/inferencelab',  // ← replace with your Tally/Fillout URL
+    applyHref: 'https://forms.gle/ZUMht8VUfPwepPSW6',
   },
   {
     id: 'research-internship',
     title: 'Research Internship',
     type: 'Flexible · Remote',
-    status: 'open',
+    status: 'closed',
     applicationsOpen: true,
     summary:
       'Contribute to active research in low-resource NLP or speech AI. Help with data collection, annotation pipelines, model evaluation, and writing. All work is published with proper attribution.',
@@ -56,13 +56,13 @@ export const positions: Position[] = [
       'International collaboration network',
     ],
     href: '/join',
-    applyHref: 'https://tally.so/r/inferencelab',  // ← replace with your Tally/Fillout URL
+    applyHref: 'https://inference-lab-ai.vercel.app/join',  // to be replaced with the google form link
   },
   {
     id: 'volunteer-contributor',
     title: 'Volunteer Research Contributor',
     type: 'Rolling Applications',
-    status: 'open',
+    status: 'soon',
     applicationsOpen: true,
     summary:
       'Contribute to open-source tooling, dataset annotation, or benchmarking tasks on a flexible schedule. No minimum commitment — just genuine interest in doing useful work.',
@@ -72,7 +72,7 @@ export const positions: Position[] = [
       'Path to Research Internship',
     ],
     href: '/join',
-    applyHref: 'https://tally.so/r/inferencelab',  // ← replace with your Tally/Fillout URL
+    applyHref: 'https://inference-lab-ai.vercel.app/join',  // to be replaced with the google form link
   },
   {
     id: 'industry-collaboration',
