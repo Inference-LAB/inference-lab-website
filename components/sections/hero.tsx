@@ -3,10 +3,10 @@ import { ArrowUpRight, ArrowRight } from 'lucide-react'
 import { siteConfig } from '@/lib/site'
 
 const stats = [
-  { value: '8', label: 'Research works' },
+  { value: '7', label: 'Research outputs' },
   { value: '10+', label: 'Deployed systems' },
   { value: '12.5mo', label: 'Curriculum' },
-  { value: '134K', label: 'Labeled samples released' },
+  { value: '2.5×', label: 'Accuracy over baseline' },
 ]
 
 export function Hero() {
@@ -22,22 +22,20 @@ export function Hero() {
         </div>
 
         <h1 className="mt-7 max-w-4xl text-balance font-sans text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
-          We build AI engineers,
-          <br className="hidden sm:block" /> research, and the systems
-          <br className="hidden sm:block" />{' '}
-          <span className="text-muted-foreground">that ship.</span>
+          Research. Engineering.
+          <br className="hidden sm:block" /> Education.{' '}
+          <span className="text-muted-foreground">Built to ship.</span>
         </h1>
 
         <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-          Inference Lab closes the gap between people who know AI concepts and
-          engineers who can actually build, deploy and maintain AI systems —
-          while producing research that is reproducible and publicly verifiable.
-          Engineering discipline over hype.
+          Inference Lab conducts reproducible AI research, builds production
+          systems, and trains engineers who can deploy — not just describe.
+          Engineering discipline over hype, evidence over branding.
         </p>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           <Link
-            href="/#education"
+            href="/curriculum"
             className="group inline-flex items-center justify-center gap-2 rounded-md bg-brand px-5 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-brand-foreground transition-opacity hover:opacity-90"
           >
             Explore the curriculum

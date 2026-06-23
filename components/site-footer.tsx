@@ -5,21 +5,21 @@ import { siteConfig } from '@/lib/site'
 
 const columns = [
   {
-    title: 'Organization',
+    title: 'Lab',
     links: [
-      { label: 'Research', href: '/#research' },
-      { label: 'Engineering Services', href: '/#engineering' },
-      { label: 'Education', href: '/#education' },
-      { label: 'Fellowship', href: '/#fellowship' },
+      { label: 'Research',       href: '/research' },
+      { label: 'Engineering',    href: '/engineering' },
+      { label: 'Education',      href: '/curriculum' },
+      { label: 'Work With Us',   href: '/#contact' },
     ],
   },
   {
-    title: 'Curriculum',
+    title: 'Join',
     links: [
-      { label: 'Full Program', href: '/curriculum' },
-      { label: 'Engineering Foundations', href: '/curriculum#phase-0' },
-      { label: 'ML Engineering', href: '/curriculum#phase-2' },
-      { label: 'LLM Engineering', href: '/curriculum#phase-4' },
+      { label: 'All Opportunities',       href: '/join' },
+      { label: 'Engineering Fellowship',  href: '/join/engineering-fellowship' },
+      { label: 'Research Internship',     href: '/join' },
+      { label: 'Industry Collaboration',  href: '/join' },
     ],
   },
 ]
@@ -82,9 +82,7 @@ export function SiteFooter() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
-                  <span className="font-mono text-[10px] font-bold leading-none">
-                    HF
-                  </span>{' '}
+                  <span className="font-mono text-[10px] font-bold leading-none">HF</span>{' '}
                   HuggingFace
                 </a>
               </li>
@@ -96,6 +94,14 @@ export function SiteFooter() {
                   className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
                   <LinkedinIcon className="h-4 w-4" /> LinkedIn
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  {siteConfig.email}
                 </a>
               </li>
             </ul>

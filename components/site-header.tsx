@@ -2,13 +2,22 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { Logo } from '@/components/logo'
-import { nav, siteConfig } from '@/lib/site'
+import { siteConfig } from '@/lib/site'
 import { cn } from '@/lib/utils'
+
+const navLinks = [
+  { label: 'Research', href: '/research' },
+  { label: 'Engineering', href: '/engineering' },
+  { label: 'Education', href: '/curriculum' },
+  { label: 'Work With Us', href: '/#contact' },
+]
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
@@ -18,11 +27,16 @@ export function SiteHeader() {
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
-          {nav.map((item) => (
+          {navLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
+              className={cn(
+                'font-mono text-xs uppercase tracking-widest transition-colors hover:text-foreground',
+                pathname === item.href
+                  ? 'text-foreground'
+                  : 'text-muted-foreground',
+              )}
             >
               {item.label}
             </Link>
@@ -31,10 +45,10 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 md:flex">
           <Link
-            href="/#education"
+            href="/join"
             className="group inline-flex items-center gap-1.5 rounded-md bg-brand px-3.5 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-brand-foreground transition-opacity hover:opacity-90"
           >
-            Join Cohort
+            Join the Lab
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </Link>
         </div>
@@ -56,7 +70,7 @@ export function SiteHeader() {
         )}
       >
         <nav className="flex flex-col gap-1 px-4 py-4">
-          {nav.map((item) => (
+          {navLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
@@ -67,11 +81,11 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link
-            href="/#education"
+            href="/join"
             onClick={() => setOpen(false)}
             className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-md bg-brand px-3.5 py-2.5 font-mono text-sm font-semibold uppercase tracking-widest text-brand-foreground"
           >
-            Join Cohort <ArrowUpRight className="h-4 w-4" />
+            Join the Lab <ArrowUpRight className="h-4 w-4" />
           </Link>
           <a
             href={siteConfig.links.github}
