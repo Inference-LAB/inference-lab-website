@@ -9,7 +9,7 @@ import { software } from '@/lib/content'
 export const metadata: Metadata = {
   title: 'Engineering',
   description:
-    'Software and systems released by Inference Lab — open-source libraries, deployed APIs, and production tools spanning speech AI, LLM observability, RAG, and MLOps.',
+    'Software and systems released by INFERENCE Lab — open-source libraries, deployed APIs, and production tools spanning speech AI, LLM observability, RAG, and MLOps.',
 }
 
 const services = [

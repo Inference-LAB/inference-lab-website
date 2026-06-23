@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: 'Inference Lab',
+  name: 'INFERENCE Lab',
   shortName: 'INFERENCE LAB',
   location: 'Multan, Punjab, Pakistan',
   tagline: 'Applied AI research, engineering & education.',
@@ -12,7 +12,7 @@ export const siteConfig = {
     founderGithub: 'https://github.com/Khubaib8281',
     founderHuggingface: 'https://huggingface.co/Khubaib01',
     founderLinkedin: 'https://linkedin.com/in/muhammad-khubaib-ahmad-',
-    applicationForm: 'https://tally.so/r/inferencelab', // ← replace with your Tally/Fillout URL
+    applicationForm: 'https://forms.gle/ZUMht8VUfPwepPSW6', // ← replace with your Tally/Fillout URL
   },
 }
 
