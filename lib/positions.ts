@@ -81,7 +81,7 @@ export const positions: Position[] = [
     status: 'open',
     applicationsOpen: true,
     summary:
-      'Partner with Inference Lab on applied AI R&D. We work with organizations that need rigorous, reproducible engineering — not a vendor relationship, a research partnership.',
+      'Partner with INFERENCE Lab on applied AI R&D. We work with organizations that need rigorous, reproducible engineering — not a vendor relationship, a research partnership.',
     highlights: [
       'Joint research and engineering deliverables',
       'Domain expertise in NLP, speech AI, LLM systems',
