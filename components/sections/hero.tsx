@@ -3,10 +3,10 @@ import { ArrowUpRight, ArrowRight } from 'lucide-react'
 import { siteConfig } from '@/lib/site'
 
 const stats = [
-  { value: 'Largest', label: 'Roman Urdu Language Resource' },
-  { value: 'SOTA', label: 'AI Models for Low-Resource Language & Health Research' },
-  { value: 'Global', label: 'Research Collaborations & Publications' },
-  { value: '4+', label: 'Open-Source AI Libraries' },
+  { value: '7', label: 'Research outputs' },
+  { value: '10+', label: 'Deployed systems' },
+  { value: '12.5mo', label: 'Curriculum' },
+  { value: '2.5×', label: 'Accuracy over baseline' },
 ]
 
 export function Hero() {
@@ -28,7 +28,7 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-          INFERENCE Lab conducts reproducible AI research, builds production
+          Inference Lab conducts reproducible AI research, builds production
           systems, and trains engineers who can deploy — not just describe.
           Engineering discipline over hype, evidence over branding.
         </p>

@@ -9,7 +9,7 @@ import { phases } from '@/lib/content'
 export const metadata: Metadata = {
   title: 'Curriculum',
   description:
-    'The complete INFERENCE Lab curriculum for developing deployment-ready Applied AI Engineers — 6 phases across 12.5 months, from Python foundations to production MLOps.',
+    'The complete Inference Lab curriculum for developing deployment-ready Applied AI Engineers — 6 phases across 12.5 months, from Python foundations to production MLOps.',
 }
 
 const sessionFormat = [

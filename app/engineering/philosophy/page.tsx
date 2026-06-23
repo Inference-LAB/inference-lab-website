@@ -8,7 +8,7 @@ import { SectionLabel } from '@/components/section-label'
 export const metadata: Metadata = {
   title: 'Engineering Philosophy',
   description:
-    'How INFERENCE Lab approaches building AI systems — production-first, documented, and the same discipline in every engagement.',
+    'How Inference Lab approaches building AI systems — production-first, documented, and the same discipline in every engagement.',
 }
 
 const principles = [

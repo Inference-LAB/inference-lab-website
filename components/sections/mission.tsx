@@ -26,7 +26,7 @@ export function Mission() {
               One organization, three reinforcing tracks.
             </h2>
             <p className="mt-5 text-pretty leading-relaxed text-muted-foreground">
-              INFERENCE Lab is an applied AI research and engineering
+              Inference Lab is an applied AI research and engineering
               organization founded by Muhammad Khubaib Ahmad. It operates as
               original research, AI/software engineering services, and
               structured engineering education — under one identity, each track

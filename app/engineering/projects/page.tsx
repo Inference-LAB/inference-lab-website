@@ -9,7 +9,7 @@ import { software } from '@/lib/content'
 export const metadata: Metadata = {
   title: 'Engineering Projects',
   description:
-    'Open-source software, deployed APIs, and production systems released by INFERENCE Lab.',
+    'Open-source software, deployed APIs, and production systems released by Inference Lab.',
 }
 
 export default function EngineeringProjectsPage() {

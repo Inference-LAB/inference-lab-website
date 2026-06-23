@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils'
 export const metadata: Metadata = {
   title: 'Research',
   description:
-    'Research output from INFERENCE Lab — low-resource NLP, speech intelligence, and applied AI. Every release ships reproducible pipelines and a permanent DOI.',
+    'Research output from Inference Lab — low-resource NLP, speech intelligence, and applied AI. Every release ships reproducible pipelines and a permanent DOI.',
 }
 
 const statusStyles: Record<string, string> = {

@@ -11,15 +11,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'INFERENCE Lab — Applied AI Research, Engineering & Education',
-    template: '%s · INFERENCE Lab',
+    default: 'Inference Lab — Applied AI Research, Engineering & Education',
+    template: '%s · Inference Lab',
   },
   description:
-    'INFERENCE Lab is an applied AI research and engineering organization building reproducible research, production AI systems, and deployment-focused engineering education. Founded by Muhammad Khubaib Ahmad.',
+    'Inference Lab is an applied AI research and engineering organization building reproducible research, production AI systems, and deployment-focused engineering education. Founded by Muhammad Khubaib Ahmad.',
   generator: 'v0.app',
   keywords: [
-    'INFERENCE Lab',
-    'Inference lab',
+    'Inference Lab',
     'applied AI',
     'AI research',
     'machine learning engineering',
@@ -31,10 +30,10 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL('https://inference-lab.dev'),
   openGraph: {
-    title: 'INFERENCE Lab — Applied AI Research, Engineering & Education',
+    title: 'Inference Lab — Applied AI Research, Engineering & Education',
     description:
       'Reproducible research, production AI systems, and a deployment-focused engineering curriculum. Engineering discipline over hype.',
-    siteName: 'INFERENCE Lab',
+    siteName: 'Inference Lab',
     type: 'website',
   },
 }

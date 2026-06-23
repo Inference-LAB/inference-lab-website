@@ -10,7 +10,7 @@ import { positions } from '@/lib/positions'
 export const metadata: Metadata = {
   title: 'Engineering Fellowship',
   description:
-    'The INFERENCE Lab Engineering Fellowship — 6 months of real AI systems work, open-source contribution, and mentorship. Applications open.',
+    'The Inference Lab Engineering Fellowship — 6 months of real AI systems work, open-source contribution, and mentorship. Applications open.',
 }
 
 const fellowship = positions.find((p) => p.id === 'engineering-fellowship')!

@@ -10,12 +10,12 @@ import { siteConfig } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Founder & Director',
   description:
-    'INFERENCE Lab was founded on the premise that AI research and production engineering should not be treated as separate disciplines.',
+    'Inference Lab was founded on the premise that AI research and production engineering should not be treated as separate disciplines.',
 }
 
 const profile = [
-  { k: 'Role',       v: 'Founder & Director, INFERENCE Lab' },
-  // { k: 'Background', v: 'Artificial Intelligence — Emerson University, Multan' },
+  { k: 'Role',       v: 'Founder & Director, Inference Lab' },
+  { k: 'Background', v: 'Artificial Intelligence — Emerson University, Multan' },
   { k: 'Location',   v: 'Multan, Punjab, Pakistan' },
   { k: 'Research',   v: 'Low-Resource NLP, Speech Intelligence, LLM Engineering' },
   { k: 'Method',     v: 'Architecture-first design, reproducible benchmarks, open release' },
@@ -58,7 +58,7 @@ export default function FounderPage() {
               AI Research Engineer
             </p>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground">
-              INFERENCE Lab exists because most AI work sits on one side of a
+              Inference Lab exists because most AI work sits on one side of a
               divide: research that never leaves a notebook, or engineering
               that ships without rigor. The lab was built to close that gap —
               treating architecture decisions, evaluation, and deployment as
