@@ -1,57 +1,71 @@
-import { ArrowUpRight } from 'lucide-react'
-import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowLeft, ArrowUpRight } from 'lucide-react'
+import { SiteHeader } from '@/components/site-header'
+import { SiteFooter } from '@/components/site-footer'
 import { SectionLabel } from '@/components/section-label'
+import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 import { siteConfig } from '@/lib/site'
 
-const focus = [
-  'Speech & Language AI',
-  'Low-Resource Language Understanding',
-  'AI for Healthcare & Human Performance',
-  'LLM Systems Engineering',
-  'Representation Learning',
+export const metadata: Metadata = {
+  title: 'Founder & Director',
+  description:
+    'INFERENCE Lab was founded on the premise that AI research and production engineering should not be treated as separate disciplines.',
+}
+
+const profile = [
+  { k: 'Role',       v: 'Founder & Director, INFERENCE Lab' },
+  // { k: 'Background', v: 'Artificial Intelligence — Emerson University, Multan' },
+  { k: 'Location',   v: 'Multan, Punjab, Pakistan' },
+  { k: 'Research',   v: 'Low-Resource NLP, Speech Intelligence, LLM Engineering' },
+  { k: 'Method',     v: 'Architecture-first design, reproducible benchmarks, open release' },
+  { k: 'Network',    v: 'Hanyang University (Korea), King Saud University, EPU Kuwait, Doane University (USA)' },
 ]
 
-const facts = [
-  { k: 'Role', v: 'Founder & Director, INFERENCE Lab' },
-  // { k: 'Education', v: 'B.S. Artificial Intelligence — Emerson University' },
-  // { k: 'Standing', v: 'GPA 3.97 / 4.0 · Highest Achiever in Program' },
-  { k: 'Research Network', 
-    v: 'International collaborations across Saudi Arabia, Kuwait, USA, South Korea, and Canada' 
- },
+const focusAreas = [
+  'Speech & Language Intelligence',
+  'Low-Resource NLP',
+  'LLM Engineering',
+  'Contrastive Learning',
+  'Applied ML Systems',
+  'MLOps & Deployment',
 ]
 
-export function Founder() {
+export default function FounderPage() {
   return (
-    <section id="founder" className="scroll-mt-16 border-b border-border">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-        <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-          <div>
-            <SectionLabel>The founder</SectionLabel>
-            <h2 className="mt-5 text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-              {siteConfig.founder}
-            </h2>
-            <p className="mt-2 font-mono text-sm uppercase tracking-widest text-brand">
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader />
+      <main className="flex-1">
+
+        {/* Hero */}
+        <section className="relative overflow-hidden border-b border-border">
+          <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]" />
+          <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 lg:px-8 lg:pb-20">
+            <Link
+              href="/about"
+              className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-1" />
+              About
+            </Link>
+            <div className="mt-8">
+              <SectionLabel>Founder &amp; Director</SectionLabel>
+            </div>
+            <h1 className="mt-5 text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
+              Muhammad Khubaib Ahmad
+            </h1>
+            <p className="mt-3 font-mono text-sm uppercase tracking-widest text-brand">
               AI Research Engineer
             </p>
-            <p className="mt-6 text-pretty leading-relaxed text-muted-foreground">
-              An AI research engineer at the intersection of rigorous research
-              and production engineering — designing architectures from scratch,
-              publishing reproducible research with open-source artefacts, and
-              deploying end-to-end ML systems independently. Mentors and trains
-              engineers in applied AI.
+            <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground">
+              INFERENCE Lab exists because most AI work sits on one side of a
+              divide: research that never leaves a notebook, or engineering
+              that ships without rigor. The lab was built to close that gap —
+              treating architecture decisions, evaluation, and deployment as
+              one continuous discipline rather than three handoffs.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-2">
-              {focus.map((f) => (
-                <span
-                  key={f}
-                  className="rounded-full border border-border px-3 py-1 font-mono text-xs text-muted-foreground"
-                >
-                  {f}
-                </span>
-              ))}
-            </div>
-
+            {/* Links */}
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href={siteConfig.links.founderGithub}
@@ -79,35 +93,64 @@ export function Founder() {
               </a>
             </div>
           </div>
+        </section>
 
-          <div className="flex flex-col justify-center">
-            <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border">
-              {facts.map((fact) => (
-                <div
-                  key={fact.k}
-                  className="grid grid-cols-[100px_1fr] gap-4 bg-background p-5 sm:grid-cols-[140px_1fr]"
-                >
-                  <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                    {fact.k}
-                  </span>
-                  <span className="text-sm font-medium text-foreground">
-                    {fact.v}
-                  </span>
+        {/* Profile facts + focus */}
+        <section className="border-b border-border">
+          <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+            <div className="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
+              <div>
+                <SectionLabel>Profile</SectionLabel>
+                <div className="mt-8 grid gap-px overflow-hidden rounded-lg border border-border bg-border">
+                  {profile.map((row) => (
+                    <div
+                      key={row.k}
+                      className="grid grid-cols-[110px_1fr] gap-4 bg-background p-5 sm:grid-cols-[140px_1fr]"
+                    >
+                      <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                        {row.k}
+                      </span>
+                      <span className="text-sm text-foreground">{row.v}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <div>
+                <SectionLabel>Focus areas</SectionLabel>
+                <div className="mt-8 flex flex-wrap gap-2">
+                  {focusAreas.map((f) => (
+                    <span
+                      key={f}
+                      className="rounded-full border border-border px-3 py-1.5 font-mono text-xs text-muted-foreground"
+                    >
+                      {f}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-10">
+                  <SectionLabel>All releases</SectionLabel>
+                  <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                    Models, datasets, and libraries produced by the lab are
+                    released openly on GitHub and HuggingFace, versioned and
+                    documented for independent reproduction.
+                  </p>
+                  <a
+                    href={siteConfig.links.founderGithub}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group mt-5 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    github.com/Khubaib8281
+                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                </div>
+              </div>
             </div>
-            <a
-              href={siteConfig.links.founderGithub}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-6 inline-flex items-center gap-2 self-start font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
-            >
-              All models, datasets & pip-installable libraries
-              <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+
+      </main>
+      <SiteFooter />
+    </div>
   )
 }
