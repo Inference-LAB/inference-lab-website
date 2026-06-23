@@ -27,7 +27,7 @@ export const positions: Position[] = [
   {
     id: 'engineering-fellowship',
     title: 'Engineering Fellowship',
-    type: '3-Month · Remote · Flexible',
+    type: '6-Month · Remote · Flexible',
     status: 'open',
     applicationsOpen: true,
     summary:
@@ -39,7 +39,7 @@ export const positions: Position[] = [
       'Research exposure and co-authorship opportunities',
     ],
     href: '/join/engineering-fellowship',
-    applyHref: 'https://forms.gle/ZUMht8VUfPwepPSW6',
+    applyHref: 'https://forms.gle/ZUMht8VUfPwepPSW6',  // replace with the updated form url 
   },
   {
     id: 'research-internship',
@@ -56,7 +56,7 @@ export const positions: Position[] = [
       'International collaboration network',
     ],
     href: '/join',
-    applyHref: 'https://inference-lab-ai.vercel.app/join',  // to be replaced with the google form link
+    applyHref: 'https://inference-lab-ai.vercel.app/join',  // to be replaced with form URL
   },
   {
     id: 'volunteer-contributor',
@@ -72,7 +72,7 @@ export const positions: Position[] = [
       'Path to Research Internship',
     ],
     href: '/join',
-    applyHref: 'https://inference-lab-ai.vercel.app/join',  // to be replaced with the google form link
+    applyHref: 'https://inference-lab-ai.vercel.app/join',  // to be replaced with form URL
   },
   {
     id: 'industry-collaboration',

@@ -8,7 +8,7 @@ import { SectionLabel } from '@/components/section-label'
 export const metadata: Metadata = {
   title: 'Research Philosophy',
   description:
-    'How INFERENCE Lab approaches research — reproducibility, permanent DOIs, deployable code, and real-world evaluation.',
+    'How Inference Lab approaches research — reproducibility, permanent DOIs, deployable code, and real-world evaluation.',
 }
 
 const pillars = [
@@ -24,8 +24,8 @@ const pillars = [
   },
   {
     index: '03',
-    title: 'Deployable INFERENCE code',
-    body: 'Research papers describe models. Lab releases also ship production INFERENCE code — a pip-installable library, a REST API, or a HuggingFace Space. The test of a model is whether a downstream engineer can actually use it.',
+    title: 'Deployable inference code',
+    body: 'Research papers describe models. Lab releases also ship production inference code — a pip-installable library, a REST API, or a HuggingFace Space. The test of a model is whether a downstream engineer can actually use it.',
   },
   {
     index: '04',

@@ -3,10 +3,10 @@ import { ArrowUpRight, ArrowRight } from 'lucide-react'
 import { siteConfig } from '@/lib/site'
 
 const stats = [
-  { value: 'Largest', label: 'Roman Urdu Language Resource' },
-  { value: 'SOTA', label: 'AI Models for Low-Resource Language & Health Research' },
-  { value: 'Global', label: 'Research Collaborations & Publications' },
-  { value: '4+', label: 'Open-Source AI Libraries' },
+  { value: 'Largest', label: 'ROMAN URDU LANGUAGE RESOURCE' },
+  { value: 'SOTA', label: 'MODELS FOR LOW-RESOURCE LANGUAGE & HEALTH RESEARCH' },
+  { value: 'GLOBAL', label: 'RESEARCH COLLABORATIONS & PUBLICATIONS' },
+  { value: '4+', label: 'OPEN-SOURCE AI LIBRARIES' },
 ]
 
 export function Hero() {

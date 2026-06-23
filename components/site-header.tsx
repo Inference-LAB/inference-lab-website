@@ -1,49 +1,216 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, ArrowUpRight } from 'lucide-react'
+import { Menu, X, ArrowUpRight, ChevronDown } from 'lucide-react'
 import { Logo } from '@/components/logo'
 import { siteConfig } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
-const navLinks = [
-  { label: 'Research', href: '/research' },
-  { label: 'Engineering', href: '/engineering' },
+// ─── Nav structure ────────────────────────────────────────────────────────────
+// To add/edit menu items: change the arrays below. No other file needs touching.
+//
+// Each top-level item can either be:
+//   { label, href }           → plain link, no dropdown
+//   { label, children: [...] } → dropdown; each child has label + href + description
+// ─────────────────────────────────────────────────────────────────────────────
+const NAV = [
+  {
+    label: 'Research',
+    children: [
+      {
+        label: 'Publications',
+        href: '/research',
+        description: 'Papers, preprints, and research output',
+      },
+      {
+        label: 'Datasets',
+        href: '/research/datasets',
+        description: 'Open datasets released by the lab',
+      },
+      {
+        label: 'Research With Us',
+        href: '/research/collaborate',
+        description: 'End-to-end research, PhD & industry work',
+      },
+    ],
+  },
+  {
+    label: 'Engineering',
+    children: [
+      {
+        label: 'Engineering Projects',
+        href: '/engineering/projects',
+        description: 'Software and systems released by the lab',
+      },
+      {
+        label: 'Services',
+        href: '/engineering/services',
+        description: 'What we build for clients',
+      },
+      {
+        label: 'Engineering Philosophy',
+        href: '/engineering/philosophy',
+        description: 'How we think about building AI systems',
+      },
+    ],
+  },
   { label: 'Education', href: '/curriculum' },
   { label: 'Work With Us', href: '/#contact' },
-]
+  {
+    label: 'About',
+    children: [
+      {
+        label: 'Our Mission',
+        href: '/about/mission',
+        description: 'Why the lab exists and what drives it',
+      },
+      {
+        label: 'Founder & Director',
+        href: '/about/founder',
+        description: 'Muhammad Khubaib Ahmad',
+      },
+      {
+        label: 'Research Philosophy',
+        href: '/about/research-philosophy',
+        description: 'Reproducibility, rigour, and real output',
+      },
+    ],
+  },
+] as const
 
-export function SiteHeader() {
+type NavChild = { label: string; href: string; description: string }
+type NavItem =
+  | { label: string; href: string; children?: never }
+  | { label: string; children: readonly NavChild[]; href?: never }
+
+// ─── Dropdown ─────────────────────────────────────────────────────────────────
+function Dropdown({
+  label,
+  children,
+  pathname,
+}: {
+  label: string
+  children: readonly NavChild[]
+  pathname: string
+}) {
   const [open, setOpen] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
+  // close on outside click
+  useEffect(() => {
+    function handler(e: MouseEvent) {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false)
+    }
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [])
+
+  // close on Escape
+  useEffect(() => {
+    function handler(e: KeyboardEvent) {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('keydown', handler)
+    return () => document.removeEventListener('keydown', handler)
+  }, [])
+
+  const active = children.some((c) => pathname?.startsWith(c.href.split('#')[0]))
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        className={cn(
+          'inline-flex items-center gap-1 font-mono text-xs uppercase tracking-widest transition-colors hover:text-foreground',
+          active ? 'text-foreground' : 'text-muted-foreground',
+        )}
+      >
+        {label}
+        <ChevronDown
+          className={cn(
+            'h-3 w-3 transition-transform duration-200',
+            open && 'rotate-180',
+          )}
+        />
+      </button>
+
+      {open && (
+        <div className="absolute left-1/2 top-full z-50 mt-3 w-64 -translate-x-1/2">
+          {/* little arrow */}
+          <div className="mx-auto mb-0 h-2 w-2 -translate-y-px rotate-45 border-l border-t border-border bg-background" />
+          <div className="overflow-hidden rounded-lg border border-border bg-background shadow-xl shadow-black/20">
+            {children.map((item, i) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className={cn(
+                  'flex flex-col gap-0.5 px-4 py-3.5 transition-colors hover:bg-muted',
+                  i !== 0 && 'border-t border-border',
+                  pathname?.startsWith(item.href) && 'bg-muted',
+                )}
+              >
+                <span className="text-sm font-medium text-foreground">
+                  {item.label}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  {item.description}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// ─── Header ───────────────────────────────────────────────────────────────────
+export function SiteHeader() {
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null)
   const pathname = usePathname()
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" aria-label="INFERENCE Lab home" className="shrink-0">
+        <Link href="/" aria-label="Inference Lab home" className="shrink-0">
           <Logo />
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
-          {navLinks.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                'font-mono text-xs uppercase tracking-widest transition-colors hover:text-foreground',
-                pathname === item.href
-                  ? 'text-foreground'
-                  : 'text-muted-foreground',
-              )}
-            >
-              {item.label}
-            </Link>
-          ))}
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-6 md:flex">
+          {(NAV as readonly NavItem[]).map((item) =>
+            item.children ? (
+              <Dropdown
+                key={item.label}
+                label={item.label}
+                children={item.children}
+                pathname={pathname ?? ''}
+              />
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href!}
+                className={cn(
+                  'font-mono text-xs uppercase tracking-widest transition-colors hover:text-foreground',
+                  pathname === item.href
+                    ? 'text-foreground'
+                    : 'text-muted-foreground',
+                )}
+              >
+                {item.label}
+              </Link>
+            ),
+          )}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        {/* Join CTA */}
+        <div className="hidden items-center md:flex">
           <Link
             href="/join"
             className="group inline-flex items-center gap-1.5 rounded-md bg-brand px-3.5 py-2 font-mono text-xs font-semibold uppercase tracking-widest text-brand-foreground transition-opacity hover:opacity-90"
@@ -53,49 +220,86 @@ export function SiteHeader() {
           </Link>
         </div>
 
+        {/* Mobile burger */}
         <button
           type="button"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          onClick={() => setOpen((v) => !v)}
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+          onClick={() => setMobileOpen((v) => !v)}
           className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-foreground md:hidden"
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
+      {/* ── Mobile menu ─────────────────────────────────────────────────────── */}
       <div
         className={cn(
-          'overflow-hidden border-t border-border md:hidden',
-          open ? 'max-h-96' : 'max-h-0 border-t-0',
+          'overflow-hidden border-t border-border md:hidden transition-all duration-200',
+          mobileOpen ? 'max-h-[600px]' : 'max-h-0 border-t-0',
         )}
       >
-        <nav className="flex flex-col gap-1 px-4 py-4">
-          {navLinks.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="rounded-md px-3 py-2.5 font-mono text-sm uppercase tracking-widest text-muted-foreground hover:bg-muted hover:text-foreground"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <nav className="flex flex-col gap-0.5 px-4 py-3">
+          {(NAV as readonly NavItem[]).map((item) => {
+            if (item.children) {
+              const expanded = mobileExpanded === item.label
+              return (
+                <div key={item.label}>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setMobileExpanded((v) =>
+                        v === item.label ? null : item.label,
+                      )
+                    }
+                    className="flex w-full items-center justify-between rounded-md px-3 py-2.5 font-mono text-sm uppercase tracking-widest text-muted-foreground hover:bg-muted hover:text-foreground"
+                  >
+                    {item.label}
+                    <ChevronDown
+                      className={cn(
+                        'h-3.5 w-3.5 transition-transform duration-200',
+                        expanded && 'rotate-180',
+                      )}
+                    />
+                  </button>
+                  {expanded && (
+                    <div className="ml-3 mt-0.5 flex flex-col gap-0.5 border-l border-border pl-3">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.href}
+                          href={child.href}
+                          onClick={() => {
+                            setMobileOpen(false)
+                            setMobileExpanded(null)
+                          }}
+                          className="rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              )
+            }
+            return (
+              <Link
+                key={item.href}
+                href={item.href!}
+                onClick={() => setMobileOpen(false)}
+                className="rounded-md px-3 py-2.5 font-mono text-sm uppercase tracking-widest text-muted-foreground hover:bg-muted hover:text-foreground"
+              >
+                {item.label}
+              </Link>
+            )
+          })}
+
           <Link
             href="/join"
-            onClick={() => setOpen(false)}
+            onClick={() => setMobileOpen(false)}
             className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-md bg-brand px-3.5 py-2.5 font-mono text-sm font-semibold uppercase tracking-widest text-brand-foreground"
           >
             Join the Lab <ArrowUpRight className="h-4 w-4" />
           </Link>
-          <a
-            href={siteConfig.links.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
-            className="rounded-md px-3 py-2.5 font-mono text-xs uppercase tracking-widest text-muted-foreground hover:text-foreground"
-          >
-            GitHub ↗
-          </a>
         </nav>
       </div>
     </header>

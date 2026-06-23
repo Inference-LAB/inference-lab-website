@@ -8,7 +8,7 @@ import { SectionLabel } from '@/components/section-label'
 export const metadata: Metadata = {
   title: 'Our Mission',
   description:
-    'INFERENCE Lab exists to close the gap between AI concepts and engineers who can actually build, deploy, and maintain AI systems.',
+    'Inference Lab exists to close the gap between AI concepts and engineers who can actually build, deploy, and maintain AI systems.',
 }
 
 const tracks = [
@@ -72,7 +72,7 @@ export default function MissionPage() {
               Close the gap between knowing AI and building with it.
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-              INFERENCE Lab exists to close the gap between people who know AI
+              Inference Lab exists to close the gap between people who know AI
               concepts and engineers who can actually build, deploy, and
               maintain AI systems — while producing research that is
               reproducible, publicly verifiable, and genuinely useful.

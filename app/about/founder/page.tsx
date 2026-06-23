@@ -17,9 +17,9 @@ const profile = [
   { k: 'Role',       v: 'Founder & Director, INFERENCE Lab' },
   // { k: 'Background', v: 'Artificial Intelligence — Emerson University, Multan' },
   { k: 'Location',   v: 'Multan, Punjab, Pakistan' },
-  { k: 'Research',   v: 'Low-Resource NLP, Speech Intelligence, LLM Engineering' },
+  { k: 'Research',   v: 'Low-Resource NLP, Speech Intelligence, LLM Engineering, Human Ergonomics' },
   { k: 'Method',     v: 'Architecture-first design, reproducible benchmarks, open release' },
-  { k: 'Network',    v: 'Hanyang University (Korea), King Saud University, EPU Kuwait, Doane University (USA)' },
+  { k: 'Network',    v: 'Hanyang University (Republic of Korea), King Saud University (Kingdom of Saudia-Arabia), EPU Kuwait, Doane University (USA)' },
 ]
 
 const focusAreas = [
@@ -58,7 +58,7 @@ export default function FounderPage() {
               AI Research Engineer
             </p>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground">
-              INFERENCE Lab exists because most AI work sits on one side of a
+              Inference Lab exists because most AI work sits on one side of a
               divide: research that never leaves a notebook, or engineering
               that ships without rigor. The lab was built to close that gap —
               treating architecture decisions, evaluation, and deployment as
@@ -135,12 +135,12 @@ export default function FounderPage() {
                     documented for independent reproduction.
                   </p>
                   <a
-                    href={siteConfig.links.founderGithub}
+                    href={siteConfig.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group mt-5 inline-flex items-center gap-1.5 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
                   >
-                    github.com/Khubaib8281
+                    github.com/Inference-LAB
                     <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>

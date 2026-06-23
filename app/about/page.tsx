@@ -7,7 +7,7 @@ import { SectionLabel } from '@/components/section-label'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'About INFERENCE Lab — mission, founder, and research philosophy.',
+  description: 'About Inference Lab — mission, founder, and research philosophy.',
 }
 
 const sections = [
@@ -23,14 +23,14 @@ const sections = [
     label: 'Founder & Director',
     index: '02',
     summary:
-      'Muhammad Khubaib Ahmad — AI Research Engineer, founder of INFERENCE Lab, and the person behind all the lab\'s research and engineering work.',
+      'Muhammad Khubaib Ahmad — AI Research Engineer, founder of Inference Lab, and the person behind all the lab\'s research and engineering work.',
   },
   {
     href: '/about/research-philosophy',
     label: 'Research Philosophy',
     index: '03',
     summary:
-      'Reproducibility, permanent DOIs, deployable INFERENCE code. What makes research real and why it matters.',
+      'Reproducibility, permanent DOIs, deployable inference code. What makes research real and why it matters.',
   },
 ]
 
@@ -42,7 +42,7 @@ export default function AboutPage() {
         <section className="relative overflow-hidden border-b border-border">
           <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]" />
           <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 lg:px-8 lg:pb-20">
-            <SectionLabel>About INFERENCE Lab</SectionLabel>
+            <SectionLabel>About Inference Lab</SectionLabel>
             <h1 className="mt-5 max-w-3xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
               Engineering discipline over hype.
             </h1>

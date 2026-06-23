@@ -4,20 +4,17 @@ import { SectionLabel } from '@/components/section-label'
 import { siteConfig } from '@/lib/site'
 
 const focus = [
-  'Speech & Language AI',
-  'Low-Resource Language Understanding',
-  'AI for Healthcare & Human Performance',
-  'LLM Systems Engineering',
-  'Representation Learning',
+  'Speech & Language Intelligence',
+  'Low-Resource NLP',
+  'LLM Engineering',
+  'Contrastive Learning',
 ]
 
 const facts = [
   { k: 'Role', v: 'Founder & Director, INFERENCE Lab' },
   // { k: 'Education', v: 'B.S. Artificial Intelligence — Emerson University' },
   // { k: 'Standing', v: 'GPA 3.97 / 4.0 · Highest Achiever in Program' },
-  { k: 'Research Network', 
-    v: 'International collaborations across Saudi Arabia, Kuwait, USA, South Korea, and Canada' 
- },
+  { k: 'Collaborations', v: 'King Saud University · EPU Kuwait · Doane (USA) · Hanyang University (Republic of Korea)' },
 ]
 
 export function Founder() {

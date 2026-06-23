@@ -18,8 +18,8 @@ export const metadata: Metadata = {
     'INFERENCE Lab is an applied AI research and engineering organization building reproducible research, production AI systems, and deployment-focused engineering education. Founded by Muhammad Khubaib Ahmad.',
   generator: 'v0.app',
   keywords: [
+    'Inference Lab',
     'INFERENCE Lab',
-    'Inference lab',
     'applied AI',
     'AI research',
     'machine learning engineering',
