@@ -7,9 +7,16 @@ import { SectionLabel } from '@/components/section-label'
 import { phases } from '@/lib/content'
 
 export const metadata: Metadata = {
-  title: 'Curriculum',
+  title: 'Engineering Curriculum',
   description:
-    'The complete INFERENCE Lab curriculum for developing deployment-ready Applied AI Engineers — 6 phases across 12.5 months, from Python foundations to production MLOps.',
+    'The INFERENCE Lab engineering curriculum — 6 phases, 12.5 months. From Python foundations to production MLOps. Deployment-focused AI engineering education by Muhammad Khubaib Ahmad.',
+  alternates: { canonical: 'https://inference-lab.dev/curriculum' },
+  openGraph: {
+    title: 'Engineering Curriculum · INFERENCE Lab',
+    description:
+      'Six-phase, 12.5-month curriculum producing deployment-ready AI engineers. Each phase ends with a capstone you can show in a job interview.',
+    url: 'https://inference-lab.dev/curriculum',
+  },
 }
 
 const sessionFormat = [

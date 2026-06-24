@@ -10,7 +10,13 @@ import { positions } from '@/lib/positions'
 export const metadata: Metadata = {
   title: 'Engineering Fellowship',
   description:
-    'The INFERENCE Lab Engineering Fellowship — 6 months of real AI systems work, open-source contribution, and mentorship. Applications open.',
+    'INFERENCE Lab Engineering Fellowship — 6 months of real AI systems work, open-source contributions, and mentorship. Applications open. Remote, flexible commitment.',
+  alternates: { canonical: 'https://inference-lab.dev/join/engineering-fellowship' },
+  openGraph: {
+    title: 'Engineering Fellowship · INFERENCE Lab',
+    description: 'INFERENCE Lab Engineering Fellowship — 6 months of real AI systems work, open-source contributions, and mentorship. Applications open. Remote, flexible commitment.',
+    url: 'https://inference-lab.dev/join/engineering-fellowship',
+  },
 }
 
 const fellowship = positions.find((p) => p.id === 'engineering-fellowship')!

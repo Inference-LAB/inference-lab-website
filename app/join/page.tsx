@@ -11,7 +11,13 @@ import { siteConfig } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Join the Lab',
   description:
-    'Work on real AI systems, contribute to published research, and build production-grade ML solutions alongside the INFERENCE Lab team.',
+    'Join INFERENCE Lab — Engineering Fellowship, Research Internship, Volunteer Contributor, and Industry Collaboration. Work on real AI systems with researchers and engineers.',
+  alternates: { canonical: 'https://inference-lab.dev/join' },
+  openGraph: {
+    title: 'Join the Lab · INFERENCE Lab',
+    description: 'Join INFERENCE Lab — Engineering Fellowship, Research Internship, Volunteer Contributor, and Industry Collaboration. Work on real AI systems with researchers and engineers.',
+    url: 'https://inference-lab.dev/join',
+  },
 }
 
 const whyJoin = [

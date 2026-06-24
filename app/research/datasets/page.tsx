@@ -8,7 +8,13 @@ import { SectionLabel } from '@/components/section-label'
 export const metadata: Metadata = {
   title: 'Datasets',
   description:
-    'Open datasets released by INFERENCE Lab — Roman Urdu Sentiment Corpus and RUEmoCorp, published on Harvard Dataverse and HuggingFace.',
+    'Open datasets from INFERENCE Lab — Roman Urdu Sentiment Corpus (RUDaSA) and RUEmoCorp, published on Harvard Dataverse with companion models on HuggingFace.',
+  alternates: { canonical: 'https://inference-lab.dev/research/datasets' },
+  openGraph: {
+    title: 'Datasets · INFERENCE Lab',
+    description: 'Open datasets from INFERENCE Lab — Roman Urdu Sentiment Corpus (RUDaSA) and RUEmoCorp, published on Harvard Dataverse with companion models on HuggingFace.',
+    url: 'https://inference-lab.dev/research/datasets',
+  },
 }
 
 const datasets = [

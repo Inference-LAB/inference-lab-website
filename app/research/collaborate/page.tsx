@@ -9,7 +9,13 @@ import { siteConfig } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Research With Us',
   description:
-    'End-to-end research partnerships — theory through deployment. PhD research, industry R&D, and institutional collaboration.',
+    'End-to-end research partnerships with INFERENCE Lab — theory through deployment. PhD research support, industry R&D, and institutional collaboration.',
+  alternates: { canonical: 'https://inference-lab.dev/research/collaborate' },
+  openGraph: {
+    title: 'Research With Us · INFERENCE Lab',
+    description: 'End-to-end research partnerships with INFERENCE Lab — theory through deployment. PhD research support, industry R&D, and institutional collaboration.',
+    url: 'https://inference-lab.dev/research/collaborate',
+  },
 }
 
 const tracks = [

@@ -10,7 +10,14 @@ import { cn } from '@/lib/utils'
 export const metadata: Metadata = {
   title: 'Research',
   description:
-    'Research output from INFERENCE Lab — low-resource NLP, speech intelligence, and applied AI. Every release ships reproducible pipelines and a permanent DOI.',
+    'Research publications, preprints, and output from INFERENCE Lab — low-resource NLP, Roman Urdu, speech intelligence, and vocal health AI. Every release ships reproducible pipelines and a permanent DOI.',
+  alternates: { canonical: 'https://inference-lab.dev/research' },
+  openGraph: {
+    title: 'Research · INFERENCE Lab',
+    description:
+      'Original research in low-resource NLP and speech intelligence — with international academic collaboration across Saudi Arabia, Kuwait, USA, and South Korea.',
+    url: 'https://inference-lab.dev/research',
+  },
 }
 
 const statusStyles: Record<string, string> = {
@@ -37,11 +44,42 @@ const areas = [
   },
 ]
 
+
+// JSON-LD for this page: list of ScholarlyArticles so Google can index each paper
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Research Publications — INFERENCE Lab',
+  url: 'https://inference-lab.dev/research',
+  description:
+    'Publications, preprints, and research output from INFERENCE Lab.',
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: publications.map((p, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'ScholarlyArticle',
+        name: p.title,
+        author: { '@type': 'Organization', name: 'INFERENCE Lab' },
+        datePublished: p.year,
+        publisher: p.venue,
+        ...(p.doi ? { identifier: `https://doi.org/${p.doi}` } : {}),
+        description: p.highlight,
+      },
+    })),
+  },
+}
+
 export default function ResearchPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-border">
           <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]" />

@@ -8,7 +8,13 @@ import { SectionLabel } from '@/components/section-label'
 export const metadata: Metadata = {
   title: 'Research Philosophy',
   description:
-    'How Inference Lab approaches research — reproducibility, permanent DOIs, deployable code, and real-world evaluation.',
+    'INFERENCE Lab research philosophy: reproducible by default, permanent DOIs, deployable inference code, and honest evaluation. No leaderboard chasing.',
+  alternates: { canonical: 'https://inference-lab.dev/about/research-philosophy' },
+  openGraph: {
+    title: 'Research Philosophy · INFERENCE Lab',
+    description: 'INFERENCE Lab research philosophy: reproducible by default, permanent DOIs, deployable inference code, and honest evaluation. No leaderboard chasing.',
+    url: 'https://inference-lab.dev/about/research-philosophy',
+  },
 }
 
 const pillars = [

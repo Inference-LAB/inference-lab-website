@@ -52,53 +52,70 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Dark, research-grade engineering theme. Near-black canvas, off-white type,
-   one sharp green signal accent. Monochrome + single accent per design rules. */
+/*
+  Precision monochrome theme — matched to the INFERENCE Lab logo.
+  White canvas, pure black type, cool graphite accents.
+  The logo is stark black-on-white geometric precision: the site mirrors that.
+  Single accent: deep graphite (#111) used as the brand signal.
+*/
 :root {
-  color-scheme: dark;
-  --background: oklch(0.155 0.004 285);
-  --foreground: oklch(0.96 0.002 285);
-  --card: oklch(0.185 0.004 285);
-  --card-foreground: oklch(0.96 0.002 285);
-  --popover: oklch(0.185 0.004 285);
-  --popover-foreground: oklch(0.96 0.002 285);
+  color-scheme: light;
 
-  --primary: oklch(0.96 0.002 285);
-  --primary-foreground: oklch(0.17 0.004 285);
+  /* ── Canvas ── */
+  --background:        oklch(0.99 0 0);          /* pure white */
+  --foreground:        oklch(0.09 0.004 270);     /* near-black */
 
-  --secondary: oklch(0.24 0.004 285);
-  --secondary-foreground: oklch(0.96 0.002 285);
+  /* ── Cards / surfaces ── */
+  --card:              oklch(0.975 0 0);          /* very light grey surface */
+  --card-foreground:   oklch(0.09 0.004 270);
 
-  --muted: oklch(0.22 0.004 285);
-  --muted-foreground: oklch(0.66 0.005 285);
+  --popover:           oklch(1 0 0);
+  --popover-foreground: oklch(0.09 0.004 270);
 
-  --accent: oklch(0.24 0.004 285);
-  --accent-foreground: oklch(0.96 0.002 285);
+  /* ── Primary (buttons, CTAs) ── */
+  --primary:           oklch(0.10 0.004 270);     /* near-black */
+  --primary-foreground: oklch(0.99 0 0);          /* white text on black button */
 
-  --brand: oklch(0.82 0.17 150);
-  --brand-foreground: oklch(0.18 0.04 150);
+  /* ── Secondary (ghost buttons, tags) ── */
+  --secondary:         oklch(0.94 0.002 270);
+  --secondary-foreground: oklch(0.18 0.004 270);
 
-  --destructive: oklch(0.62 0.21 25);
-  --border: oklch(1 0 0 / 11%);
-  --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.82 0.17 150);
+  /* ── Muted (subtitles, placeholders) ── */
+  --muted:             oklch(0.94 0.002 270);
+  --muted-foreground:  oklch(0.50 0.005 270);     /* medium grey */
 
-  --chart-1: oklch(0.82 0.17 150);
-  --chart-2: oklch(0.7 0.02 285);
-  --chart-3: oklch(0.55 0.01 285);
-  --chart-4: oklch(0.42 0.01 285);
-  --chart-5: oklch(0.3 0.008 285);
+  /* ── Accent (hover states, selected items) ── */
+  --accent:            oklch(0.92 0.002 270);
+  --accent-foreground: oklch(0.12 0.004 270);
 
-  --radius: 0.4rem;
+  /* ── Brand signal ── graphite black, matches logo ink ── */
+  --brand:             oklch(0.14 0.006 270);     /* very dark graphite */
+  --brand-foreground:  oklch(0.98 0 0);
 
-  --sidebar: oklch(0.185 0.004 285);
-  --sidebar-foreground: oklch(0.96 0.002 285);
-  --sidebar-primary: oklch(0.82 0.17 150);
-  --sidebar-primary-foreground: oklch(0.18 0.04 150);
-  --sidebar-accent: oklch(0.24 0.004 285);
-  --sidebar-accent-foreground: oklch(0.96 0.002 285);
-  --sidebar-border: oklch(1 0 0 / 11%);
-  --sidebar-ring: oklch(0.82 0.17 150);
+  /* ── Utility ── */
+  --destructive:       oklch(0.55 0.22 25);
+  --border:            oklch(0.09 0.004 270 / 12%); /* hairline black */
+  --input:             oklch(0.09 0.004 270 / 10%);
+  --ring:              oklch(0.14 0.006 270);
+
+  /* ── Charts (monochrome scale) ── */
+  --chart-1: oklch(0.14 0.006 270);
+  --chart-2: oklch(0.35 0.004 270);
+  --chart-3: oklch(0.55 0.003 270);
+  --chart-4: oklch(0.72 0.002 270);
+  --chart-5: oklch(0.87 0.001 270);
+
+  --radius: 0.35rem;
+
+  /* ── Sidebar ── */
+  --sidebar:                   oklch(0.975 0 0);
+  --sidebar-foreground:        oklch(0.09 0.004 270);
+  --sidebar-primary:           oklch(0.14 0.006 270);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent:            oklch(0.94 0.002 270);
+  --sidebar-accent-foreground: oklch(0.12 0.004 270);
+  --sidebar-border:            oklch(0.09 0.004 270 / 12%);
+  --sidebar-ring:              oklch(0.14 0.006 270);
 }
 
 @layer base {
@@ -114,11 +131,11 @@
 }
 
 @layer utilities {
-  /* faint engineering grid backdrop */
+  /* precision engineering grid — light version: very faint black lines */
   .bg-grid {
     background-image:
-      linear-gradient(to right, oklch(1 0 0 / 4%) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(1 0 0 / 4%) 1px, transparent 1px);
+      linear-gradient(to right, oklch(0 0 0 / 4%) 1px, transparent 1px),
+      linear-gradient(to bottom, oklch(0 0 0 / 4%) 1px, transparent 1px);
     background-size: 64px 64px;
   }
   .text-balance {
