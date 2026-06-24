@@ -8,7 +8,13 @@ import { SectionLabel } from '@/components/section-label'
 export const metadata: Metadata = {
   title: 'Our Mission',
   description:
-    'Inference Lab exists to close the gap between AI concepts and engineers who can actually build, deploy, and maintain AI systems.',
+    'INFERENCE Lab exists to close the gap between AI concepts and engineers who can actually build, deploy, and maintain AI systems. Engineering discipline over hype.',
+  alternates: { canonical: 'https://inference-lab.dev/about/mission' },
+  openGraph: {
+    title: 'Our Mission · INFERENCE Lab',
+    description: 'INFERENCE Lab exists to close the gap between AI concepts and engineers who can actually build, deploy, and maintain AI systems. Engineering discipline over hype.',
+    url: 'https://inference-lab.dev/about/mission',
+  },
 }
 
 const tracks = [

@@ -8,7 +8,13 @@ import { SectionLabel } from '@/components/section-label'
 export const metadata: Metadata = {
   title: 'Engineering',
   description:
-    'INFERENCE Lab engineering — open-source projects, client services, and the philosophy behind how we build AI systems.',
+    'INFERENCE Lab engineering — open-source AI projects, production ML engineering services, and the philosophy behind how we build AI systems.',
+  alternates: { canonical: 'https://inference-lab.dev/engineering' },
+  openGraph: {
+    title: 'Engineering · INFERENCE Lab',
+    description: 'INFERENCE Lab engineering — open-source AI projects, production ML engineering services, and the philosophy behind how we build AI systems.',
+    url: 'https://inference-lab.dev/engineering',
+  },
 }
 
 const sections = [

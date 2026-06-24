@@ -8,9 +8,15 @@ import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 import { siteConfig } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Founder & Director',
+  title: 'Founder & Director — Muhammad Khubaib Ahmad',
   description:
-    'INFERENCE Lab was founded on the premise that AI research and production engineering should not be treated as separate disciplines.',
+    'Muhammad Khubaib Ahmad — AI Research Engineer, founder of INFERENCE Lab. Research in speech intelligence, low-resource NLP, and LLM systems. Based in Multan, Pakistan.',
+  alternates: { canonical: 'https://inference-lab.dev/about/founder' },
+  openGraph: {
+    title: 'Founder & Director — Muhammad Khubaib Ahmad · INFERENCE Lab',
+    description: 'Muhammad Khubaib Ahmad — AI Research Engineer, founder of INFERENCE Lab. Research in speech intelligence, low-resource NLP, and LLM systems. Based in Multan, Pakistan.',
+    url: 'https://inference-lab.dev/about/founder',
+  },
 }
 
 const profile = [

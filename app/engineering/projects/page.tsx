@@ -9,7 +9,13 @@ import { software } from '@/lib/content'
 export const metadata: Metadata = {
   title: 'Engineering Projects',
   description:
-    'Open-source software, deployed APIs, and production systems released by INFERENCE Lab.',
+    'Open-source software and systems released by INFERENCE Lab — auralis-vfs, VocalID, faker-pk, QueryVault, DataForge and more. pip-installable and production-deployed.',
+  alternates: { canonical: 'https://inference-lab.dev/engineering/projects' },
+  openGraph: {
+    title: 'Engineering Projects · INFERENCE Lab',
+    description: 'Open-source software and systems released by INFERENCE Lab — auralis-vfs, VocalID, faker-pk, QueryVault, DataForge and more. pip-installable and production-deployed.',
+    url: 'https://inference-lab.dev/engineering/projects',
+  },
 }
 
 export default function EngineeringProjectsPage() {

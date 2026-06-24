@@ -7,7 +7,14 @@ import { SectionLabel } from '@/components/section-label'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'About Inference Lab — mission, founder, and research philosophy.',
+  description:
+    'About INFERENCE Lab — our mission, founder Muhammad Khubaib Ahmad, and research philosophy. Applied AI research and engineering, Multan, Pakistan.',
+  alternates: { canonical: 'https://inference-lab.dev/about' },
+  openGraph: {
+    title: 'About · INFERENCE Lab',
+    description: 'About INFERENCE Lab — our mission, founder Muhammad Khubaib Ahmad, and research philosophy. Applied AI research and engineering, Multan, Pakistan.',
+    url: 'https://inference-lab.dev/about',
+  },
 }
 
 const sections = [

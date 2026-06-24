@@ -8,7 +8,13 @@ import { SectionLabel } from '@/components/section-label'
 export const metadata: Metadata = {
   title: 'Engineering Philosophy',
   description:
-    'How INFERENCE Lab approaches building AI systems — production-first, documented, and the same discipline in every engagement.',
+    'How INFERENCE Lab builds AI systems — production-first, benchmarks not impressions, own the full lifecycle. Six concrete engineering principles.',
+  alternates: { canonical: 'https://inference-lab.dev/engineering/philosophy' },
+  openGraph: {
+    title: 'Engineering Philosophy · INFERENCE Lab',
+    description: 'How INFERENCE Lab builds AI systems — production-first, benchmarks not impressions, own the full lifecycle. Six concrete engineering principles.',
+    url: 'https://inference-lab.dev/engineering/philosophy',
+  },
 }
 
 const principles = [
