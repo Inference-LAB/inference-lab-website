@@ -58,6 +58,12 @@ export const CERTIFICATES: Record<string, Certificate> = {
     issued: '2026-06-25',
     grade: ''
   },
+  'IL-RC-2026-0005' : {
+    name: 'Muzammil Shadab',
+    program: 'Research Collaboration',
+    issued: '2026-06-25',
+    grade: ''
+  },
   // ── Add  certificates below ───────────────────────────────────────────
   // 'IL-2025-AEP-0003': {
   //   name: 'Full Name Here',
