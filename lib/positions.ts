@@ -27,7 +27,7 @@ export const positions: Position[] = [
   {
     id: 'engineering-fellowship',
     title: 'Engineering Fellowship',
-    type: '6-Month · Remote · Flexible',
+    type: '3-Month · Remote · Flexible',
     status: 'open',
     applicationsOpen: true,
     summary:

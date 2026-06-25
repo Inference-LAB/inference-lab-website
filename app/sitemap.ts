@@ -1,11 +1,9 @@
 // app/sitemap.ts
 // Next.js reads this file and automatically serves /sitemap.xml
-// Google uses sitemap.xml to discover and crawl every page on your site.
-// Update `baseUrl` to your real domain once you deploy.
 
 import type { MetadataRoute } from 'next'
 
-const baseUrl = 'https://inference-lab.dev'
+const baseUrl = 'https://inference-lab.vercel.app'
 
 // Every route on the site listed with:
 //   changeFrequency — how often Google should re-crawl
