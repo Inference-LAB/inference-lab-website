@@ -14,6 +14,7 @@ import { cn } from '@/lib/utils'
 // Each top-level item can either be:
 //   { label, href }           → plain link, no dropdown
 //   { label, children: [...] } → dropdown; each child has label + href + description
+//                                Optionally add external: true to open in new tab
 // ─────────────────────────────────────────────────────────────────────────────
 const NAV = [
   {
@@ -56,7 +57,34 @@ const NAV = [
       },
     ],
   },
-  { label: 'Education', href: '/curriculum' },
+  // ── Education now has a dropdown ─────────────────────────────────────────
+  {
+    label: 'Education',
+    children: [
+      {
+        label: 'Curriculum',
+        href: '/curriculum',
+        description: '6-phase, deployment-focused AI engineering program',
+      },
+      {
+        label: 'Apply — AI Engineering Program',
+        href: siteConfig.links.edu_applicationForm,  // education application form
+        description: 'Join the Applied AI Engineering Program',
+        external: true,
+      },
+      {
+        label: 'Contact Us',
+        href: `mailto:${siteConfig.email}`,
+        description: 'Email us directly at inferencelab.ai@gmail.com',
+        external: true,
+      },
+      {
+        label: 'Verify Certificate',
+        href: '/verify',
+        description: 'Check authenticity of an INFERENCE Lab certificate',
+      },
+    ],
+  },
   { label: 'Work With Us', href: '/#contact' },
   {
     label: 'About',
@@ -80,7 +108,7 @@ const NAV = [
   },
 ] as const
 
-type NavChild = { label: string; href: string; description: string }
+type NavChild = { label: string; href: string; description: string; external?: boolean }
 type NavItem =
   | { label: string; href: string; children?: never }
   | { label: string; children: readonly NavChild[]; href?: never }
@@ -116,7 +144,8 @@ function Dropdown({
     return () => document.removeEventListener('keydown', handler)
   }, [])
 
-  const active = children.some((c) => pathname?.startsWith(c.href.split('#')[0]))
+  const internalChildren = children.filter((c) => !c.external)
+  const active = internalChildren.some((c) => pathname?.startsWith(c.href.split('#')[0]))
 
   return (
     <div ref={ref} className="relative">
@@ -139,29 +168,57 @@ function Dropdown({
       </button>
 
       {open && (
-        <div className="absolute left-1/2 top-full z-50 mt-3 w-64 -translate-x-1/2">
+        <div className="absolute left-1/2 top-full z-50 mt-3 w-72 -translate-x-1/2">
           {/* little arrow */}
           <div className="mx-auto mb-0 h-2 w-2 -translate-y-px rotate-45 border-l border-t border-border bg-background" />
-          <div className="overflow-hidden rounded-lg border border-border bg-background shadow-xl shadow-black/20">
-            {children.map((item, i) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  'flex flex-col gap-0.5 px-4 py-3.5 transition-colors hover:bg-muted',
-                  i !== 0 && 'border-t border-border',
-                  pathname?.startsWith(item.href) && 'bg-muted',
-                )}
-              >
-                <span className="text-sm font-medium text-foreground">
-                  {item.label}
-                </span>
-                <span className="text-xs text-muted-foreground">
-                  {item.description}
-                </span>
-              </Link>
-            ))}
+          <div className="overflow-hidden rounded-lg border border-border bg-background shadow-xl shadow-black/10">
+            {children.map((item, i) => {
+              const isExternal = item.external === true
+
+              if (isExternal) {
+                return (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target={item.href.startsWith('mailto') ? undefined : '_blank'}
+                    rel={item.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                    onClick={() => setOpen(false)}
+                    className={cn(
+                      'flex flex-col gap-0.5 px-4 py-3.5 transition-colors hover:bg-muted',
+                      i !== 0 && 'border-t border-border',
+                    )}
+                  >
+                    <span className="flex items-center gap-1 text-sm font-medium text-foreground">
+                      {item.label}
+                      <ArrowUpRight className="h-3 w-3 text-muted-foreground" />
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      {item.description}
+                    </span>
+                  </a>
+                )
+              }
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    'flex flex-col gap-0.5 px-4 py-3.5 transition-colors hover:bg-muted',
+                    i !== 0 && 'border-t border-border',
+                    pathname?.startsWith(item.href) && 'bg-muted',
+                  )}
+                >
+                  <span className="text-sm font-medium text-foreground">
+                    {item.label}
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    {item.description}
+                  </span>
+                </Link>
+              )
+            })}
           </div>
         </div>
       )}
@@ -235,7 +292,7 @@ export function SiteHeader() {
       <div
         className={cn(
           'overflow-hidden border-t border-border md:hidden transition-all duration-200',
-          mobileOpen ? 'max-h-[600px]' : 'max-h-0 border-t-0',
+          mobileOpen ? 'max-h-[700px]' : 'max-h-0 border-t-0',
         )}
       >
         <nav className="flex flex-col gap-0.5 px-4 py-3">
@@ -263,19 +320,40 @@ export function SiteHeader() {
                   </button>
                   {expanded && (
                     <div className="ml-3 mt-0.5 flex flex-col gap-0.5 border-l border-border pl-3">
-                      {item.children.map((child) => (
-                        <Link
-                          key={child.href}
-                          href={child.href}
-                          onClick={() => {
-                            setMobileOpen(false)
-                            setMobileExpanded(null)
-                          }}
-                          className="rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
-                        >
-                          {child.label}
-                        </Link>
-                      ))}
+                      {item.children.map((child) => {
+                        const isExternal = (child as NavChild).external === true
+                        if (isExternal) {
+                          return (
+                            <a
+                              key={child.href}
+                              href={child.href}
+                              target={child.href.startsWith('mailto') ? undefined : '_blank'}
+                              rel={child.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                              onClick={() => {
+                                setMobileOpen(false)
+                                setMobileExpanded(null)
+                              }}
+                              className="flex items-center gap-1 rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+                            >
+                              {child.label}
+                              <ArrowUpRight className="h-3 w-3" />
+                            </a>
+                          )
+                        }
+                        return (
+                          <Link
+                            key={child.href}
+                            href={child.href}
+                            onClick={() => {
+                              setMobileOpen(false)
+                              setMobileExpanded(null)
+                            }}
+                            className="rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+                          >
+                            {child.label}
+                          </Link>
+                        )
+                      })}
                     </div>
                   )}
                 </div>
