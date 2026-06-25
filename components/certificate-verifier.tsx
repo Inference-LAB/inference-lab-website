@@ -72,7 +72,7 @@ export function CertificateVerifier() {
               setId(e.target.value)
               if (status !== 'idle') setStatus('idle')
             }}
-            placeholder="IL-2025-AEP-0001"
+            placeholder="IL-RC-2026-1090"
             spellCheck={false}
             autoComplete="off"
             className={cn(
