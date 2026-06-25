@@ -56,7 +56,7 @@ export const positions: Position[] = [
       'International collaboration network',
     ],
     href: '/join',
-    applyHref: 'https://inference-lab-ai.vercel.app/join',  // to be replaced with form URL
+    applyHref: 'https://www.inference-lab.org/join',  // to be replaced with form URL
   },
   {
     id: 'volunteer-contributor',
@@ -72,7 +72,7 @@ export const positions: Position[] = [
       'Path to Research Internship',
     ],
     href: '/join',
-    applyHref: 'https://inference-lab-ai.vercel.app/join',  // to be replaced with form URL
+    applyHref: 'https://www.inference-lab.org/join',  // to be replaced with form URL
   },
   {
     id: 'industry-collaboration',
