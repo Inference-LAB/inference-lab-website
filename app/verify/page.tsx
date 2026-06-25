@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { CertificateVerifier } from '@/components/certificate-verifier'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
@@ -7,12 +8,12 @@ export const metadata: Metadata = {
   title: 'Verify Certificate',
   description:
     'Verify the authenticity of an INFERENCE Lab certificate. Enter the certificate ID to confirm it was issued by INFERENCE Lab.',
-  alternates: { canonical: 'https://inference-lab.vercel.app/verify' },
+  alternates: { canonical: 'https://inference-lab.dev/verify' },
   openGraph: {
     title: 'Verify Certificate · INFERENCE Lab',
     description:
       'Verify the authenticity of an INFERENCE Lab certificate by entering the certificate ID.',
-    url: 'https://inference-lab.vercel.app/verify',
+    url: 'https://inference-lab.dev/verify',
   },
   robots: {
     index: true,
@@ -44,7 +45,9 @@ export default function VerifyPage() {
 
         {/* Verifier widget */}
         <section className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
-          <CertificateVerifier />
+          <Suspense fallback={<div className="h-11 w-full animate-pulse rounded-md bg-muted" />}>
+            <CertificateVerifier />
+          </Suspense>
         </section>
 
         {/* How it works */}
