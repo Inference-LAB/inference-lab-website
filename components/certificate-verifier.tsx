@@ -23,7 +23,7 @@ export function CertificateVerifier() {
   const [result, setResult] = useState<Certificate | null>(null)
   const [checkedId, setCheckedId] = useState('')
 
-  // Pre-fill from URL: /verify?id=IL-2025-AEP-0001
+  // Pre-fill from URL: /verify?id=IL-RC-2026-0001
   // (QR codes on certificates can link directly to this URL)
   useEffect(() => {
     const urlId = searchParams.get('id')
