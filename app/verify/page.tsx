@@ -61,7 +61,7 @@ export default function VerifyPage() {
                 {
                   step: '01',
                   title: 'Find the ID',
-                  body: 'Every INFERENCE Lab certificate has a unique ID in the format IL-YYYY-XXX-NNNN printed at the bottom.',
+                  body: 'Every INFERENCE Lab certificate has a unique ID in the format IL-XXX-YYYY-NNNN printed at the bottom.',
                 },
                 {
                   step: '02',

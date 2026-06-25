@@ -10,7 +10,7 @@ const geistMono = Geist_Mono({
 })
 
 // ─── Change this ONE constant when your domain is confirmed ───────────────────
-const SITE_URL = 'https://inference-lab.vercel.app'
+const SITE_URL = 'https://www.inference-lab.org'
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {

@@ -3,7 +3,7 @@
 
 import type { MetadataRoute } from 'next'
 
-const baseUrl = 'https://inference-lab.vercel.app'
+const baseUrl = 'https://www.inference-lab.org'
 
 // Every route on the site listed with:
 //   changeFrequency — how often Google should re-crawl
