@@ -101,10 +101,9 @@ export default function CollaboratePage() {
               From theory and notebooks to deployment and publication.
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-              We conduct complete, end-to-end research work — problem
-              formulation through reproducible pipeline, deployed model, and
-              published paper. PhD research, industry R&D, and institutional
-              collaboration.
+              Collaborate with us on end-to-end research, from problem formulation
+              to reproducible pipelines, deployed models, and formal publications. 
+              We welcome PhD research, industry R&D, and institutional collaboration.
             </p>
           </div>
         </section>

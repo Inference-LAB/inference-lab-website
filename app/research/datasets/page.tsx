@@ -79,10 +79,10 @@ export default function DatasetsPage() {
               Open, citable, and reproducible.
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-              All lab datasets are published with permanent DOIs on Harvard
-              Dataverse, with companion models on HuggingFace. Every dataset
-              ships with a data card, loading scripts, and documented
-              annotation methodology.
+              All lab datasets are officially published on Harvard Dataverse 
+              with permanent DOIs, alongside companion models on HuggingFace. 
+              Each release includes detailed data cards, standardized loading scripts,
+              and fully documented annotation methodology.
             </p>
           </div>
         </section>

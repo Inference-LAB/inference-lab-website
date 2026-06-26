@@ -10,7 +10,7 @@ import { siteConfig } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Founder & Director — Muhammad Khubaib Ahmad',
   description:
-    'Muhammad Khubaib Ahmad — AI Research Engineer, founder of INFERENCE Lab. Research in speech intelligence, low-resource NLP, and LLM systems. Based in Multan, Pakistan.',
+    'Muhammad Khubaib Ahmad — AI Research Engineer, founder of INFERENCE Lab. Research in speech intelligence, low-resource NLP, and LLM systems. Based in Multan, Punjab, Pakistan.',
   alternates: { canonical: 'https://inference-lab.dev/about/founder' },
   openGraph: {
     title: 'Founder & Director — Muhammad Khubaib Ahmad · INFERENCE Lab',
@@ -25,7 +25,7 @@ const profile = [
   { k: 'Location',   v: 'Multan, Punjab, Pakistan' },
   { k: 'Research',   v: 'Low-Resource NLP, Speech Intelligence, LLM Engineering, Human Ergonomics' },
   { k: 'Method',     v: 'Architecture-first design, reproducible benchmarks, open release' },
-  { k: 'Network',    v: 'Hanyang University (Republic of Korea), King Saud University (Kingdom of Saudia-Arabia), EPU Kuwait, Doane University (USA)' },
+  { k: 'Network',    v: 'Hanyang University (Republic of Korea), KU Leuven (Belgium) , King Saud University (Kingdom of Saudia-Arabia), EPU Kuwait, Doane University (USA)' },
 ]
 
 const focusAreas = [
@@ -64,11 +64,12 @@ export default function FounderPage() {
               AI Research Engineer
             </p>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground">
-              Inference Lab exists because most AI work sits on one side of a
-              divide: research that never leaves a notebook, or engineering
-              that ships without rigor. The lab was built to close that gap —
-              treating architecture decisions, evaluation, and deployment as
-              one continuous discipline rather than three handoffs.
+              INFERENCE Lab exists because most AI work sits on one of three
+              sides of a divide: research that never leaves the notebook,
+              engineering that ships without rigor, or ai training that never
+              reaches industry-level work. The lab treats architecture
+              decisions, evaluation, and deployment as one continuous
+              discipline — not three separate handoffs.
             </p>
 
             {/* Links */}

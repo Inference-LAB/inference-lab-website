@@ -113,9 +113,9 @@ export function SiteFooter() {
             © {new Date().getFullYear()} {siteConfig.name}. All artefacts open
             and reproducible.
           </p>
-          <p className="font-mono text-xs text-muted-foreground">
+          {/* <p className="font-mono text-xs text-muted-foreground">
             Founded by {siteConfig.founder}
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>
