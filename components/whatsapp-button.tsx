@@ -6,7 +6,7 @@ import { siteConfig } from '@/lib/site'
 export function WhatsAppButton() {
   return (
     
-      href={siteConfig.whatsapp}
+      href={siteConfig.links.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with INFERENCE Lab on WhatsApp"
