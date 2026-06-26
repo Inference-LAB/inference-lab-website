@@ -28,9 +28,10 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-          INFERENCE Lab conducts reproducible AI research, builds production
-          systems, and trains engineers who can deploy — not just describe.
-          Engineering discipline over hype, evidence over branding.
+          INFERENCE Lab conducts reproducible AI research, builds production-grade systems,
+          and trains engineers who can design, deploy, and scale AI in the real world.
+          
+          Evidence over hype. Engineering discipline over branding.
         </p>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
