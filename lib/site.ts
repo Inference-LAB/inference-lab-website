@@ -14,7 +14,7 @@ export const siteConfig = {
     founderHuggingface: 'https://huggingface.co/Khubaib01',
     founderLinkedin: 'https://linkedin.com/in/muhammad-khubaib-ahmad-',
     applicationForm: 'https://forms.gle/ZUMht8VUfPwepPSW6', // updated form link
-    edu_applicationForm: 'https://forms.gle/YQ1kiyvqYiu8TAho9'
+    edu_applicationForm: 'https://forms.gle/YQ1kiyvqYiu8TAho9',
   },
 }
 
