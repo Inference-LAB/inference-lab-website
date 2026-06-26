@@ -30,7 +30,7 @@ export function Hero() {
         <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
           INFERENCE Lab conducts reproducible AI research, builds production-grade systems,
           and trains engineers who can design, deploy, and scale AI in the real world.
-          
+
           Evidence over hype. Engineering discipline over branding.
         </p>
 
