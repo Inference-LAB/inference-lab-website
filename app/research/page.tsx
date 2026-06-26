@@ -98,7 +98,11 @@ export default function ResearchPage() {
               Low-resource NLP &amp; speech intelligence.
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-              We merge academic theory with real-world application through independent research. By collaborating with partners such as King Saud University (KSA), EPU Kuwait, Doane University (USA), KU Leuven (Belgium), and Hanyang University (Republic of Korea), we ensure every discovery is actionable, backed by reproducible pipelines, evaluation documentation, and a permanent, transparent DOI.
+              We merge academic theory with real-world application through 
+              independent research. By collaborating with partners 
+              such as King Saud University (KSA), EPU Kuwait, Doane University (USA),
+              KU Leuven (Belgium), and Hanyang University (Republic of Korea), we ensure
+              every discovery is actionable, backed by reproducible pipelines, evaluation documentation, and a permanent, transparent DOI.
             </p>
           </div>
         </section>
