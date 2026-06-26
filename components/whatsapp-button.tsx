@@ -1,18 +1,18 @@
 'use client'
 
-import { MessageCircle } from 'lucide-react'
 import { siteConfig } from '@/lib/site'
+import { MessageCircle } from 'lucide-react'
 
 export function WhatsAppButton() {
   return (
-    
+    <a
       href={siteConfig.links.whatsapp}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with INFERENCE Lab on WhatsApp"
       className="fixed bottom-6 right-6 z-50 flex h-13 w-13 items-center justify-center rounded-full bg-[#25D366] shadow-lg shadow-black/20 transition-transform hover:scale-110 hover:shadow-xl"
     >
-      {/* WhatsApp SVG — more accurate than lucide's MessageCircle */}
+      {/* WhatsApp SVG */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
