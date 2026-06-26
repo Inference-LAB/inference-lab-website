@@ -25,7 +25,7 @@ const profile = [
   { k: 'Location',   v: 'Multan, Punjab, Pakistan' },
   { k: 'Research',   v: 'Low-Resource NLP, Speech Intelligence, LLM Engineering, Human Ergonomics' },
   { k: 'Method',     v: 'Architecture-first design, reproducible benchmarks, open release' },
-  { k: 'Network',    v: 'Hanyang University (Republic of Korea), KU Leuven (Belgium) , King Saud University (Kingdom of Saudia-Arabia), EPU Kuwait, Doane University (USA)' },
+  { k: 'Network',    v: 'Hanyang University (Republic of Korea), KU Leuven (Belgium) , King Saud University (Kingdom of Saudia-Arabia), Virtual University (Pakistan), Emerson University (Pakistan), EPU (Kuwait), Doane University (USA), Queen\'s University (Canada)' },
 ]
 
 const focusAreas = [
