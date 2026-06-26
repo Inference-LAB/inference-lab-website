@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import { WhatsAppButton } from '@/components/whatsapp-button'
 import './globals.css'
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] })
@@ -133,7 +134,7 @@ const jsonLd = {
       image: `${SITE_URL}/og-image.png`,
       description:
         'Applied AI research and engineering organization founded by Muhammad Khubaib Ahmad in Multan, Pakistan. Research in low-resource NLP and speech intelligence, production AI engineering services, and deployment-focused engineering education.',
-      foundingDate: '2025',
+      foundingDate: '2026',
       foundingLocation: {
         '@type': 'Place',
         name: 'Multan, Punjab, Pakistan',
@@ -157,7 +158,7 @@ const jsonLd = {
       ],
       contactPoint: {
         '@type': 'ContactPoint',
-        email: 'inferencelab.ai@gmail.com',
+        email: 'contact@inference-lab.org',
         contactType: 'general inquiry',
       },
       knowsAbout: [
@@ -232,14 +233,15 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <head>
-        {/* Inject JSON-LD structured data for Google Knowledge Panel */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
+
       <body className="font-sans antialiased">
         {children}
+        <WhatsAppButton />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>
