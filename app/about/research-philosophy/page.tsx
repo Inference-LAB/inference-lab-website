@@ -56,6 +56,10 @@ const collaborations = [
   'Doane University — USA',
   'Hanyang University — Republic of Korea',
   'Emerson University — Multan, Pakistan',
+  'Virtual University — Pakistan',
+  'KU Leuven — Belgium',
+  'University of Rasul — Pakistan', 
+  'Queen\'s University — Canada'
 ]
 
 export default function ResearchPhilosophyPage() {
