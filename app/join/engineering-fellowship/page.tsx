@@ -10,11 +10,11 @@ import { positions } from '@/lib/positions'
 export const metadata: Metadata = {
   title: 'Engineering Fellowship',
   description:
-    'INFERENCE Lab Engineering Fellowship — 6 months of real AI systems work, open-source contributions, and mentorship. Applications open. Remote, flexible commitment.',
+    'INFERENCE Lab Engineering Fellowship — 3 months of real AI systems work, open-source contributions, and mentorship. Applications open. Remote, flexible commitment.',
   alternates: { canonical: 'https://inference-lab.dev/join/engineering-fellowship' },
   openGraph: {
     title: 'Engineering Fellowship · INFERENCE Lab',
-    description: 'INFERENCE Lab Engineering Fellowship — 6 months of real AI systems work, open-source contributions, and mentorship. Applications open. Remote, flexible commitment.',
+    description: 'INFERENCE Lab Engineering Fellowship — 3 months of real AI systems work, open-source contributions, and mentorship. Applications open. Remote, flexible commitment.',
     url: 'https://inference-lab.dev/join/engineering-fellowship',
   },
 }
@@ -87,7 +87,7 @@ export default function EngineeringFellowshipPage() {
             {/* Meta pills */}
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="inline-flex items-center gap-2 rounded-md border border-border bg-card/40 px-3.5 py-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                <Clock className="h-4 w-4 text-brand" /> 6 months
+                <Clock className="h-4 w-4 text-brand" /> 3 months
               </span>
               <span className="inline-flex items-center gap-2 rounded-md border border-border bg-card/40 px-3.5 py-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
                 <Globe className="h-4 w-4 text-brand" /> Remote

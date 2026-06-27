@@ -75,7 +75,7 @@ const NAV = [
       {
         label: 'Contact Us',
         href: `mailto:${siteConfig.email}`,
-        description: 'Email us directly at inferencelab.ai@gmail.com',
+        description: 'Email us directly at contact@inference-lab.com',
         external: true,
       },
       {
