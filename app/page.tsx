@@ -7,7 +7,7 @@ import { Research } from '@/components/sections/research'
 import { SoftwareSection } from '@/components/sections/software'
 import { CurriculumOverview } from '@/components/sections/curriculum-overview'
 import { Founder } from '@/components/sections/founder'
-import { Fellowship } from '@/components/sections/fellowship'
+// import { Fellowship } from '@/components/sections/fellowship'
 import { CurrentOpportunities } from '@/components/sections/current-opportunities'
 import { ContactCta } from '@/components/sections/contact-cta'
 
@@ -23,7 +23,7 @@ export default function HomePage() {
         <SoftwareSection />
         <CurriculumOverview />
         <Founder />
-        <Fellowship />
+        {/* <Fellowship /> */}
         <CurrentOpportunities />
         <ContactCta />
       </main>
