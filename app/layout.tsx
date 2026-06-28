@@ -26,7 +26,11 @@ export const metadata: Metadata = {
 
   description:
     'INFERENCE Lab is an applied AI research and engineering organization founded by Muhammad Khubaib Ahmad in Multan, Pakistan. Original research in low-resource NLP and speech intelligence, production AI engineering services, and a deployment-focused curriculum.',
-
+  icons: {
+    icon: '/inference-lab-logo.png',
+    shortcut: '/inference-lab-logo.png',
+    apple: '/inference-lab-logo.png',
+  },
   keywords: [
     'Inference Lab',
     'INFERENCE Lab',
