@@ -18,8 +18,12 @@ export function CurrentOpportunities() {
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-            We&apos;re building AI systems, conducting research, and training
-            engineers. Every position involves real, shipped work.
+              From published research with public DOIs to open-source
+              libraries used by other engineers, INFERENCE Lab's work is
+              real and verifiable. We build production AI systems, conduct
+              original research in low-resource NLP and speech
+              intelligence, and release our code, models, and datasets in
+              the open — not behind a paywall or a portfolio screenshot.
           </p>
         </div>
 
