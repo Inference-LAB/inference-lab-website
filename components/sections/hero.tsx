@@ -31,7 +31,7 @@ export function Hero() {
           INFERENCE Lab conducts reproducible AI research, builds production-grade systems,
           and trains engineers who can design, deploy, and scale AI in the real world.
 
-          Evidence over hype. Engineering discipline over branding.
+          Evidence over hype. Engineering over branding.
         </p>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
