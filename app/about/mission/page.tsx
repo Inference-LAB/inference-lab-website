@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   title: 'Our Mission',
   description:
     'INFERENCE Lab exists to close the gap between AI concepts and engineers who can actually build, deploy, and maintain AI systems. Engineering discipline over hype.',
-  alternates: { canonical: 'https://inference-lab.dev/about/mission' },
+  alternates: { canonical: 'https://www.inference-lab.org/about/mission' },
   openGraph: {
     title: 'Our Mission · INFERENCE Lab',
     description: 'INFERENCE Lab exists to close the gap between AI concepts and engineers who can actually build, deploy, and maintain AI systems. Engineering discipline over hype.',
-    url: 'https://inference-lab.dev/about/mission',
+    url: 'https://www.inference-lab.org/about/mission',
   },
 }
 

@@ -76,7 +76,7 @@ export default function EngineeringFellowshipPage() {
             </div>
 
             <h1 className="mt-5 max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-              Six months. Real projects. Real impact.
+              3 months. Real projects. Real impact.
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
               Work on AI systems that ship — agentic pipelines, LLM
