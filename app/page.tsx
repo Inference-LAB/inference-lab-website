@@ -6,8 +6,8 @@ import { Tracks } from '@/components/sections/tracks'
 import { Research } from '@/components/sections/research'
 import { SoftwareSection } from '@/components/sections/software'
 import { CurriculumOverview } from '@/components/sections/curriculum-overview'
-import { Founder } from '@/components/sections/founder'
-import { Fellowship } from '@/components/sections/fellowship'
+// import { Founder } from '@/components/sections/founder'
+// import { Fellowship } from '@/components/sections/fellowship'
 import { CurrentOpportunities } from '@/components/sections/current-opportunities'
 import { ContactCta } from '@/components/sections/contact-cta'
 
@@ -22,8 +22,8 @@ export default function HomePage() {
         <Research />
         <SoftwareSection />
         <CurriculumOverview />
-        <Founder />
-        <Fellowship />
+        {/* <Founder /> */}
+        {/* <Fellowship /> */}
         <CurrentOpportunities />
         <ContactCta />
       </main>
