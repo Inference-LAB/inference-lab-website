@@ -66,7 +66,7 @@ export const metadata: Metadata = {
       'Reproducible AI research, production ML systems, and a deployment-focused engineering curriculum. Founded by Muhammad Khubaib Ahmad, Multan, Pakistan.',
     images: [
       {
-        url: '/og-image.png',
+        url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
         alt: 'INFERENCE Lab — Applied AI Research, Engineering & Education',
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     title: 'INFERENCE Lab — Applied AI Research, Engineering & Education',
     description:
       'Reproducible AI research, production ML systems, and a deployment-focused engineering curriculum.',
-    images: ['/og-image.png'],
+    images: [`${SITE_URL}/og-image.png`],
   },
 
   icons: {
