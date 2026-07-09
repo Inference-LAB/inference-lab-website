@@ -88,7 +88,7 @@ export const positions: Position[] = [
       'Co-publication opportunities',
     ],
     href: '/join',
-    applyHref: `mailto:inferencelab.ai@gmail.com`,
+    applyHref: `mailto:contact@inference-lab.org`,
   },
 ]
 
