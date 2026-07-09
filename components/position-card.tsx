@@ -10,7 +10,7 @@ interface PositionCardProps {
 
 export function PositionCard({ position, variant = 'default' }: PositionCardProps) {
   const badge = statusConfig[position.status]
-
+  const hideActions = position.status === 'closed' || position.status === 'soon'
   if (variant === 'compact') {
     return (
       <div className="flex flex-col bg-background p-6 transition-colors hover:bg-card">
@@ -36,17 +36,9 @@ export function PositionCard({ position, variant = 'default' }: PositionCardProp
         <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-2">
           {position.summary}
         </p>
-
+        {!hideActions && ( 
         <div className="mt-4 flex items-center gap-3">
-          {position.href && (
-            <Link
-              href={position.href}
-              className="group inline-flex items-center gap-1 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Learn more
-              <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-          )}
+         
           {position.applicationsOpen && (
             <a
               href={position.applyHref}
@@ -59,6 +51,7 @@ export function PositionCard({ position, variant = 'default' }: PositionCardProp
             </a>
           )}
         </div>
+        )}
       </div>
     )
   }
@@ -92,17 +85,9 @@ export function PositionCard({ position, variant = 'default' }: PositionCardProp
           </li>
         ))}
       </ul>
-
+      {!hideActions && (
       <div className="mt-6 flex flex-wrap gap-3 border-t border-border pt-5">
-        {position.href && (
-          <Link
-            href={position.href}
-            className="group inline-flex items-center gap-1.5 rounded-md border border-border px-4 py-2 font-mono text-xs uppercase tracking-widest text-foreground transition-colors hover:border-foreground/30 hover:bg-card"
-          >
-            Learn more
-            <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-          </Link>
-        )}
+      
         {position.applicationsOpen && (
           <a
             href={position.applyHref}
@@ -115,6 +100,7 @@ export function PositionCard({ position, variant = 'default' }: PositionCardProp
           </a>
         )}
       </div>
+      )}
     </div>
   )
 }

@@ -28,7 +28,7 @@ export const positions: Position[] = [
     id: 'engineering-fellowship',
     title: 'Engineering Fellowship',
     type: '3-Month · Remote · Flexible',
-    status: 'open',
+    status: 'closed',
     applicationsOpen: true,
     summary:
       'Work on real AI systems alongside the lab — agentic pipelines, LLM applications, speech AI, and production MLOps. Designed for engineers who want serious project experience, not busy-work.',
@@ -88,7 +88,7 @@ export const positions: Position[] = [
       'Co-publication opportunities',
     ],
     href: '/join',
-    applyHref: `mailto:inferencelab.ai@gmail.com`,
+    applyHref: `mailto:contact@inference-lab.org`,
   },
 ]
 

@@ -78,7 +78,7 @@ export default function JoinPage() {
             <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand" />
               <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                {positions.filter(p => p.status === 'open').length} positions currently open
+                {positions.filter(p => p.status === 'open').length} position currently open
               </span>
             </div>
           </div>
