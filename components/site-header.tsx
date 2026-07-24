@@ -72,12 +72,12 @@ const NAV = [
         description: 'Join the Applied AI Engineering Program',
         external: true,
       },
-      {
-        label: 'Contact Us',
-        href: `mailto:${siteConfig.email}`,
-        description: 'Email us directly at contact@inference-lab.com',
-        external: true,
-      },
+      // {
+      //   label: 'Contact Us',
+      //   href: `mailto:${siteConfig.email}`,
+      //   description: 'Email us directly at contact@inference-lab.com',
+      //   external: true,
+      // },
       {
         label: 'Verify Certificate',
         href: '/verify',
@@ -86,6 +86,7 @@ const NAV = [
     ],
   },
   { label: 'Work With Us', href: '/#contact' },
+  { label: 'Contact Us', href: `mailto:${siteConfig.email}` },
   {
     label: 'About',
     children: [
@@ -106,6 +107,7 @@ const NAV = [
       },
     ],
   },
+
 ] as const
 
 type NavChild = { label: string; href: string; description: string; external?: boolean }
