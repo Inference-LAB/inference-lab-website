@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: 'Engineering Curriculum',
   description:
     'The INFERENCE Lab engineering curriculum — 6 phases, 12.5 months. From Python foundations to production MLOps. Deployment-focused AI engineering education by Muhammad Khubaib Ahmad.',
-  alternates: { canonical: 'https://inference-lab.dev/curriculum' },
+  alternates: { canonical: 'https://www.inference-lab.org/curriculum' },
   openGraph: {
     title: 'Engineering Curriculum · INFERENCE Lab',
     description:
       'Six-phase, 12.5-month curriculum producing deployment-ready AI engineers. Each phase ends with a capstone you can show in a job interview.',
-    url: 'https://inference-lab.dev/curriculum',
+    url: 'https://www.inference-lab.org/curriculum',
   },
 }
 
@@ -49,10 +49,13 @@ export default function CurriculumPage() {
               Developing deployment-ready Applied AI Engineers.
             </h1>
             <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-              A complete, deployment-focused curriculum across 6 phases. Every
-              concept is taught through live coding, every week ends with a
-              GitHub submission, and every phase ends with a capstone that
-              proves you can build the real thing.
+              A complete, deployment-focused curriculum across 6 phases. <br />
+              Every concept is taught through live coding, every week ends with a
+              GitHub submission, and every phase ends with a capstone that proves 
+              you can build the real thing. 
+             <br />
+              This is a paid, limited-capacity mentorship engagement — fee details 
+              are shared directly during the application conversation.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
