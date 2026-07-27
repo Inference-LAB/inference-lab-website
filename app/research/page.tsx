@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: 'Research',
   description:
     'Research publications, preprints, and output from INFERENCE Lab — low-resource NLP, Roman Urdu, speech intelligence, and vocal health AI. Every release ships reproducible pipelines and a permanent DOI.',
-  alternates: { canonical: 'https://inference-lab.dev/research' },
+  alternates: { canonical: 'https://www.inference-lab.org/research' },
   openGraph: {
     title: 'Research · INFERENCE Lab',
     description:
       'Original research in low-resource NLP and speech intelligence — with international academic collaboration across Saudi Arabia, Kuwait, USA, and South Korea.',
-    url: 'https://inference-lab.dev/research',
+    url: 'https://www.inference-lab.org/research',
   },
 }
 
@@ -50,7 +50,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Research Publications — INFERENCE Lab',
-  url: 'https://inference-lab.dev/research',
+  url: 'https://www.inference-lab.org/research',
   description:
     'Publications, preprints, and research output from INFERENCE Lab.',
   mainEntity: {

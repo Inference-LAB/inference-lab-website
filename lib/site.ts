@@ -23,5 +23,6 @@ export const nav = [
   { label: 'Engineering', href: '/engineering' },
   { label: 'Education', href: '/curriculum' },
   { label: 'Work With Us', href: '/#contact' },
+  { label: 'Contact', href: `mailto:${siteConfig.email}` },
   { label: 'Join the Lab', href: '/join' },
 ]

@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   title: 'About',
   description:
     'About INFERENCE Lab — our mission, founder Muhammad Khubaib Ahmad, and research philosophy. Applied AI research and engineering, Multan, Pakistan.',
-  alternates: { canonical: 'https://inference-lab.dev/about' },
+  alternates: { canonical: 'https://www.inference-lab.org/about' },
   openGraph: {
     title: 'About · INFERENCE Lab',
     description: 'About INFERENCE Lab — our mission, founder Muhammad Khubaib Ahmad, and research philosophy. Applied AI research and engineering, Multan, Pakistan.',
-    url: 'https://inference-lab.dev/about',
+    url: 'https://www.inference-lab.org/about',
   },
 }
 
@@ -26,16 +26,23 @@ const sections = [
       'Why the lab exists — closing the gap between AI concepts and engineers who can actually build, deploy, and maintain AI systems.',
   },
   {
+    href: '/about/team',
+    label: 'Our Team',
+    index: '02',
+    summary:
+      'The engineers and researchers building INFERENCE Lab\'s research, engineering, and education tracks.',
+  },
+  {
     href: '/about/founder',
     label: 'Founder & Director',
-    index: '02',
+    index: '03',
     summary:
       'Muhammad Khubaib Ahmad — AI Research Engineer, founder of Inference Lab, and the person behind all the lab\'s research and engineering work.',
   },
   {
     href: '/about/research-philosophy',
     label: 'Research Philosophy',
-    index: '03',
+    index: '04',
     summary:
       'Reproducibility, permanent DOIs, deployable inference code. What makes research real and why it matters.',
   },

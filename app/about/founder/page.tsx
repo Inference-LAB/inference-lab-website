@@ -11,11 +11,11 @@ export const metadata: Metadata = {
   title: 'Founder & Director — Muhammad Khubaib Ahmad',
   description:
     'Muhammad Khubaib Ahmad — AI Research Engineer, founder of INFERENCE Lab. Research in speech intelligence, low-resource NLP, and LLM systems. Based in Multan, Punjab, Pakistan.',
-  alternates: { canonical: 'https://inference-lab.dev/about/founder' },
+  alternates: { canonical: 'https://www.inference-lab.org/about/founder' },
   openGraph: {
     title: 'Founder & Director — Muhammad Khubaib Ahmad · INFERENCE Lab',
     description: 'Muhammad Khubaib Ahmad — AI Research Engineer, founder of INFERENCE Lab. Research in speech intelligence, low-resource NLP, and LLM systems. Based in Multan, Pakistan.',
-    url: 'https://inference-lab.dev/about/founder',
+    url: 'https://www.inference-lab.org/about/founder',
   },
 }
 

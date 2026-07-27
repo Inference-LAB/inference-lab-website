@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   title: 'Join the Lab',
   description:
     'Join INFERENCE Lab — Engineering Fellowship, Research Internship, Volunteer Contributor, and Industry Collaboration. Work on real AI systems with researchers and engineers.',
-  alternates: { canonical: 'https://inference-lab.dev/join' },
+  alternates: { canonical: 'https://www.inference-lab.org/join' },
   openGraph: {
     title: 'Join the Lab · INFERENCE Lab',
     description: 'Join INFERENCE Lab — Engineering Fellowship, Research Internship, Volunteer Contributor, and Industry Collaboration. Work on real AI systems with researchers and engineers.',
-    url: 'https://inference-lab.dev/join',
+    url: 'https://www.inference-lab.org/join',
   },
 }
 

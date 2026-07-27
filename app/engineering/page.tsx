@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   title: 'Engineering',
   description:
     'INFERENCE Lab engineering — open-source AI projects, production ML engineering services, and the philosophy behind how we build AI systems.',
-  alternates: { canonical: 'https://inference-lab.dev/engineering' },
+  alternates: { canonical: 'https://www.inference-lab.org/engineering' },
   openGraph: {
     title: 'Engineering · INFERENCE Lab',
     description: 'INFERENCE Lab engineering — open-source AI projects, production ML engineering services, and the philosophy behind how we build AI systems.',
-    url: 'https://inference-lab.dev/engineering',
+    url: 'https://www.inference-lab.org/engineering',
   },
 }
 

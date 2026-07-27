@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   title: 'Engineering Philosophy',
   description:
     'How INFERENCE Lab builds AI systems — production-first, benchmarks not impressions, own the full lifecycle. Six concrete engineering principles.',
-  alternates: { canonical: 'https://inference-lab.dev/engineering/philosophy' },
+  alternates: { canonical: 'https://www.inference-lab.org/engineering/philosophy' },
   openGraph: {
     title: 'Engineering Philosophy · INFERENCE Lab',
     description: 'How INFERENCE Lab builds AI systems — production-first, benchmarks not impressions, own the full lifecycle. Six concrete engineering principles.',
-    url: 'https://inference-lab.dev/engineering/philosophy',
+    url: 'https://www.inference-lab.org/engineering/philosophy',
   },
 }
 

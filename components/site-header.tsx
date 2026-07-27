@@ -96,10 +96,15 @@ const NAV = [
         description: 'Why the lab exists and what drives it',
       },
       {
-        label: 'Founder & Director',
-        href: '/about/founder',
-        description: 'Muhammad Khubaib Ahmad',
+        label: 'Our Team',
+        href: '/about/team',
+        description: 'The people building INFERENCE Lab',
       },
+      // {
+      //   label: 'Founder & Director',
+      //   href: '/about/founder',
+      //   description: 'Muhammad Khubaib Ahmad',
+      // },
       {
         label: 'Research Philosophy',
         href: '/about/research-philosophy',
