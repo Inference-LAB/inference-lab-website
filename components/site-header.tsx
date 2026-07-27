@@ -86,7 +86,7 @@ const NAV = [
     ],
   },
   { label: 'Work With Us', href: '/#contact' },
-  { label: 'Contact Us', href: `mailto:${siteConfig.email}` },
+  { label: 'Contact Us', href: `/contact` },
   {
     label: 'About',
     children: [

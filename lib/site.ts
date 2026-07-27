@@ -4,7 +4,7 @@ export const siteConfig = {
   location: 'Multan, Punjab, Pakistan',
   tagline: 'Applied AI research, engineering & education.',
   founder: 'Muhammad Khubaib Ahmad',
-  email: 'inferencelab.ai@gmail.com',
+  email: 'contact@inference-lab.org',
   links: {
     github: 'https://github.com/Inference-LAB',
     huggingface: 'https://huggingface.co/Inferencelab',
@@ -23,6 +23,6 @@ export const nav = [
   { label: 'Engineering', href: '/engineering' },
   { label: 'Education', href: '/curriculum' },
   { label: 'Work With Us', href: '/#contact' },
-  { label: 'Contact', href: `mailto:${siteConfig.email}` },
+  { label: 'Contact', href:'/contact' },
   { label: 'Join the Lab', href: '/join' },
 ]
