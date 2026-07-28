@@ -67,7 +67,7 @@ const NAV = [
         description: '6-phase, deployment-focused AI engineering program',
       },
       {
-        label: 'Apply — AI Engineering Program',
+        label: 'Apply — Applied AI Engineering Program',
         href: siteConfig.links.edu_applicationForm,  // education application form
         description: 'Join the Applied AI Engineering Program',
         external: true,
@@ -78,6 +78,13 @@ const NAV = [
       //   description: 'Email us directly at contact@inference-lab.com',
       //   external: true,
       // },
+      {
+        label: 'Contact Us',
+        href: `mailto:${siteConfig.email}`,
+        description: 'Email us directly at contact@inference-lab.org',
+        external: true,
+        
+      },
       {
         label: 'Verify Certificate',
         href: '/verify',
