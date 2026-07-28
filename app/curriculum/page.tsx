@@ -5,7 +5,7 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { SectionLabel } from '@/components/section-label'
 import { phases } from '@/lib/content'
-
+import { siteConfig } from '@/lib/site'
 export const metadata: Metadata = {
   title: 'Engineering Curriculum',
   description:
@@ -272,13 +272,25 @@ export default function CurriculumPage() {
                 The first online cohort is live. Join the next intake or apply
                 for the Engineering Fellowship.
               </p>
-              <Link
-                href="/#contact"
-                className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-brand px-5 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-brand-foreground transition-opacity hover:opacity-90"
-              >
-                Get in touch
-              </Link>
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+  <Link
+    href="/#contact"
+    className="inline-flex items-center justify-center gap-2 rounded-md bg-brand px-5 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-brand-foreground transition-opacity hover:opacity-90"
+  >
+    Get in touch
+  </Link>
+  <a 
+ href="https://forms.gle/YQ1kiyvqYiu8TAho9"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-background px-5 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-foreground transition-colors hover:bg-card"
+>
+  Apply now
+</a>
+</div>
+              
             </div>
+            
           </div>
         </section>
       </main>

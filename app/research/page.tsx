@@ -26,23 +26,23 @@ const statusStyles: Record<string, string> = {
   'In Progress':       'border-border text-muted-foreground',
 }
 
-const areas = [
-  {
-    label: 'Low-Resource NLP',
-    description:
-      'Datasets, annotation pipelines, and fine-tuned models for Roman Urdu — filling the gap between major-language NLP and underrepresented South Asian languages.',
-  },
-  {
-    label: 'Speech Intelligence',
-    description:
-      'Vocal fatigue estimation, speaker verification, and continuous vocal load monitoring — deployed as open libraries and production REST APIs.',
-  },
-  {
-    label: 'Cognitive & Ergonomic Systems',
-    description:
-      'Multi-institutional research applying Cognitive Systems Engineering to real-world healthcare settings.',
-  },
-]
+// const areas = [
+//   {
+//     label: 'Low-Resource NLP',
+//     description:
+//       'Datasets, annotation pipelines, and fine-tuned models for Roman Urdu — filling the gap between major-language NLP and underrepresented South Asian languages.',
+//   },
+//   {
+//     label: 'Speech Intelligence',
+//     description:
+//       'Vocal fatigue estimation, speaker verification, and continuous vocal load monitoring — deployed as open libraries and production REST APIs.',
+//   },
+//   {
+//     label: 'Cognitive & Ergonomic Systems',
+//     description:
+//       'Multi-institutional research applying Cognitive Systems Engineering to real-world healthcare settings.',
+//   },
+// ]
 
 
 // JSON-LD for this page: list of ScholarlyArticles so Google can index each paper
@@ -111,7 +111,7 @@ export default function ResearchPage() {
         </section>
 
         {/* Research areas */}
-        <section className="border-b border-border">
+        {/* <section className="border-b border-border">
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3">
               {areas.map((a) => (
@@ -124,7 +124,7 @@ export default function ResearchPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Publications */}
         <section className="border-b border-border">
