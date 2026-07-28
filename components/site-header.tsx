@@ -67,11 +67,17 @@ const NAV = [
         description: '6-phase, deployment-focused AI engineering program',
       },
       {
-        label: 'Apply — AI Engineering Program',
+        label: 'Apply — Applied AI Engineering Program',
         href: siteConfig.links.edu_applicationForm,  // education application form
         description: 'Join the Applied AI Engineering Program',
         external: true,
       },
+      // {
+      //   label: 'Contact Us',
+      //   href: `mailto:${siteConfig.email}`,
+      //   description: 'Email us directly at contact@inference-lab.com',
+      //   external: true,
+      // },
       {
         label: 'Contact Us',
         href: `mailto:${siteConfig.email}`,
@@ -87,6 +93,7 @@ const NAV = [
     ],
   },
   { label: 'Work With Us', href: '/#contact' },
+  { label: 'Contact Us', href: `/contact` },
   {
     label: 'About',
     children: [
@@ -96,10 +103,15 @@ const NAV = [
         description: 'Why the lab exists and what drives it',
       },
       {
-        label: 'Founder & Director',
-        href: '/about/founder',
-        description: 'Muhammad Khubaib Ahmad',
+        label: 'Our Team',
+        href: '/about/team',
+        description: 'The people building INFERENCE Lab',
       },
+      // {
+      //   label: 'Founder & Director',
+      //   href: '/about/founder',
+      //   description: 'Muhammad Khubaib Ahmad',
+      // },
       {
         label: 'Research Philosophy',
         href: '/about/research-philosophy',
@@ -107,6 +119,7 @@ const NAV = [
       },
     ],
   },
+
 ] as const
 
 type NavChild = { label: string; href: string; description: string; external?: boolean }

@@ -44,14 +44,16 @@ export function CurrentOpportunities() {
           </Link></div>
           <br />
           <div>
-          <Link
-            href={siteConfig.links.edu_applicationForm}
-            className="group inline-flex items-center gap-2 rounded-md border border-border bg-card/40 px-5 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-foreground transition-colors hover:border-foreground/30 hover:bg-card"
-          >
-            Apply — AI Engineering Program
-            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-
-          </Link>
+            <a
+  href={siteConfig.links.edu_applicationForm}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="group inline-flex items-center gap-2 rounded-md border border-border bg-card/40 px-5 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-foreground transition-colors hover:border-foreground/30 hover:bg-card"
+>
+  Apply — AI Engineering Program
+  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+</a>
+          
           </div>
         </div>
       </div>

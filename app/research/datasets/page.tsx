@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   title: 'Datasets',
   description:
     'Open datasets from INFERENCE Lab — Roman Urdu Sentiment Corpus (RUDaSA) and RUEmoCorp, published on Harvard Dataverse with companion models on HuggingFace.',
-  alternates: { canonical: 'https://inference-lab.dev/research/datasets' },
+  alternates: { canonical: 'https://www.inference-lab.org/research/datasets' },
   openGraph: {
     title: 'Datasets · INFERENCE Lab',
     description: 'Open datasets from INFERENCE Lab — Roman Urdu Sentiment Corpus (RUDaSA) and RUEmoCorp, published on Harvard Dataverse with companion models on HuggingFace.',
-    url: 'https://inference-lab.dev/research/datasets',
+    url: 'https://www.inference-lab.org/research/datasets',
   },
 }
 

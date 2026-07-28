@@ -23,5 +23,6 @@ export const nav = [
   { label: 'Engineering', href: '/engineering' },
   { label: 'Education', href: '/curriculum' },
   { label: 'Work With Us', href: '/#contact' },
+  { label: 'Contact', href:'/contact' },
   { label: 'Join the Lab', href: '/join' },
 ]

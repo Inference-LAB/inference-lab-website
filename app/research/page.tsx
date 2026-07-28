@@ -11,12 +11,12 @@ export const metadata: Metadata = {
   title: 'Research',
   description:
     'Research publications, preprints, and output from INFERENCE Lab — low-resource NLP, Roman Urdu, speech intelligence, and vocal health AI. Every release ships reproducible pipelines and a permanent DOI.',
-  alternates: { canonical: 'https://inference-lab.dev/research' },
+  alternates: { canonical: 'https://www.inference-lab.org/research' },
   openGraph: {
     title: 'Research · INFERENCE Lab',
     description:
       'Original research in low-resource NLP and speech intelligence — with international academic collaboration across Saudi Arabia, Kuwait, USA, and South Korea.',
-    url: 'https://inference-lab.dev/research',
+    url: 'https://www.inference-lab.org/research',
   },
 }
 
@@ -26,23 +26,23 @@ const statusStyles: Record<string, string> = {
   'In Progress':       'border-border text-muted-foreground',
 }
 
-const areas = [
-  {
-    label: 'Low-Resource NLP',
-    description:
-      'Datasets, annotation pipelines, and fine-tuned models for Roman Urdu — filling the gap between major-language NLP and underrepresented South Asian languages.',
-  },
-  {
-    label: 'Speech Intelligence',
-    description:
-      'Vocal fatigue estimation, speaker verification, and continuous vocal load monitoring — deployed as open libraries and production REST APIs.',
-  },
-  {
-    label: 'Cognitive & Ergonomic Systems',
-    description:
-      'Multi-institutional research applying Cognitive Systems Engineering to real-world healthcare settings.',
-  },
-]
+// const areas = [
+//   {
+//     label: 'Low-Resource NLP',
+//     description:
+//       'Datasets, annotation pipelines, and fine-tuned models for Roman Urdu — filling the gap between major-language NLP and underrepresented South Asian languages.',
+//   },
+//   {
+//     label: 'Speech Intelligence',
+//     description:
+//       'Vocal fatigue estimation, speaker verification, and continuous vocal load monitoring — deployed as open libraries and production REST APIs.',
+//   },
+//   {
+//     label: 'Cognitive & Ergonomic Systems',
+//     description:
+//       'Multi-institutional research applying Cognitive Systems Engineering to real-world healthcare settings.',
+//   },
+// ]
 
 
 // JSON-LD for this page: list of ScholarlyArticles so Google can index each paper
@@ -50,7 +50,7 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
   name: 'Research Publications — INFERENCE Lab',
-  url: 'https://inference-lab.dev/research',
+  url: 'https://www.inference-lab.org/research',
   description:
     'Publications, preprints, and research output from INFERENCE Lab.',
   mainEntity: {
@@ -81,7 +81,7 @@ export default function ResearchPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {/* Hero */}
-        <section className="relative overflow-hidden border-b border-border">
+       <section className="relative overflow-hidden border-b border-border">
           <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]" />
           <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 lg:px-8 lg:pb-20">
             <Link
@@ -95,20 +95,23 @@ export default function ResearchPage() {
               <SectionLabel>Research output</SectionLabel>
             </div>
             <h1 className="mt-5 max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-              Low-resource NLP &amp; speech intelligence.
+              Where rigorous research meets real-world impact
             </h1>
-            <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-              We merge academic theory with real-world application through 
-              independent research. By collaborating with partners 
-              such as King Saud University (KSA), EPU Kuwait, Doane University (USA),
-              KU Leuven (Belgium), and Hanyang University (Republic of Korea), we ensure
-              every discovery is actionable, backed by reproducible pipelines, evaluation documentation, and a permanent, transparent DOI.
+            <p className="mt-8 max-w-3xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Inference Lab publishes across speech intelligence, natural language 
+  processing, human-centered sensing, and applied AI — with each study 
+  designed from the ground up to be reproducible, citable, and deployable. 
+  Our work spans clinical voice diagnostics and cross-corpus emotion 
+  recognition to large-scale low-resource corpora, cognitive fatigue 
+  detection, and data-driven agricultural forecasting. Every output is 
+  developed in collaboration with international academic partners and 
+  released with open datasets, auditable model pipelines, and a permanent DOI.
             </p>
           </div>
         </section>
 
         {/* Research areas */}
-        <section className="border-b border-border">
+        {/* <section className="border-b border-border">
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3">
               {areas.map((a) => (
@@ -121,7 +124,7 @@ export default function ResearchPage() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Publications */}
         <section className="border-b border-border">

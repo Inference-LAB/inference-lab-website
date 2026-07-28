@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'Verify Certificate',
   description:
     'Verify the authenticity of an INFERENCE Lab certificate. Enter the certificate ID to confirm it was issued by INFERENCE Lab.',
-  alternates: { canonical: 'https://inference-lab.dev/verify' },
+  alternates: { canonical: 'https://www.inference-lab.org/verify' },
   openGraph: {
     title: 'Verify Certificate · INFERENCE Lab',
     description:
       'Verify the authenticity of an INFERENCE Lab certificate by entering the certificate ID.',
-    url: 'https://inference-lab.dev/verify',
+    url: 'https://www.inference-lab.org/verify',
   },
   robots: {
     index: true,
