@@ -156,10 +156,10 @@ export function CertificateVerifier() {
             Verified against the INFERENCE Lab certificate registry.
             Questions? Contact{' '}
             <a
-              href="mailto:inferencelab.ai@gmail.com"
+              href="mailto:contact@inference-lab.org"
               className="text-foreground underline underline-offset-2"
             >
-              inferencelab.ai@gmail.com
+              contact@inference-lab.org
             </a>
           </p>
         </div>
@@ -190,10 +190,10 @@ export function CertificateVerifier() {
             was not issued by INFERENCE Lab. Double-check the ID on the
             document, or contact{' '}
             <a
-              href="mailto:inferencelab.ai@gmail.com"
+              href="mailto:contact@inference-lab.org"
               className="text-foreground underline underline-offset-2"
             >
-              inferencelab.ai@gmail.com
+              contact@inference-lab.org
             </a>{' '}
             if you believe this is an error.
           </p>

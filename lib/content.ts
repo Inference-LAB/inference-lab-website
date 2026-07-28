@@ -48,30 +48,40 @@ export const tracks: Track[] = [
 export type Publication = {
   title: string
   venue: string
-  status: 'Under Review' | 'Published Preprint' | 'In Progress'
+  status: 'Under Review' | 'Published Preprint' | 'Accepted' | 'In Progress'
   year: string
   doi?: string
   highlight: string
 }
 
 export const publications: Publication[] = [
+    {
+    title: 'Automated Vocal Fatigue Screening in Professional Voice Users: Development and Occupational Validation of an Automated Assessment System',
+    venue: 'Journal of Voice · Hanyang University, Republic of Korea',
+    status: 'Accepted',
+    year: '2026',
+    highlight:
+      'Development and occupational validation of an automated vocal load assessment tool for professional voice users — clinical-grade speech analysis in production.',
+  },
   {
     title:
-      'Modeling Vocal Fatigue as Embedding-Space Deviation Using Contrastively Trained ECAPA-TDNNs',
-    venue: 'Springer · EURASIP J. on Signal Processing',
+      'Disagreement-Weighted Classification and Calibration-Aware Training for Subjective NLP Tasks: A Multi-Seed Empirical Study',
+    venue: 'Language Resources and Evaluation • National University of Singapore',
     status: 'Under Review',
     year: '2026',
     doi: '10.5281/zenodo.18305757',
     highlight:
       'ECAPA-TDNN-VHE designed from scratch with supervised contrastive loss — 2.5× accuracy over baseline (78% vs 36%), F1 scores 0.85 / 0.78 / 0.70 across three fatigue classes.',
   },
-  {
-    title: 'Continuous Vocal Load Monitoring in Professional Voice Users',
-    venue: 'Journal of Voice · King Saud University & EPU Kuwait',
+    {
+    title:
+      'Ergonomic Intervention as Joint Cognitive System Reconfiguration: A Qualitative Case Study in Healthcare',
+    venue:
+      'KU Leuven (Belgium), King Saud University',
     status: 'Under Review',
     year: '2026',
     highlight:
-      'Development and occupational validation of an automated vocal load assessment tool for professional voice users — clinical-grade speech analysis in production.',
+      'Multi-institutional international study applying Cognitive Systems Engineering to healthcare ergonomics — systematic analysis of workload, safety, and intervention efficacy.',
   },
   {
     title:
@@ -112,15 +122,26 @@ export const publications: Publication[] = [
       'Time-series forecasting and smart-agriculture DSS — demonstrated 50–60% yield improvement through data-driven intervention.',
   },
   {
-    title:
-      'Ergonomic Interventions and Cognitive Workload in Healthcare Settings: A Qualitative Case Study Using Cognitive Systems Engineering',
-    venue:
-      'Hanyang University (Korea) · King Saud University (Saudi Arabia) · Doane University (USA)',
+    title: 'DASER-Net: Disentangled Adversarial Speech Emotion Recognition with Hierarchical Bottleneck Fusion for Cross-Corpus Generalization',
+    venue: 'Open to collaboration',
     status: 'In Progress',
-    year: '2026',
+    year: '2025',
+    doi: '10.5281/zenodo.16090477',
     highlight:
-      'Multi-institutional international study applying Cognitive Systems Engineering to healthcare ergonomics — systematic analysis of workload, safety, and intervention efficacy.',
+      'Cross-corpus speech emotion recognition study developing disentangled and domain-invariant representations for robust emotion classification across unseen acoustic domains.',
   },
+  {
+    title: 'Cursor Kinematics as a Privacy-Preserving Indicator of Cognitive Fatigue and Stress in Knowledge Work: An Explainability-Driven Analysis of Within-Person Interaction Logs',
+    venue: 'Open to collaboration',
+    status: 'In Progress',
+    year: '2025',
+    doi: '10.5281/zenodo.16090477',
+    highlight:
+      'Within-person study investigating cursor kinematics as a privacy-preserving indicator of cognitive fatigue and acute stress using explainable machine learning on workplace interaction logs.',
+  },
+    
+  
+
 ]
 
 export type Software = {
