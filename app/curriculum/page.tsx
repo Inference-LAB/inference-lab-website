@@ -27,6 +27,7 @@ const sessionFormat = [
 ]
 
 export default function CurriculumPage() {
+  const totalFee = phases.reduce((sum:number, phase) => sum + phase.totalFee, 0)
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
@@ -165,6 +166,100 @@ export default function CurriculumPage() {
             </div>
           </div>
         </section>
+        {/* Investment */}
+{/* Investment */}
+<section className="border-t border-border">
+  <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+
+      <div className="lg:sticky lg:top-24 lg:self-start">
+        <SectionLabel>Program investment</SectionLabel>
+        <h2 className="mt-5 text-balance text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+          Pay as you progress.
+        </h2>
+        <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
+          Each phase is billed independently — you commit one phase at a
+          time, not the full 12.5 months upfront. Fees are set per phase
+          based on depth, tooling, and mentorship intensity. Continuation
+          into the next phase is confirmed after capstone review.
+        </p>
+        <p className="mt-4 text-pretty text-sm leading-relaxed text-muted-foreground">
+          All fees are in PKR. Payment plans are available — discussed
+          during the application conversation.
+        </p>
+      </div>
+
+      <div className="overflow-hidden rounded-lg border border-border">
+        {/* Table header */}
+        <div className="grid grid-cols-[1fr_auto_auto_auto] gap-px bg-border">
+          <div className="bg-card/60 px-4 py-3 font-mono text-xs uppercase tracking-widest text-muted-foreground">
+            Phases
+          </div>
+          <div className="bg-card/60 px-4 py-3 font-mono text-xs uppercase tracking-widest text-muted-foreground text-right">
+            Duration
+          </div>
+          <div className="bg-card/60 px-4 py-3 font-mono text-xs uppercase tracking-widest text-muted-foreground text-right">
+            Fee/Month
+          </div>
+          <div className="bg-card/60 px-4 py-3 font-mono text-xs uppercase tracking-widest text-muted-foreground text-right">
+            Total Fee
+          </div>
+        </div>
+
+        {/* Rows */}
+        <ol className="grid gap-px bg-border">
+          {phases.map((phase) => (
+            <li
+              key={phase.id}
+              className="grid grid-cols-[1fr_auto_auto_auto] gap-px bg-background"
+            >
+              <div className="flex items-center gap-3 px-4 py-4">
+                <span className="shrink-0 font-mono text-xs font-semibold uppercase tracking-widest text-brand">
+                  {phase.index}
+                </span>
+                <span className="text-sm text-foreground/90 leading-snug">
+                  {phase.title}
+                </span>
+              </div>
+              <div className="flex items-center justify-end px-4 py-4">
+                <span className="font-mono text-xs text-muted-foreground whitespace-nowrap">
+                  {phase.duration}
+                </span>
+              </div>
+              <div className="flex items-center justify-end px-4 py-4">
+                <span className="font-mono text-sm text-foreground/80 whitespace-nowrap">
+                  PKR {phase.feePerMonth.toLocaleString()}
+                </span>
+              </div>
+              <div className="flex items-center justify-end px-4 py-4">
+                <span className="font-mono text-sm font-semibold text-foreground whitespace-nowrap">
+                  PKR {phase.totalFee.toLocaleString()}
+                </span>
+              </div>
+            </li>
+          ))}
+
+          {/* Total row */}
+          <li className="grid grid-cols-[1fr_auto_auto_auto] bg-card/40">
+            <div className="px-4 py-4">
+              <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+                Full program
+              </span>
+            </div>
+            <div className="px-4 py-4" />
+            <div className="px-4 py-4" />
+            <div className="flex items-center justify-end px-4 py-4">
+              <span className="font-mono text-sm font-semibold text-brand whitespace-nowrap">
+                PKR {totalFee.toLocaleString()}
+              </span>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         {/* CTA */}
         <section className="border-t border-border">

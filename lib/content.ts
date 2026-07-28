@@ -211,6 +211,8 @@ export type Phase = {
   index: string
   title: string
   duration: string
+  feePerMonth: number  // ← rename/add
+  totalFee: number 
   blurb: string
   weeks: string[]
   capstone: string
@@ -222,6 +224,8 @@ export const phases: Phase[] = [
     index: 'Phase 0',
     title: 'Engineering Foundations',
     duration: '2 months',
+    feePerMonth: 6000, 
+    totalFee:12000,
     blurb:
       'From a working terminal to production database architecture. Writing Python that does not break.',
     weeks: [
@@ -241,6 +245,8 @@ export const phases: Phase[] = [
     index: 'Phase 1',
     title: 'Data Engineering & Visualization',
     duration: '2 months',
+    feePerMonth: 6000, 
+    totalFee:12000,
     blurb:
       'NumPy through publication-quality visualization, grounded in real statistical thinking.',
     weeks: [
@@ -261,6 +267,8 @@ export const phases: Phase[] = [
     index: 'Phase 2',
     title: 'Machine Learning Engineering',
     duration: '2.5 months',
+    feePerMonth: 8000, 
+    totalFee:20000,
     blurb:
       'Classical ML the engineering way: pipelines, leakage-free evaluation, and experiment tracking.',
     weeks: [
@@ -280,6 +288,8 @@ export const phases: Phase[] = [
     index: 'Phase 3',
     title: 'Deep Learning & NLP',
     duration: '2.5 months',
+    feePerMonth: 8000, 
+    totalFee:20000, 
     blurb:
       'Neural networks from scratch to fine-tuned Transformers and speech AI pipelines.',
     weeks: [
@@ -300,6 +310,8 @@ export const phases: Phase[] = [
     index: 'Phase 4',
     title: 'AI Systems & LLM Engineering',
     duration: '2 months',
+    feePerMonth: 10000, 
+    totalFee:20000,
     blurb:
       'Production AI APIs, disciplined LLM engineering, RAG systems, and agents that actually work.',
     weeks: [
@@ -316,6 +328,8 @@ export const phases: Phase[] = [
     index: 'Phase 5',
     title: 'MLOps & Deployment',
     duration: '1.5 months',
+    feePerMonth: 10000, 
+    totalFee:15000, 
     blurb:
       'Containerize, automate, ship and monitor. The difference between a notebook and a product.',
     weeks: [
