@@ -12,7 +12,7 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         // Block the admin panel from being indexed — it has no public value
         // and you don't want login pages appearing in search results.
-        disallow: '/admin/',
+        disallow: ['/admin/', '/api/'],
       },
     ],
     sitemap: 'https://www.inference-lab.org/sitemap.xml',
