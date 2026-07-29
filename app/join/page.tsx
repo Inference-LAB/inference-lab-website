@@ -1,58 +1,79 @@
-import type { Metadata } from 'next'
-import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
-import { SiteHeader } from '@/components/site-header'
-import { SiteFooter } from '@/components/site-footer'
-import { SectionLabel } from '@/components/section-label'
-import { PositionCard } from '@/components/position-card'
-import { positions } from '@/lib/positions'
-import { siteConfig } from '@/lib/site'
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { SectionLabel } from "@/components/section-label";
+import { PositionCard } from "@/components/position-card";
+import { positions } from "@/lib/positions";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: 'Join the Lab',
+  title: "Join the Lab",
   description:
-    'Join INFERENCE Lab — Engineering Fellowship, Research Internship, Volunteer Contributor, and Industry Collaboration. Work on real AI systems with researchers and engineers.',
-  alternates: { canonical: 'https://www.inference-lab.org/join' },
+    "Join INFERENCE Lab — Engineering Fellowship, Research Internship, Volunteer Contributor, and Industry Collaboration. Work on real AI systems with researchers and engineers.",
+  alternates: { canonical: "https://www.inference-lab.org/join" },
   openGraph: {
-    title: 'Join the Lab · INFERENCE Lab',
-    description: 'Join INFERENCE Lab — Engineering Fellowship, Research Internship, Volunteer Contributor, and Industry Collaboration. Work on real AI systems with researchers and engineers.',
-    url: 'https://www.inference-lab.org/join',
+    title: "Join the Lab · INFERENCE Lab",
+    description:
+      "Join INFERENCE Lab — Engineering Fellowship, Research Internship, Volunteer Contributor, and Industry Collaboration. Work on real AI systems with researchers and engineers.",
+    url: "https://www.inference-lab.org/join",
   },
-}
+};
 
 const whyJoin = [
   {
-    title: 'Real systems, not toy projects',
-    body: 'Every fellowship and internship involves code that ships — libraries that real researchers install, APIs that serve real traffic, research that gets published.',
+    title: "Real systems, not toy projects",
+    body: "Every fellowship and internship involves code that ships — libraries that real researchers install, APIs that serve real traffic, research that gets published.",
   },
   {
-    title: 'Research you can put your name on',
-    body: 'Contributors to research work receive attribution. We publish with permanent DOIs and open-source every artefact — your work is verifiable by anyone.',
+    title: "Research you can put your name on",
+    body: "Contributors to research work receive attribution. We publish with permanent DOIs and open-source every artefact — your work is verifiable by anyone.",
   },
   {
-    title: 'Mentorship that goes both ways',
+    title: "Mentorship that goes both ways",
     body: "You get direct access to the lab founder — not a mentor who reviews your PRs once a week. You're expected to push back, ask hard questions, and own your work.",
   },
   {
-    title: 'Portfolio that speaks for itself',
-    body: 'GitHub history, published models on HuggingFace, co-authored papers. Not a certificate. The kind of proof that holds up to a technical interview.',
+    title: "Portfolio that speaks for itself",
+    body: "GitHub history, published models on HuggingFace, co-authored papers. Not a certificate. The kind of proof that holds up to a technical interview.",
   },
-]
+];
 
 const process = [
-  { step: '01', title: 'Submit application', body: 'Fill the application form — takes about 10 minutes. Tell us what you want to build.' },
-  { step: '02', title: 'Screening review', body: "We read every application. If there's a fit, we reach out within a week." },
-  { step: '03', title: 'Technical assessment', body: 'A short, relevant task — not a LeetCode gauntlet. We want to see how you think, not how you memorize.' },
-  { step: '04', title: 'Interview', body: 'A conversation with the lab founder about your interests, goals, and the work you want to do.' },
-  { step: '05', title: 'Selection', body: "If it's a fit, we agree on scope, timeline, and start date. No trailing paperwork." },
-]
+  {
+    step: "01",
+    title: "Submit application",
+    body: "Fill the application form — takes about 10 minutes. Tell us what you want to build.",
+  },
+  {
+    step: "02",
+    title: "Screening review",
+    body: "We read every application. If there's a fit, we reach out within a week.",
+  },
+  {
+    step: "03",
+    title: "Technical assessment",
+    body: "A short, relevant task — not a LeetCode gauntlet. We want to see how you think, not how you memorize.",
+  },
+  {
+    step: "04",
+    title: "Interview",
+    body: "A conversation with the lab founder about your interests, goals, and the work you want to do.",
+  },
+  {
+    step: "05",
+    title: "Selection",
+    body: "If it's a fit, we agree on scope, timeline, and start date. No trailing paperwork.",
+  },
+];
 
 export default function JoinPage() {
+  const openCount = positions.filter((p) => p.status === "open").length;
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
-
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-border">
           <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]" />
@@ -78,7 +99,7 @@ export default function JoinPage() {
             <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-card/60 px-3 py-1">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand" />
               <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                {positions.filter(p => p.status === 'open').length} position currently open
+                {openCount} position{openCount !== 1 ? "s" : ""} currently open
               </span>
             </div>
           </div>
@@ -105,9 +126,14 @@ export default function JoinPage() {
             </h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2">
               {whyJoin.map((item) => (
-                <div key={item.title} className="rounded-lg border border-border bg-background p-6">
+                <div
+                  key={item.title}
+                  className="rounded-lg border border-border bg-background p-6"
+                >
                   <h3 className="font-semibold tracking-tight">{item.title}</h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+                  <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+                    {item.body}
+                  </p>
                 </div>
               ))}
             </div>
@@ -127,8 +153,12 @@ export default function JoinPage() {
                   <span className="font-mono text-2xl font-semibold tabular-nums text-brand">
                     {p.step}
                   </span>
-                  <h3 className="mt-3 text-sm font-semibold tracking-tight">{p.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
+                  <h3 className="mt-3 text-sm font-semibold tracking-tight">
+                    {p.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {p.body}
+                  </p>
                 </li>
               ))}
             </ol>
@@ -170,5 +200,5 @@ export default function JoinPage() {
       </main>
       <SiteFooter />
     </div>
-  )
+  );
 }
