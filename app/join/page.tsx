@@ -166,7 +166,7 @@ export default function JoinPage() {
         </section>
 
         {/* CTA */}
-        <section>
+        {/* <section>
           <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
             <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
             <div className="relative flex flex-col items-center text-center">
@@ -196,7 +196,7 @@ export default function JoinPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
       <SiteFooter />
     </div>
