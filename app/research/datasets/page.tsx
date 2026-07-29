@@ -55,11 +55,43 @@ const datasets = [
   },
 ]
 
+// JSON-LD for this page: exposes each dataset as a schema.org Dataset entity
+// so Google can potentially surface these in Dataset Search / rich results.
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Open Datasets — INFERENCE Lab',
+  url: 'https://www.inference-lab.org/research/datasets',
+  description:
+    'Open datasets published by INFERENCE Lab on Harvard Dataverse with companion models on HuggingFace.',
+  mainEntity: {
+    '@type': 'ItemList',
+    itemListElement: datasets.map((d, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Dataset',
+        name: d.name,
+        description: d.description,
+        creator: { '@type': 'Organization', name: 'INFERENCE Lab' },
+        url: d.dataverseUrl,
+        sameAs: [d.huggingfaceUrl, d.doiUrl],
+        keywords: d.tags,
+        ...(d.doiUrl ? { identifier: d.doiUrl } : {}),
+      },
+    })),
+  },
+}
+
 export default function DatasetsPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       <main className="flex-1">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
 
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-border">

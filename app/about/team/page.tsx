@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   description:
     "Learn about Muhammad Khubaib Ahmad, Founder & Director of INFERENCE Lab, and meet the researchers and engineers building AI research, engineering, and education.",
   alternates: {
-    canonical: "https://www.inference-lab.org/about",
+    canonical: "https://www.inference-lab.org/about/team",
   },
   openGraph: {
     title: "About · INFERENCE Lab",
     description: "Meet the Founder and Team behind INFERENCE Lab.",
-    url: "https://www.inference-lab.org/about",
+    url: "https://www.inference-lab.org/about/team",
   },
 };
 
