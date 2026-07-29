@@ -168,7 +168,7 @@ const jsonLd = {
         '@id': `${SITE_URL}/#founder`,
         name: 'Muhammad Khubaib Ahmad',
         jobTitle: 'Founder & Director',
-        url: `${SITE_URL}/about/founder`,
+        url: `${SITE_URL}/about/team`,
         sameAs: [
           'https://github.com/Khubaib8281',
           'https://huggingface.co/Khubaib01',
@@ -219,7 +219,7 @@ const jsonLd = {
       name: 'Muhammad Khubaib Ahmad',
       jobTitle: 'AI Research Engineer',
       worksFor: { '@id': `${SITE_URL}/#organization` },
-      url: `${SITE_URL}/about/founder`,
+      url: `${SITE_URL}/about/team`,
       image: `${SITE_URL}/og-image.png`,
       description:
         'AI Research Engineer specializing in speech intelligence, low-resource NLP, and LLM systems. Founder and Director of INFERENCE Lab.',
