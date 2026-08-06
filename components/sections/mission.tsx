@@ -39,7 +39,7 @@ export function Mission() {
               Our aim: close the gap between people who{' '}
               <span className="text-muted-foreground">know AI concepts</span>{' '}
               and engineers who can{' '}
-              <span className="text-brand">build, deploy and maintain</span> AI
+              <span className="text-brand">build, deploy, and maintain</span> AI
               systems.
             </p>
             <div className="mt-8 grid gap-px overflow-hidden rounded-lg border border-border bg-border">
