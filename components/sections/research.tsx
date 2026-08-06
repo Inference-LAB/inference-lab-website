@@ -22,7 +22,7 @@ export function Research() {
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
             Independent and international research — every release ships
-            reproducible pipelines, evaluation documentation and a permanent
+            reproducible pipelines, evaluation documentation, and a permanent
             DOI.
           </p>
         </div>

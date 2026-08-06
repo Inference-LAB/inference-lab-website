@@ -110,7 +110,7 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-xs text-muted-foreground">
-            © {new Date().getFullYear()} {siteConfig.name}. All artefacts open
+            © {new Date().getFullYear()} {siteConfig.name}. All artifacts are open
             and reproducible.
           </p>
           {/* <p className="font-mono text-xs text-muted-foreground">
