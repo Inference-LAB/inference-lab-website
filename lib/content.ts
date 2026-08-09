@@ -137,16 +137,13 @@ export const publications: Publication[] = [
       'Within-person study investigating cursor kinematics as a privacy-preserving indicator of cognitive fatigue and acute stress using explainable machine learning on workplace interaction logs.',
   },
   {
-    title: '-	A Post-Quantum Hybrid Key Encapsulation Mechanism with Lorenz Chaotic Diffusion for Authenticated Medical Image Encryption',
+    title: 'A Post-Quantum Hybrid Key Encapsulation Mechanism with Lorenz Chaotic Diffusion for Authenticated Medical Image Encryption',
     venue: 'Open to collaboration',
     status: 'In Progress',
     year: '2026',
     highlight:
       'Combines post-quantum cryptography and chaos-based diffusion to provide strong confidentiality, integrity, and resistance against quantum-enabled attacks.',
   },
-    
-  
-
 ]
 
 export type Software = {
