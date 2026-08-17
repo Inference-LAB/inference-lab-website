@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   title: 'Engineering Services',
   description:
     'AI/ML engineering services from INFERENCE Lab — speech AI, LLM and RAG systems, computer vision, NLP, MLOps, and full-stack AI product development.',
-  alternates: { canonical: 'https://inference-lab.dev/engineering/services' },
+  alternates: { canonical: 'https://www.inference-lab.org/engineering/services' },
   openGraph: {
     title: 'Engineering Services · INFERENCE Lab',
     description: 'AI/ML engineering services from INFERENCE Lab — speech AI, LLM and RAG systems, computer vision, NLP, MLOps, and full-stack AI product development.',
-    url: 'https://inference-lab.dev/engineering/services',
+    url: 'https://www.inference-lab.org/engineering/services',
   },
 }
 

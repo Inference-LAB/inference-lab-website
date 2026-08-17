@@ -23,17 +23,27 @@ const NAV = [
       {
         label: 'Publications',
         href: '/research',
-        description: 'Papers, preprints, and research output',
+        description: 'Published papers, preprints, and research output',
       },
       {
-        label: 'Datasets',
-        href: '/research/datasets',
-        description: 'Open datasets released by the lab',
+        label: 'Research Areas',
+        href: '/research#areas',
+        description: 'Our core domains of scientific expertise',
       },
       {
-        label: 'Research With Us',
+        label: 'Research Services',
+        href: '/research/services',
+        description: 'End-to-end research support from idea to publication',
+      },
+      {
+        label: 'Collaborate on Research',
         href: '/research/collaborate',
-        description: 'End-to-end research, PhD & industry work',
+        description: 'Research partnerships with universities and industry',
+      },
+      {
+        label: 'Research Philosophy',
+        href: '/about/research-philosophy',
+        description: 'How we conduct reproducible and open research',
       },
     ],
   },
@@ -43,50 +53,57 @@ const NAV = [
       {
         label: 'Engineering Projects',
         href: '/engineering/projects',
-        description: 'Software and systems released by the lab',
+        description: 'Software, APIs, and systems released by the lab',
       },
       {
-        label: 'Services',
+        label: 'Engineering Services',
         href: '/engineering/services',
-        description: 'What we build for clients',
+        description: 'Custom AI solutions, LLM engineering & deployment',
+      },
+      {
+        label: 'Engineering Journal',
+        href: '/engineering/journal',
+        description: 'Technical reports documenting project engineering',
       },
       {
         label: 'Engineering Philosophy',
         href: '/engineering/philosophy',
-        description: 'How we think about building AI systems',
+        description: 'Our principles for building production-grade AI',
       },
     ],
   },
-  // ── Education now has a dropdown ─────────────────────────────────────────
   {
     label: 'Education',
     children: [
       {
-        label: 'Curriculum',
+        label: 'All Programs',
         href: '/curriculum',
-        description: '6-phase, deployment-focused AI engineering program',
+        description: 'Compare programs and find the right learning path',
       },
       {
-        label: 'Apply — AI Engineering Program',
-        href: siteConfig.links.edu_applicationForm,  // education application form
-        description: 'Join the Applied AI Engineering Program',
-        external: true,
+        label: 'AI Builder Program',
+        href: '/programs/ai-builder',
+        description: 'Build and ship real AI-powered products (Beginner)',
       },
       {
-        label: 'Contact Us',
-        href: `mailto:${siteConfig.email}`,
-        description: 'Email us directly at contact@inference-lab.org',
-        external: true,
-        
+        label: 'Applied AI Engineering',
+        href: '/programs/applied-ai-engineering',
+        description: '12.5-month comprehensive AI systems engineering track',
+      },
+      {
+        label: 'Career Guidance',
+        href: '/education/career-guidance',
+        description: 'Book guidance to find your ideal AI career pathway',
       },
       {
         label: 'Verify Certificate',
         href: '/verify',
-        description: 'Check authenticity of an INFERENCE Lab certificate',
+        description: 'Cryptographic credential verification',
       },
     ],
   },
   { label: 'Work With Us', href: '/#contact' },
+  { label: 'Contact Us', href: '/contact' },
   {
     label: 'About',
     children: [
@@ -96,14 +113,14 @@ const NAV = [
         description: 'Why the lab exists and what drives it',
       },
       {
-        label: 'Founder & Director',
-        href: '/about/founder',
-        description: 'Muhammad Khubaib Ahmad',
+        label: 'People',
+        href: '/about/people',
+        description: 'Leadership, core team, and engineering fellows',
       },
       {
-        label: 'Research Philosophy',
-        href: '/about/research-philosophy',
-        description: 'Reproducibility, rigour, and real output',
+        label: 'FAQ',
+        href: '/faqs',
+        description: 'Frequently asked questions about the lab',
       },
     ],
   },
@@ -234,7 +251,7 @@ export function SiteHeader() {
   const pathname = usePathname()
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" aria-label="Inference Lab home" className="shrink-0">
           <Logo />

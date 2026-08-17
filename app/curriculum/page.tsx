@@ -1,40 +1,39 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowLeft, Calendar, Clock, GraduationCap } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpen, Clock, Sparkles } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { SectionLabel } from '@/components/section-label'
-import { phases } from '@/lib/content'
+import { ProgramCard } from '@/components/programs/program-card'
+import { ProgramComparison } from '@/components/programs/program-comparison'
+import { LearningModel } from '@/components/programs/learning-model'
+import { ProgramCTA } from '@/components/programs/program-cta'
+
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
 
 export const metadata: Metadata = {
-  title: 'Engineering Curriculum',
+  title: 'AI Programs · INFERENCE Lab',
   description:
-    'The INFERENCE Lab engineering curriculum — 6 phases, 12.5 months. From Python foundations to production MLOps. Deployment-focused AI engineering education by Muhammad Khubaib Ahmad.',
-  alternates: { canonical: 'https://inference-lab.dev/curriculum' },
+    'Practical, project-driven programs designed to help you build with AI, develop technical skills, and turn ideas into working systems.',
+  alternates: { canonical: 'https://www.inference-lab.org/curriculum' },
   openGraph: {
-    title: 'Engineering Curriculum · INFERENCE Lab',
+    title: 'AI Programs · INFERENCE Lab',
     description:
-      'Six-phase, 12.5-month curriculum producing deployment-ready AI engineers. Each phase ends with a capstone you can show in a job interview.',
-    url: 'https://inference-lab.dev/curriculum',
+      'Practical, project-driven programs designed to help you build with AI, develop technical skills, and turn ideas into working systems.',
+    url: 'https://www.inference-lab.org/curriculum',
   },
 }
 
-const sessionFormat = [
-  { time: '0:00–0:10', label: 'Recap + last week’s assignment review' },
-  { time: '0:10–0:55', label: 'Core concept teaching with live coding' },
-  { time: '0:55–1:10', label: 'Guided exercise — code alongside the mentor' },
-  { time: '1:10–1:30', label: 'Assignment briefing + Q&A' },
-]
-
-export default function CurriculumPage() {
+export default function ProgramsHubPage() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col bg-background text-foreground">
       <SiteHeader />
       <main className="flex-1">
-        {/* Hero */}
-        <section className="relative overflow-hidden border-b border-border">
+        {/* Section 1: Hero */}
+        <section className="relative overflow-hidden border-b border-border bg-background">
           <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]" />
-          <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 lg:px-8 lg:pb-20">
+          <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-16 sm:px-6 sm:pb-20 sm:pt-20 lg:px-8">
             <Link
               href="/"
               className="group inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-muted-foreground transition-colors hover:text-foreground"
@@ -42,147 +41,129 @@ export default function CurriculumPage() {
               <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-1" />
               Back home
             </Link>
+
             <div className="mt-8">
-              <SectionLabel>Engineering education</SectionLabel>
+              <SectionLabel>Education &amp; Mentorship</SectionLabel>
             </div>
-            <h1 className="mt-5 max-w-4xl text-balance text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl">
-              Developing deployment-ready Applied AI Engineers.
+
+            <h1 className="mt-4 max-w-4xl text-balance text-4xl font-bold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+              AI Programs
             </h1>
-            <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-              A complete, deployment-focused curriculum across 6 phases. Every
-              concept is taught through live coding, every week ends with a
-              GitHub submission, and every phase ends with a capstone that
-              proves you can build the real thing.
+
+            <p className="mt-6 max-w-3xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+              Practical, project-driven programs designed to help you build with AI, develop technical skills, and turn ideas into working systems.
             </p>
 
-            <div className="mt-9 flex flex-wrap gap-3">
-              <span className="inline-flex items-center gap-2 rounded-md border border-border bg-card/40 px-3.5 py-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                <Clock className="h-4 w-4 text-brand" /> 12.5 months
+            {/* Metadata Row */}
+            <div className="mt-8 flex flex-wrap items-center gap-3 font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+              <span className="rounded-full border border-border bg-card px-3.5 py-1 text-foreground">
+                2 Programs
               </span>
-              <span className="inline-flex items-center gap-2 rounded-md border border-border bg-card/40 px-3.5 py-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                <GraduationCap className="h-4 w-4 text-brand" /> 6 phases
+              <span>·</span>
+              <span className="rounded-full border border-border bg-card px-3.5 py-1 text-foreground">
+                Project-Based
               </span>
-              <span className="inline-flex items-center gap-2 rounded-md border border-border bg-card/40 px-3.5 py-2 font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                <Calendar className="h-4 w-4 text-brand" /> Sat + Sun live · 1.5h
+              <span>·</span>
+              <span className="rounded-full border border-border bg-card px-3.5 py-1 text-foreground">
+                Mentor-Guided
               </span>
             </div>
           </div>
         </section>
 
-        {/* Session format */}
-        <section className="border-b border-border">
-          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-              <div>
-                <SectionLabel>Every week, without exception</SectionLabel>
-                <h2 className="mt-5 text-balance text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-                  The session structure.
-                </h2>
-                <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-                  Saturday introduces a new concept with a live coding
-                  walkthrough. Sunday is a deeper dive into edge cases where you
-                  attempt problems and we debug together. Monday–Friday is
-                  self-paced assignment work, submitted on GitHub by Friday
-                  night.
-                </p>
-              </div>
-              <ol className="grid gap-px overflow-hidden rounded-lg border border-border bg-border">
-                {sessionFormat.map((s) => (
-                  <li
-                    key={s.time}
-                    className="flex items-center gap-5 bg-background p-5"
-                  >
-                    <span className="w-24 shrink-0 font-mono text-sm font-semibold text-brand">
-                      {s.time}
-                    </span>
-                    <span className="text-sm text-foreground/90">
-                      {s.label}
-                    </span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
-
-        {/* Phases */}
-        <section>
-          <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-            <div className="flex flex-col gap-12 lg:gap-16">
-              {phases.map((phase) => (
-                <article
-                  key={phase.id}
-                  id={phase.id}
-                  className="scroll-mt-24 border-t border-border pt-10 first:border-t-0 first:pt-0"
-                >
-                  <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
-                    <div className="lg:sticky lg:top-24 lg:self-start">
-                      <div className="flex items-baseline gap-3">
-                        <span className="font-mono text-sm uppercase tracking-widest text-brand">
-                          {phase.index}
-                        </span>
-                        <span className="font-mono text-xs text-muted-foreground">
-                          {phase.duration}
-                        </span>
-                      </div>
-                      <h2 className="mt-4 text-balance text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
-                        {phase.title}
-                      </h2>
-                      <p className="mt-4 text-pretty leading-relaxed text-muted-foreground">
-                        {phase.blurb}
-                      </p>
-                      <div className="mt-6 rounded-lg border border-brand/30 bg-brand/5 p-4">
-                        <p className="font-mono text-xs uppercase tracking-widest text-brand">
-                          Capstone
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-foreground/90">
-                          {phase.capstone}
-                        </p>
-                      </div>
-                    </div>
-
-                    <ol className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">
-                      {phase.weeks.map((week, i) => (
-                        <li
-                          key={week}
-                          className="flex items-start gap-4 bg-background p-5"
-                        >
-                          <span className="font-mono text-xs font-semibold tabular-nums text-muted-foreground">
-                            W{String(i + 1).padStart(2, '0')}
-                          </span>
-                          <span className="text-sm leading-snug text-foreground/90">
-                            {week}
-                          </span>
-                        </li>
-                      ))}
-                    </ol>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="border-t border-border">
-          <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-center text-center">
-              <h2 className="max-w-2xl text-balance text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-                Ready to build, deploy, and maintain real AI systems?
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 space-y-24 sm:space-y-32">
+          {/* Section 2: Available Programs */}
+          <section className="space-y-10">
+            <div>
+              <SectionLabel>Available Programs</SectionLabel>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Choose Your Starting Point
               </h2>
-              <p className="mt-4 max-w-xl text-pretty leading-relaxed text-muted-foreground">
-                The first online cohort is live. Join the next intake or apply
-                for the Engineering Fellowship.
+              <p className="mt-3 max-w-3xl text-sm text-muted-foreground sm:text-base">
+                Our programs are designed for different stages of the AI learning journey. Start with building practical products, or take the deeper engineering path.
               </p>
-              <Link
-                href="/#contact"
-                className="mt-8 inline-flex items-center justify-center gap-2 rounded-md bg-brand px-5 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-brand-foreground transition-opacity hover:opacity-90"
-              >
-                Get in touch
-              </Link>
             </div>
-          </div>
-        </section>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              {/* Card 01: AI Builder */}
+              <ProgramCard
+                badgeNumber="01 · BEGINNER-FRIENDLY"
+                title="AI Builder Program"
+                tagline="Build and ship a real AI-powered product."
+                description="A practical, beginner-friendly program for students, teachers, professionals, and curious builders who want to learn by creating real software. Start with Python, build a web application, add useful AI capabilities, deploy it online, and finish with a product you can demonstrate."
+                duration="5.5 Months*"
+                trackType="Beginner-Friendly"
+                outcome="A live AI-powered product, a public GitHub portfolio, and practical experience building and deploying software."
+                href="/programs/ai-builder"
+              />
+
+              {/* Card 02: Applied AI Engineering */}
+              <ProgramCard
+                badgeNumber="02 · AI ENGINEERING TRACK"
+                title="Applied AI Engineering Program"
+                tagline="Build the technical foundation to engineer AI systems."
+                description="A 12.5-month, project-driven program for students and early-career learners who want to move beyond using AI tools and develop the technical skills required to build, deploy, and maintain AI systems."
+                duration="12.5 Months"
+                trackType="Technical Track"
+                outcome="A portfolio of progressively more advanced AI projects covering data, machine learning, deep learning, NLP, LLM engineering, and deployment."
+                href="/programs/applied-ai-engineering"
+              />
+            </div>
+          </section>
+
+          {/* Section 3: Which Program Is Right For You? */}
+          <section className="space-y-10">
+            <div>
+              <SectionLabel>Find Your Path</SectionLabel>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Which Program Is Right For You?
+              </h2>
+              <p className="mt-3 max-w-3xl text-sm text-muted-foreground sm:text-base">
+                The two programs serve different starting points. Choose based on your current skills and what you want to build toward.
+              </p>
+            </div>
+
+            <ProgramComparison />
+          </section>
+
+          {/* Section 4: How Our Programs Work */}
+          <section className="space-y-10">
+            <div>
+              <SectionLabel>Learning Model</SectionLabel>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Learn. Build. Review. Improve.
+              </h2>
+            </div>
+
+            <LearningModel />
+          </section>
+
+          {/* Section 5: Final CTA */}
+          <section className="rounded-2xl border border-border bg-card p-8 text-center sm:p-12 lg:p-16">
+            <div className="mx-auto max-w-3xl space-y-6">
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                Ready to Start Building?
+              </h2>
+              <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+                Choose the program that matches your current level and start building practical AI skills through guided projects.
+              </p>
+              <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+                <Link
+                  href="/programs/ai-builder"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-7 py-3.5 font-mono text-xs font-bold uppercase tracking-wider text-brand-foreground shadow transition-all hover:opacity-90 hover:shadow-lg"
+                >
+                  View AI Builder →
+                </Link>
+                <Link
+                  href="/programs/applied-ai-engineering"
+                  className="inline-flex items-center justify-center gap-2 rounded-lg border border-border bg-background px-7 py-3.5 font-mono text-xs font-semibold uppercase tracking-wider text-foreground transition-colors hover:bg-muted"
+                >
+                  View Applied AI Engineering →
+                </Link>
+              </div>
+            </div>
+          </section>
+        </div>
       </main>
       <SiteFooter />
     </div>

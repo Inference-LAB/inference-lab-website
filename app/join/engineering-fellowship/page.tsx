@@ -11,11 +11,11 @@ export const metadata: Metadata = {
   title: 'Engineering Fellowship',
   description:
     'INFERENCE Lab Engineering Fellowship — 3 months of real AI systems work, open-source contributions, and mentorship. Applications open. Remote, flexible commitment.',
-  alternates: { canonical: 'https://inference-lab.dev/join/engineering-fellowship' },
+  alternates: { canonical: 'https://www.inference-lab.org/join/engineering-fellowship' },
   openGraph: {
     title: 'Engineering Fellowship · INFERENCE Lab',
     description: 'INFERENCE Lab Engineering Fellowship — 3 months of real AI systems work, open-source contributions, and mentorship. Applications open. Remote, flexible commitment.',
-    url: 'https://inference-lab.dev/join/engineering-fellowship',
+    url: 'https://www.inference-lab.org/join/engineering-fellowship',
   },
 }
 

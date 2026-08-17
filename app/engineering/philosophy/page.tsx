@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   title: 'Engineering Philosophy',
   description:
     'How INFERENCE Lab builds AI systems — production-first, benchmarks not impressions, own the full lifecycle. Six concrete engineering principles.',
-  alternates: { canonical: 'https://inference-lab.dev/engineering/philosophy' },
+  alternates: { canonical: 'https://www.inference-lab.org/engineering/philosophy' },
   openGraph: {
     title: 'Engineering Philosophy · INFERENCE Lab',
     description: 'How INFERENCE Lab builds AI systems — production-first, benchmarks not impressions, own the full lifecycle. Six concrete engineering principles.',
-    url: 'https://inference-lab.dev/engineering/philosophy',
+    url: 'https://www.inference-lab.org/engineering/philosophy',
   },
 }
 
@@ -48,17 +48,6 @@ const principles = [
     title: 'Same standard, every time',
     body: 'There is no tier of client that gets a lower standard of work. The lab\'s open-source libraries, research code, client deliverables, and educational projects all go through the same review: does it run, is it tested, is it documented, can someone else take it over?',
   },
-]
-
-const stack = [
-  { category: 'Languages',         tools: ['Python', 'SQL', 'Bash', 'C++'] },
-  { category: 'ML & DL',           tools: ['PyTorch', 'Scikit-learn', 'Transformers', 'torchaudio'] },
-  { category: 'LLM & RAG',         tools: ['LangChain', 'Pinecone', 'Qdrant', 'FastAPI'] },
-  { category: 'Agents',            tools: ['CrewAI', 'AutoGen', 'n8n'] },
-  { category: 'Deployment',        tools: ['Docker', 'GitHub Actions', 'HuggingFace Spaces', 'Streamlit'] },
-  { category: 'Databases',         tools: ['PostgreSQL', 'MongoDB', 'Redis'] },
-  { category: 'Tracking',          tools: ['MLflow', 'Weights & Biases'] },
-  { category: 'Speech & Audio',    tools: ['torchaudio', 'ECAPA-TDNN', 'Whisper'] },
 ]
 
 export default function EngineeringPhilosophyPage() {
@@ -102,36 +91,6 @@ export default function EngineeringPhilosophyPage() {
                   <span className="font-mono text-lg font-semibold text-brand">{p.index}</span>
                   <h3 className="mt-3 text-base font-semibold tracking-tight">{p.title}</h3>
                   <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground">{p.body}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Stack */}
-        <section className="border-b border-border">
-          <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-            <SectionLabel>Tools &amp; stack</SectionLabel>
-            <p className="mt-4 max-w-xl text-sm leading-relaxed text-muted-foreground">
-              The stack used across lab research, open-source releases, and
-              client engagements. We pick the right tool, not the trendy one.
-            </p>
-            <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
-              {stack.map((s) => (
-                <div key={s.category} className="bg-background p-5">
-                  <p className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-                    {s.category}
-                  </p>
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {s.tools.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded border border-border px-2 py-0.5 font-mono text-xs text-foreground"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
                 </div>
               ))}
             </div>

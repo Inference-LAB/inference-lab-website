@@ -8,7 +8,9 @@ export const siteConfig = {
   links: {
     github: 'https://github.com/Inference-LAB',
     huggingface: 'https://huggingface.co/Inferencelab',
-    linkedin: 'https://linkedin.com/company/inference-lab',
+    linkedin: 'https://www.linkedin.com/company/inference-lab',
+    instagram: 'https://www.instagram.com/inference.lab/',
+    facebook: 'https://web.facebook.com/profile.php?id=61592782978869',
     founderGithub: 'https://github.com/Khubaib8281',
     whatsapp: 'https://wa.me/923269575321?text=Hi%20INFERENCE%20Lab%2C%20I%27d%20like%20to%20know%20more.',
     founderHuggingface: 'https://huggingface.co/Khubaib01',
@@ -23,5 +25,6 @@ export const nav = [
   { label: 'Engineering', href: '/engineering' },
   { label: 'Education', href: '/curriculum' },
   { label: 'Work With Us', href: '/#contact' },
+  { label: 'Contact', href:'/contact' },
   { label: 'Join the Lab', href: '/join' },
 ]

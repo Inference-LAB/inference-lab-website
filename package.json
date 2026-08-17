@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.5.0",
+    "@supabase/supabase-js": "^2.112.3",
     "@vercel/analytics": "1.6.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -30,9 +31,8 @@
     "tailwindcss": "^4.2.0",
     "typescript": "5.7.3"
   },
-  "pnpm": {
-    "overrides": {
-      "hono": "4.12.25"
-    }
+  "optionalDependencies": {
+    "@next/swc-wasm-nodejs": "^16.3.0",
+    "@next/swc-win32-x64-msvc": "^16.3.0"
   }
 }

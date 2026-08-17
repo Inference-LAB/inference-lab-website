@@ -1,0 +1,66 @@
+[
+  {
+    "id": "research",
+    "title": "Explore our Research",
+    "tag": "Research Output",
+    "icon": "BookOpen",
+    "href": "/research",
+    "badge": "Peer-Reviewed & Preprints",
+    "description": "Rigorous scientific output spanning vocal biomarkers, low-resource Roman Urdu corpora, human-centered cognitive sensing, and post-quantum encryption schemes.",
+    "highlights": [
+      "Clinical-grade vocal fatigue screening",
+      "RUEmoCorp & RUDaSA corpora",
+      "Workstation cursor kinematics sensing",
+      "Zenodo open data & DOI citations"
+    ],
+    "cta": "Explore Research"
+  },
+  {
+    "id": "programs",
+    "title": "Programs we Offer",
+    "tag": "Engineering Education",
+    "icon": "GraduationCap",
+    "href": "/curriculum",
+    "badge": "Mentorship Tracks",
+    "description": "Structured, deployment-focused engineering programs. Live weekend mentorship covering software fundamentals, classical ML, Transformers, RAG systems, and MLOps.",
+    "highlights": [
+      "Applied AI Engineering Program (12.5 Mo)",
+      "AI Builder Program (5.5 Mo)",
+      "Weekly GitHub code deliverables",
+      "Independent capstones per phase"
+    ],
+    "cta": "Explore Programs"
+  },
+  {
+    "id": "software",
+    "title": "Systems & Software Released",
+    "tag": "Engineering Artifacts",
+    "icon": "Code2",
+    "href": "/engineering/projects",
+    "badge": "Open-Source & PyPI",
+    "description": "Production-grade software, reproducible model pipelines, and PyPI libraries built and released by lab engineers and fellows.",
+    "highlights": [
+      "ECAPA-TDNN-VHE voice engine",
+      "Deterministic image encryption",
+      "RUEmoCorp Roman Urdu NLP",
+      "FastAPI microservices & Docker repos"
+    ],
+    "cta": "Explore Systems & Software"
+  },
+  {
+    "id": "join",
+    "title": "Join the Lab",
+    "tag": "Talent & Partnerships",
+    "icon": "Users",
+    "href": "/join",
+    "badge": "Cohorts & Open Roles",
+    "description": "Work alongside lab leadership on published research, build open-source tools, or join our Engineering Fellowship cohorts.",
+    "highlights": [
+      "Engineering Fellowship Cohort",
+      "Research Internships",
+      "Open-Source Collaboration",
+      "Academic & Industry Partnerships"
+    ],
+    "cta": "View All Opportunities"
+  }
+]

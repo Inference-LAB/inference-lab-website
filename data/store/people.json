@@ -1,0 +1,97 @@
+[
+  {
+    "slug": "muhammad-khubaib-ahmad",
+    "name": "Muhammad Khubaib Ahmad",
+    "rank": "Founder & Director",
+    "roles": [
+      "Founder & Director",
+      "Team Lead",
+      "AI Research Engineer",
+      "Senior Mentor"
+    ],
+    "bio": "AI Research Engineer specializing in speech intelligence, low-resource NLP, and LLM systems. Founder and Director of INFERENCE Lab.",
+    "expertise": [
+      "Speech AI",
+      "Low-Resource NLP",
+      "ECAPA-TDNN",
+      "LLM Engineering",
+      "MLOps"
+    ],
+    "photo": "",
+    "teamType": "core",
+    "github": "https://github.com/Khubaib8281",
+    "linkedin": "https://linkedin.com/in/muhammad-khubaib-ahmad-",
+    "isLeadership": true,
+    "isCoreTeam": true,
+    "isFellow": false
+  },
+  {
+    "slug": "faiez-ahmad",
+    "name": "Faiez Ahmad",
+    "rank": "Data Engineer & Core Contributor",
+    "roles": [
+      "Data Engineer",
+      "Core Contributor"
+    ],
+    "bio": "Core team data engineer focusing on synthetic data pipelines, telemetry logging, and statistical analysis.",
+    "expertise": [
+      "Synthetic Data",
+      "PostgreSQL",
+      "Pandas",
+      "Statistical Evaluation"
+    ],
+    "photo": "",
+    "teamType": "core",
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "isLeadership": false,
+    "isCoreTeam": true,
+    "isFellow": false
+  },
+  {
+    "slug": "khadija-faisal",
+    "name": "Khadija Faisal",
+    "rank": "AI Research Fellow",
+    "roles": [
+      "AI Research Fellow",
+      "NLP Specialist"
+    ],
+    "bio": "Research fellow contributing to large-scale dataset annotation, Roman Urdu emotion corpora, and Transformer model evaluation.",
+    "expertise": [
+      "NLP Annotation",
+      "Emotion Classification",
+      "Dataset Curation",
+      "HuggingFace"
+    ],
+    "photo": "",
+    "teamType": "fellow",
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "isLeadership": false,
+    "isCoreTeam": false,
+    "isFellow": true
+  },
+  {
+    "slug": "muzammil-shadab",
+    "name": "Muzammil Shadab",
+    "rank": "Speech AI Fellow",
+    "roles": [
+      "Engineering Fellow",
+      "Speech AI Engineer"
+    ],
+    "bio": "Engineering Fellow focusing on speech intelligence libraries, real-time vocal fatigue scoring, and PyPI packaging.",
+    "expertise": [
+      "Python Packaging",
+      "Speech Recognition",
+      "PyTorch",
+      "FastAPI"
+    ],
+    "photo": "",
+    "teamType": "fellow",
+    "github": "https://github.com/MuzammilShadab",
+    "linkedin": "https://linkedin.com",
+    "isLeadership": false,
+    "isCoreTeam": false,
+    "isFellow": true
+  }
+]

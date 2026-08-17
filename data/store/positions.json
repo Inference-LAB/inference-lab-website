@@ -1,0 +1,64 @@
+[
+  {
+    "id": "engineering-fellowship",
+    "title": "Engineering Fellowship",
+    "type": "3-Month · Remote · Flexible",
+    "status": "closed",
+    "applicationsOpen": true,
+    "summary": "Work on real AI systems alongside the lab — agentic pipelines, LLM applications, speech AI, and production MLOps. Designed for engineers who want serious project experience, not busy-work.",
+    "highlights": [
+      "Real shipped projects (not toy exercises)",
+      "Mentorship from the lab founder",
+      "Open-source contributions with your name on them",
+      "Research exposure and co-authorship opportunities"
+    ],
+    "href": "/join/engineering-fellowship",
+    "applyHref": "https://forms.gle/ZUMht8VUfPwepPSW6"
+  },
+  {
+    "id": "research-internship",
+    "title": "Research Internship",
+    "type": "Flexible · Remote",
+    "status": "closed",
+    "applicationsOpen": true,
+    "summary": "Contribute to active research in low-resource NLP or speech AI. Help with data collection, annotation pipelines, model evaluation, and writing. All work is published with proper attribution.",
+    "highlights": [
+      "Co-authorship on published work",
+      "Hands-on reproducible research workflow",
+      "Access to lab datasets and compute resources",
+      "International collaboration network"
+    ],
+    "href": "/join",
+    "applyHref": "https://www.inference-lab.org/join"
+  },
+  {
+    "id": "volunteer-contributor",
+    "title": "Volunteer Research Contributor",
+    "type": "Rolling Applications",
+    "status": "soon",
+    "applicationsOpen": true,
+    "summary": "Contribute to open-source tooling, dataset annotation, or benchmarking tasks on a flexible schedule. No minimum commitment — just genuine interest in doing useful work.",
+    "highlights": [
+      "Flexible hours, fully remote",
+      "Lab credit on contributions",
+      "Path to Research Internship"
+    ],
+    "href": "/join",
+    "applyHref": "https://www.inference-lab.org/join"
+  },
+  {
+    "id": "industry-collaboration",
+    "title": "Industry Collaboration",
+    "type": "Project-Based · Open",
+    "status": "open",
+    "applicationsOpen": true,
+    "summary": "Partner with INFERENCE Lab on applied AI R&D. We work with organizations that need rigorous, reproducible engineering — not a vendor relationship, a research partnership.",
+    "highlights": [
+      "Joint research and engineering deliverables",
+      "Domain expertise in NLP, speech AI, LLM systems",
+      "Co-publication opportunities"
+    ],
+    "href": "/join",
+    "applyHref": "mailto:contact@inference-lab.org"
+  }
+]

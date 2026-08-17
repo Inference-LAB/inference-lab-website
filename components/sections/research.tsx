@@ -1,15 +1,18 @@
 import { ArrowUpRight } from 'lucide-react'
 import { SectionLabel } from '@/components/section-label'
-import { publications } from '@/lib/content'
+import { getPublications } from '@/lib/data-store'
 import { cn } from '@/lib/utils'
 
 const statusStyles: Record<string, string> = {
   'Under Review': 'border-brand/40 text-brand',
   'Published Preprint': 'border-border text-foreground',
+  'Published': 'border-green-500/40 text-green-600 dark:text-green-400',
+  'Accepted': 'border-green-500/40 text-green-600 dark:text-green-400',
   'In Progress': 'border-border text-muted-foreground',
 }
 
-export function Research() {
+export async function Research() {
+  const publications = await getPublications()
   return (
     <section id="research" className="scroll-mt-16 border-b border-border">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">

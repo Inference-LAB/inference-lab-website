@@ -1,0 +1,95 @@
+[
+  {
+    "id": "soft-1786611429999",
+    "name": "TestSoft",
+    "category": "Testing",
+    "description": "Test desc",
+    "tags": [
+      "test"
+    ],
+    "pypi": false
+  },
+  {
+    "id": "soft-1",
+    "name": "auralis-vfs",
+    "category": "Speech AI · Library",
+    "description": "Pip-installable Python library for vocal fatigue scoring from raw speech. Built on ECAPA-TDNN-VHE — returns a normalized fatigue score from any audio input.",
+    "tags": [
+      "PyPI",
+      "ECAPA-TDNN",
+      "Speech"
+    ],
+    "pypi": true
+  },
+  {
+    "id": "soft-2",
+    "name": "voiceMonitor",
+    "category": "Speech AI · Real-Time",
+    "description": "Real-time vocal health monitoring tool — streams microphone input, runs auralis-vfs, and surfaces fatigue level and vocal load over a session.",
+    "tags": [
+      "Real-Time",
+      "Monitoring",
+      "CLI"
+    ],
+    "pypi": false
+  },
+  {
+    "id": "soft-3",
+    "name": "VocalID",
+    "category": "Speech AI · Verification",
+    "description": "Open-source speaker verification framework using embedding cosine similarity on ECAPA-TDNN representations. Lightweight, no external APIs required.",
+    "tags": [
+      "Speaker Verification",
+      "Embeddings",
+      "Open Source"
+    ],
+    "pypi": false
+  },
+  {
+    "id": "soft-4",
+    "name": "faker-pk",
+    "category": "Open Source · Library",
+    "description": "Pakistani synthetic data library for realistic test fixtures — Urdu and Roman Urdu names, CNIC numbers, phone formats, addresses, and locale-aware records.",
+    "tags": [
+      "PyPI",
+      "Synthetic Data",
+      "Pakistan"
+    ],
+    "pypi": true
+  },
+  {
+    "id": "soft-5",
+    "name": "QueryVault",
+    "category": "LLM Observability",
+    "description": "End-to-end LLM platform with real-time hallucination detection, structured logging, and a developer dashboard — hallucination rate, latency, P50/P95.",
+    "tags": [
+      "Streamlit",
+      "Few-Shot",
+      "Observability"
+    ],
+    "pypi": false
+  },
+  {
+    "id": "soft-6",
+    "name": "DataForge",
+    "category": "Multi-Agent System",
+    "description": "Multi-agent system for automated EDA, cleaning, visualization, and report generation — autonomous data analysis pipelines built on CrewAI.",
+    "tags": [
+      "CrewAI",
+      "EDA",
+      "Agents"
+    ],
+    "pypi": false
+  },
+  {
+    "id": "soft-7",
+    "name": "SecureCipher v2.0",
+    "category": "Image Encryption",
+    "description": "Image encryption scheme scoring 100/100 against 14 benchmark algorithms across standard cryptographic security tests.",
+    "tags": [
+      "Cryptography",
+      "Benchmarked"
+    ],
+    "pypi": false
+  }
+]

@@ -58,8 +58,8 @@ export const CERTIFICATES: Record<string, Certificate> = {
     issued: '2026-06-25',
     grade: ''
   },
-  'IL-RC-2026-0006' : {
-    name: 'Ayesha Khalid',
+  'IL-RC-2026-0005' : {
+    name: 'Muzammil Shadab',
     program: 'Research Collaboration',
     issued: '2026-06-25',
     grade: ''

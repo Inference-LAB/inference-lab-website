@@ -1,8 +1,9 @@
 import { Terminal } from 'lucide-react'
 import { SectionLabel } from '@/components/section-label'
-import { software } from '@/lib/content'
+import { getSoftware } from '@/lib/data-store'
 
-export function SoftwareSection() {
+export async function SoftwareSection() {
+  const software = await getSoftware()
   return (
     <section id="engineering" className="scroll-mt-16 border-b border-border">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">

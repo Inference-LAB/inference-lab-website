@@ -34,7 +34,7 @@ export function CertificateVerifier() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  function verify(rawId?: string) {
+  async function verify(rawId?: string) {
     const target = (rawId ?? id).trim()
     if (!target) return
 
@@ -42,16 +42,18 @@ export function CertificateVerifier() {
     setResult(null)
     setCheckedId(target.toUpperCase())
 
-    // Simulate a short async lookup so it feels like a real check
-    setTimeout(() => {
-      const cert = lookupCertificate(target)
-      if (cert) {
-        setResult(cert)
+    try {
+      const res = await fetch(`/api/verify?id=${encodeURIComponent(target)}`)
+      const data = await res.json()
+      if (data.success && data.certificate) {
+        setResult(data.certificate)
         setStatus('verified')
       } else {
         setStatus('not_found')
       }
-    }, 600)
+    } catch {
+      setStatus('not_found')
+    }
   }
 
   function handleSubmit(e: React.FormEvent) {
@@ -156,10 +158,10 @@ export function CertificateVerifier() {
             Verified against the INFERENCE Lab certificate registry.
             Questions? Contact{' '}
             <a
-              href="mailto:inferencelab.ai@gmail.com"
+              href="mailto:contact@inference-lab.org"
               className="text-foreground underline underline-offset-2"
             >
-              inferencelab.ai@gmail.com
+              contact@inference-lab.org
             </a>
           </p>
         </div>
@@ -190,10 +192,10 @@ export function CertificateVerifier() {
             was not issued by INFERENCE Lab. Double-check the ID on the
             document, or contact{' '}
             <a
-              href="mailto:inferencelab.ai@gmail.com"
+              href="mailto:contact@inference-lab.org"
               className="text-foreground underline underline-offset-2"
             >
-              inferencelab.ai@gmail.com
+              contact@inference-lab.org
             </a>{' '}
             if you believe this is an error.
           </p>
