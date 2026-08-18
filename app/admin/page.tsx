@@ -213,7 +213,7 @@ export default function AdminPage() {
         body: JSON.stringify({ password }),
       })
       const data = await res.json()
-      if (data.authenticated) {
+      if (data.authenticated || data.success) {
         localStorage.setItem('inf_admin_token', 'authenticated-session')
         setAuthenticated(true)
         fetchAllData()
