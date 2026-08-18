@@ -85,6 +85,12 @@ const NAV = [
         href: '/programs/ai-builder',
         description: 'Build and ship real AI-powered products (Beginner)',
       },
+      // {
+      //   label: 'Contact Us',
+      //   href: `mailto:${siteConfig.email}`,
+      //   description: 'Email us directly at contact@inference-lab.com',
+      //   external: true,
+      // },
       {
         label: 'Applied AI Engineering',
         href: '/programs/applied-ai-engineering',
@@ -98,7 +104,7 @@ const NAV = [
       {
         label: 'Verify Certificate',
         href: '/verify',
-        description: 'Cryptographic credential verification',
+        description: 'Verify certificate with the Certificate ID',
       },
     ],
   },
@@ -117,6 +123,11 @@ const NAV = [
         href: '/about/people',
         description: 'Leadership, core team, and engineering fellows',
       },
+      // {
+      //   label: 'Founder & Director',
+      //   href: '/about/founder',
+      //   description: 'Muhammad Khubaib Ahmad',
+      // },
       {
         label: 'FAQ',
         href: '/faqs',
@@ -124,6 +135,7 @@ const NAV = [
       },
     ],
   },
+
 ] as const
 
 type NavChild = { label: string; href: string; description: string; external?: boolean }

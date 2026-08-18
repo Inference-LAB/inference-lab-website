@@ -6,6 +6,7 @@ import { GithubIcon } from '@/components/brand-icons'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { SectionLabel } from '@/components/section-label'
+import { MarkdownRenderer } from '@/components/markdown-renderer'
 import { getJournalBySlug, getJournals, getPeople } from '@/lib/data-store'
 
 type Props = {
@@ -131,9 +132,10 @@ export default async function EngineeringJournalDetailPage({ params }: Props) {
               {journal.journalTitle}
             </h1>
 
-            <p className="mt-6 text-pretty text-lg leading-relaxed text-muted-foreground">
-              {journal.summary}
-            </p>
+            <MarkdownRenderer 
+              content={journal.summary} 
+              className="mt-6 text-lg text-muted-foreground [&>p]:leading-relaxed [&>p:first-child]:mt-0 [&>p:last-child]:mb-0" 
+            />
 
             <div className="mt-8 flex flex-wrap items-center gap-6 border-t border-border pt-6 font-mono text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5">
@@ -159,9 +161,7 @@ export default async function EngineeringJournalDetailPage({ params }: Props) {
                   </h2>
                 </div>
 
-                <div className="prose prose-neutral dark:prose-invert max-w-none space-y-4 text-sm leading-relaxed text-foreground whitespace-pre-line font-sans">
-                  {journal.labNote}
-                </div>
+                <MarkdownRenderer content={journal.labNote} />
               </div>
 
               {/* Related Repository Links */}

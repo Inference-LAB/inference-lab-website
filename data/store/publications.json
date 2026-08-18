@@ -1,18 +1,9 @@
 [
   {
-    "id": "pub-1786611429887",
-    "title": "Test Paper Dynamic",
-    "venue": "Test Conf",
-    "status": "Under Review",
-    "year": "2026",
-    "doi": "",
-    "highlight": ""
-  },
-  {
     "id": "pub-1",
     "title": "Automated Vocal Fatigue Screening in Professional Voice Users: Development and Occupational Validation of an Automated Assessment System",
     "venue": "Journal of Voice · Hanyang University, Republic of Korea",
-    "status": "Accepted",
+    "status": "Published",
     "year": "2026",
     "highlight": "Development and occupational validation of an automated vocal load assessment tool for professional voice users — clinical-grade speech analysis in production."
   },

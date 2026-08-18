@@ -6,6 +6,7 @@ import { GithubIcon } from '@/components/brand-icons'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { SectionLabel } from '@/components/section-label'
+import { MarkdownRenderer } from '@/components/markdown-renderer'
 import { getPersonBySlug, getJournals } from '@/lib/data-store'
 
 type Props = {
@@ -158,9 +159,10 @@ export default async function IndividualProfilePage({ params }: Props) {
           <div className="grid gap-8 md:grid-cols-3">
             <div className="md:col-span-2 rounded-xl border border-border bg-card p-6 sm:p-8">
               <SectionLabel>Biography</SectionLabel>
-              <p className="mt-4 text-base leading-relaxed text-foreground">
-                {person.bio}
-              </p>
+              <MarkdownRenderer 
+                content={person.bio} 
+                className="mt-4 text-base text-foreground [&>p]:leading-relaxed [&>p:first-child]:mt-0 [&>p:last-child]:mb-0" 
+              />
             </div>
 
             <div className="rounded-xl border border-border bg-card p-6">
@@ -201,7 +203,10 @@ export default async function IndividualProfilePage({ params }: Props) {
                     <h3 className="mt-1 text-base font-semibold text-foreground group-hover:text-brand transition-colors">
                       {j.journalTitle}
                     </h3>
-                    <p className="mt-2 text-xs text-muted-foreground line-clamp-2">{j.summary}</p>
+                    <MarkdownRenderer 
+                      content={j.summary} 
+                      className="mt-2 text-xs text-muted-foreground line-clamp-2 [&>p]:leading-relaxed [&>p:first-child]:mt-0 [&>p:last-child]:mb-0" 
+                    />
                     <span className="mt-4 inline-flex items-center gap-1 font-mono text-xs font-semibold text-brand">
                       Read Journal <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                     </span>

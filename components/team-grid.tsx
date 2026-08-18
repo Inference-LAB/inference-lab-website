@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { X } from 'lucide-react'
 import { SectionLabel } from '@/components/section-label'
+import { MarkdownRenderer } from '@/components/markdown-renderer'
 
 export type TeamMember = {
   name: string
@@ -96,7 +97,10 @@ function InfoCard({
           {String(index).padStart(2, '0')}
         </span> */}
       </div>
-      <p className="mt-2 text-sm leading-relaxed text-foreground">{text}</p>
+      <MarkdownRenderer 
+        content={text} 
+        className="mt-2 text-sm text-foreground [&>p]:leading-relaxed [&>p:first-child]:mt-0 [&>p:last-child]:mb-0" 
+      />
     </div>
   )
 }
@@ -282,9 +286,10 @@ export function TeamGrid({ team }: { team: TeamMember[] }) {
               </div>
             </div>
 
-            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              {member.bio}
-            </p>
+            <MarkdownRenderer 
+              content={member.bio} 
+              className="mt-5 text-sm text-muted-foreground [&>p]:leading-relaxed [&>p:first-child]:mt-0 [&>p:last-child]:mb-0" 
+            />
 
             <span className="mt-5 inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-widest text-muted-foreground transition-colors group-hover:text-brand">
               View Details

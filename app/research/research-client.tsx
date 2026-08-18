@@ -50,7 +50,7 @@ const researchAreas = [
     title: 'Deployable AI Systems & Security',
     description:
       'Bridging scientific discovery and production engineering. Every research artifact is packaged into pip-installable libraries (PyPI), verifiable registries, and benchmarked cryptographic schemes.',
-    focus: ['Image Encryption Algorithms', 'Deterministic Model Pipelines', 'Zenodo DOI Curation', 'Open-Source Python Libraries'],
+    focus: ['Image Encryption Algorithms', 'Deterministic Model Pipelines', 'Open-Source Python Libraries'],
   },
 ]
 
