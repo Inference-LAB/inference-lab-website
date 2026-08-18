@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { MarkdownRenderer } from '@/components/markdown-renderer'
 import { cn } from '@/lib/utils'
 
 export function ExpandableText({
@@ -15,13 +16,13 @@ export function ExpandableText({
   btnClassName?: string
 }) {
   const [expanded, setExpanded] = useState(false)
-  const isLong = text.length > threshold
+  const isLong = (text || '').length > threshold
 
   return (
     <div className="space-y-1">
-      <p className={cn(className, !expanded && isLong && 'line-clamp-2')}>
-        {text}
-      </p>
+      <div className={cn(className, !expanded && isLong && 'line-clamp-2')}>
+        <MarkdownRenderer content={text} />
+      </div>
       {isLong && (
         <button
           type="button"
@@ -37,3 +38,4 @@ export function ExpandableText({
     </div>
   )
 }
+

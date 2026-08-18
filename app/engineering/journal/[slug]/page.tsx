@@ -14,8 +14,10 @@ type Props = {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
-  const journal = await getJournalBySlug(slug)
+  const resolvedParams = await params
+  const slug = decodeURIComponent(resolvedParams?.slug || '').trim()
+  const allJournals = await getJournals()
+  const journal = allJournals.find((j) => j.slug.toLowerCase().trim() === slug.toLowerCase()) || null
   if (!journal) return { title: 'Journal Not Found' }
 
   const url = `https://www.inference-lab.org/engineering/journal/${slug}`
@@ -50,14 +52,26 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+export async function generateStaticParams() {
+  const journals = await getJournals();
+  return journals.map((j) => ({ slug: j.slug }));
+}
+
 export default async function EngineeringJournalDetailPage({ params }: Props) {
-  const { slug } = await params
-  const [journal, allJournals, people] = await Promise.all([
-    getJournalBySlug(slug),
+  const resolvedParams = await params
+  const slug = decodeURIComponent(resolvedParams?.slug || '').trim()
+  const [allJournals, people] = await Promise.all([
     getJournals(),
     getPeople(),
   ])
-  if (!journal) notFound()
+  const journal = allJournals.find((j) => j.slug.toLowerCase().trim() === slug.toLowerCase()) || null
+  if (!journal) {
+    console.error(`[Journal Detail] 404 for slug "${slug}". Available slugs:`, allJournals.map((j) => j.slug))
+    notFound()
+  }
 
   const relatedJournals = allJournals.filter((j) => j.slug !== slug).slice(0, 2)
 
@@ -91,7 +105,7 @@ export default async function EngineeringJournalDetailPage({ params }: Props) {
     about: {
       '@type': 'SoftwareSourceCode',
       name: journal.projectName,
-      codeRepository: journal.githubUrl,
+      codeRepository: journal.repositoryLinks?.github,
     },
   }
 
