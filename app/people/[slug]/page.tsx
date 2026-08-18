@@ -7,15 +7,25 @@ import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { SectionLabel } from '@/components/section-label'
 import { MarkdownRenderer } from '@/components/markdown-renderer'
-import { getPersonBySlug, getJournals } from '@/lib/data-store'
+import { getPersonBySlug, getJournals, getPeople } from '@/lib/data-store'
 
 type Props = {
   params: Promise<{ slug: string }>
 }
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
+export async function generateStaticParams() {
+  const people = await getPeople()
+  return people.map((p) => ({ slug: p.slug }))
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params
-  const person = await getPersonBySlug(slug)
+  const resolvedParams = await params
+  const slug = decodeURIComponent(resolvedParams?.slug || '').trim()
+  const people = await getPeople()
+  const person = people.find((p) => p.slug.toLowerCase().trim() === slug.toLowerCase()) || null
   if (!person) return { title: 'Profile Not Found' }
 
   const url = `https://www.inference-lab.org/people/${slug}`
@@ -50,8 +60,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function IndividualProfilePage({ params }: Props) {
-  const { slug } = await params
-  const person = await getPersonBySlug(slug)
+  const resolvedParams = await params
+  const slug = decodeURIComponent(resolvedParams?.slug || '').trim()
+  const people = await getPeople()
+  const person = people.find((p) => p.slug.toLowerCase().trim() === slug.toLowerCase()) || null
   if (!person) notFound()
 
   const allJournals = await getJournals()

@@ -159,7 +159,7 @@ const allDocxFaqs: FaqItem[] = [
     category: 'Programs & Education',
     question: 'Do I get a certificate upon completion?',
     answer:
-      'Yes. Participants who successfully complete all phase requirements and capstone projects receive an INFERENCE Lab Certificate of Completion equipped with verifiable certificate ID.',
+      'Yes. Participants who successfully complete all phase requirements and capstone projects receive an INFERENCE Lab Certificate of Completion equipped with a cryptographically verifiable QR code.',
   },
 ]
 

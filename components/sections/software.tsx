@@ -1,5 +1,6 @@
 import { Terminal } from 'lucide-react'
 import { SectionLabel } from '@/components/section-label'
+import { MarkdownRenderer } from '@/components/markdown-renderer'
 import { getSoftware } from '@/lib/data-store'
 
 export async function SoftwareSection() {
@@ -35,9 +36,9 @@ export async function SoftwareSection() {
               <h3 className="mt-4 text-lg font-semibold tracking-tight">
                 {s.name}
               </h3>
-              <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground">
-                {s.description}
-              </p>
+              <div className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground">
+                <MarkdownRenderer content={s.description} />
+              </div>
               <div className="mt-5 flex flex-wrap gap-1.5">
                 {s.tags.map((tag) => (
                   <span

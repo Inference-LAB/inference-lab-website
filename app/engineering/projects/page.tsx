@@ -4,6 +4,7 @@ import { ArrowLeft, Terminal } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { SectionLabel } from '@/components/section-label'
+import { MarkdownRenderer } from '@/components/markdown-renderer'
 import { getSoftware } from '@/lib/data-store'
 
 export const dynamic = 'force-dynamic';
@@ -68,9 +69,9 @@ export default async function EngineeringProjectsPage() {
                 <h3 className="mt-4 font-mono text-lg font-semibold tracking-tight">
                   {s.name}
                 </h3>
-                <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {s.description}
-                </p>
+                <div className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  <MarkdownRenderer content={s.description} />
+                </div>
                 <div className="mt-5 flex flex-wrap gap-1.5">
                   {(Array.isArray(s.tags) ? s.tags : []).map((tag) => (
                     <span

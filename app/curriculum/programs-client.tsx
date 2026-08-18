@@ -13,6 +13,7 @@ import {
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { SectionLabel } from '@/components/section-label'
+import { MarkdownRenderer } from '@/components/markdown-renderer'
 import type { EducationProgramItem } from '@/lib/data-store'
 import { cn } from '@/lib/utils'
 
@@ -24,18 +25,18 @@ function ExpandableDescription({
   threshold?: number
 }) {
   const [expanded, setExpanded] = useState(false)
-  const isLong = text.length > threshold
+  const isLong = (text || '').length > threshold
 
   return (
     <div>
-      <p
+      <div
         className={cn(
           'text-sm leading-relaxed text-muted-foreground transition-all sm:text-base',
           !expanded && isLong && 'line-clamp-2',
         )}
       >
-        {text}
-      </p>
+        <MarkdownRenderer content={text} />
+      </div>
       {isLong && (
         <button
           type="button"

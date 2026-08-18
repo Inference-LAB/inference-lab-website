@@ -5,7 +5,7 @@ import { MarkdownRenderer } from './markdown-renderer'
 import { cn } from '@/lib/utils'
 
 interface MarkdownTextareaProps {
-  value: string
+  value?: string
   onChange: (value: string) => void
   rows?: number
   placeholder?: string
@@ -15,7 +15,7 @@ interface MarkdownTextareaProps {
 }
 
 export function MarkdownTextarea({
-  value,
+  value = '',
   onChange,
   rows = 4,
   placeholder,

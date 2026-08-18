@@ -60,7 +60,7 @@ export default function ResearchClient({ publications }: { publications: Publica
   const filteredPublications = selectedFilter === 'All'
     ? publications
     : publications.filter((p) => {
-        const normalized = p.status === 'Accepted' ? 'Published' : p.status
+        const normalized = (p.status as string) === 'Accepted' ? 'Published' : p.status
         return normalized === selectedFilter
       })
 
@@ -194,7 +194,7 @@ export default function ResearchClient({ publications }: { publications: Publica
 
             <ul className="mt-10 grid gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-2">
               {filteredPublications.map((p) => {
-                const displayStatus = p.status === 'Accepted' ? 'Published' : p.status
+                const displayStatus = (p.status as string) === 'Accepted' ? 'Published' : p.status
                 return (
                   <li key={p.id || p.title} className="flex flex-col bg-background p-6 sm:p-7">
                     <div className="flex items-center justify-between gap-4">
