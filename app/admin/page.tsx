@@ -921,7 +921,7 @@ export default function AdminPage() {
                 autoFocus
               />
               <p className="mt-1.5 text-[11px] text-muted-foreground/80">
-                Default key: <span className="font-mono font-bold text-foreground">leave-me-alone</span>
+                Default key: <span className="font-mono font-bold text-foreground">admin123</span>
               </p>
             </div>
 
