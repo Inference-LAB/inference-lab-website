@@ -34,7 +34,7 @@ export function CertificateVerifier() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  function verify(rawId?: string) {
+  async function verify(rawId?: string) {
     const target = (rawId ?? id).trim()
     if (!target) return
 
@@ -42,16 +42,18 @@ export function CertificateVerifier() {
     setResult(null)
     setCheckedId(target.toUpperCase())
 
-    // Simulate a short async lookup so it feels like a real check
-    setTimeout(() => {
-      const cert = lookupCertificate(target)
-      if (cert) {
-        setResult(cert)
+    try {
+      const res = await fetch(`/api/verify?id=${encodeURIComponent(target)}`)
+      const data = await res.json()
+      if (data.success && data.certificate) {
+        setResult(data.certificate)
         setStatus('verified')
       } else {
         setStatus('not_found')
       }
-    }, 600)
+    } catch {
+      setStatus('not_found')
+    }
   }
 
   function handleSubmit(e: React.FormEvent) {

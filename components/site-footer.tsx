@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
+import { GithubIcon, LinkedinIcon, InstagramIcon, FacebookIcon } from '@/components/brand-icons'
 import { Logo } from '@/components/logo'
 import { siteConfig } from '@/lib/site'
 
@@ -7,19 +7,29 @@ const columns = [
   {
     title: 'Lab',
     links: [
-      { label: 'Research',       href: '/research' },
-      { label: 'Engineering',    href: '/engineering' },
-      { label: 'Education',      href: '/curriculum' },
-      { label: 'Work With Us',   href: '/#contact' },
+      { label: 'Research', href: '/research' },
+      { label: 'Engineering', href: '/engineering' },
+      { label: 'All Programs', href: '/curriculum' },
+      { label: 'FAQ Hub', href: '/faqs' },
+      { label: 'Work With Us', href: '/#contact' },
+    ],
+  },
+  {
+    title: 'Education',
+    links: [
+      { label: 'AI Builder Program', href: '/programs/ai-builder' },
+      { label: 'Applied AI Engineering', href: '/programs/applied-ai-engineering' },
+      { label: 'Career Guidance', href: '/education/career-guidance' },
+      { label: 'Verify Certificate', href: '/verify' },
     ],
   },
   {
     title: 'Join',
     links: [
-      { label: 'All Opportunities',       href: '/join' },
-      { label: 'Engineering Fellowship',  href: '/join/engineering-fellowship' },
-      { label: 'Research Internship',     href: '/join' },
-      { label: 'Industry Collaboration',  href: '/join' },
+      { label: 'All Opportunities', href: '/join' },
+      { label: 'Engineering Fellowship', href: '/join/engineering-fellowship' },
+      { label: 'Research Internship', href: '/join' },
+      { label: 'Industry Collaboration', href: '/join' },
     ],
   },
 ]
@@ -98,6 +108,26 @@ export function SiteFooter() {
               </li>
               <li>
                 <a
+                  href={siteConfig.links.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <InstagramIcon className="h-4 w-4" /> Instagram
+                </a>
+              </li>
+              <li>
+                <a
+                  href={siteConfig.links.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <FacebookIcon className="h-4 w-4" /> Facebook
+                </a>
+              </li>
+              <li>
+                <a
                   href={`mailto:${siteConfig.email}`}
                   className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                 >
@@ -110,7 +140,7 @@ export function SiteFooter() {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-mono text-xs text-muted-foreground">
-            © {new Date().getFullYear()} {siteConfig.name}. All artifacts are open
+            © {new Date().getFullYear()} {siteConfig.name}. All artefacts open
             and reproducible.
           </p>
           {/* <p className="font-mono text-xs text-muted-foreground">

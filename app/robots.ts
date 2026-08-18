@@ -1,20 +1,27 @@
-// app/robots.ts
-// Next.js auto-serves this as /robots.txt
-// Tells Google and other search engines which pages to crawl and where the sitemap is.
-
 import type { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = 'https://www.inference-lab.org'
+
   return {
     rules: [
       {
         userAgent: '*',
         allow: '/',
-        // Block the admin panel from being indexed — it has no public value
-        // and you don't want login pages appearing in search results.
+        disallow: ['/admin/', '/api/', '/_next/'],
+      },
+      {
+        userAgent: 'Googlebot',
+        allow: '/',
+        disallow: ['/admin/', '/api/'],
+      },
+      {
+        userAgent: 'Bingbot',
+        allow: '/',
         disallow: ['/admin/', '/api/'],
       },
     ],
-    sitemap: 'https://www.inference-lab.org/sitemap.xml',
+    sitemap: `${baseUrl}/sitemap.xml`,
+    host: baseUrl,
   }
 }

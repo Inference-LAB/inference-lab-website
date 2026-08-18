@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { SectionLabel } from '@/components/section-label'
-// import { PositionCard } from '@/components/position-card'
-import { positions } from '@/lib/positions'
+import { getPositions } from '@/lib/data-store'
 import { siteConfig } from '@/lib/site'
-export function CurrentOpportunities() {
+export async function CurrentOpportunities() {
+  const positions = await getPositions()
   const visible = positions.filter((p) => p.status !== 'closed')
 
   return (

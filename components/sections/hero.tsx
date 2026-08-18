@@ -35,21 +35,19 @@ export function Hero() {
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           <Link
-            href="/curriculum"
+            href="/research"
             className="group inline-flex items-center justify-center gap-2 rounded-md bg-brand px-5 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-brand-foreground transition-opacity hover:opacity-90"
           >
-            Explore the curriculum
+            Explore Our Research
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </Link>
-          <a
-            href={siteConfig.links.github}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/engineering"
             className="group inline-flex items-center justify-center gap-2 rounded-md border border-border bg-card/40 px-5 py-3 font-mono text-sm font-semibold uppercase tracking-widest text-foreground transition-colors hover:border-foreground/30 hover:bg-card"
           >
-            View open source
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
+            Explore Our Engineering
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </Link>
         </div>
 
         <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-4">

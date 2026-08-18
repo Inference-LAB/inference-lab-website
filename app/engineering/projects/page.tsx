@@ -4,7 +4,10 @@ import { ArrowLeft, Terminal } from 'lucide-react'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { SectionLabel } from '@/components/section-label'
-import { software } from '@/lib/content'
+import { getSoftware } from '@/lib/data-store'
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: 'Engineering Projects',
@@ -18,7 +21,8 @@ export const metadata: Metadata = {
   },
 }
 
-export default function EngineeringProjectsPage() {
+export default async function EngineeringProjectsPage() {
+  const software = await getSoftware()
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
@@ -68,7 +72,7 @@ export default function EngineeringProjectsPage() {
                   {s.description}
                 </p>
                 <div className="mt-5 flex flex-wrap gap-1.5">
-                  {s.tags.map((tag) => (
+                  {(Array.isArray(s.tags) ? s.tags : []).map((tag) => (
                     <span
                       key={tag}
                       className="rounded border border-border px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-muted-foreground"

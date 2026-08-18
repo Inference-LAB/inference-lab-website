@@ -26,11 +26,11 @@ const sections = [
       'Why the lab exists — closing the gap between AI concepts and engineers who can actually build, deploy, and maintain AI systems.',
   },
   {
-    href: '/about/team',
+    href: '/about/people',
     label: 'Our Team',
     index: '02',
     summary:
-      'The engineers and researchers building INFERENCE Lab\'s research, engineering, and education tracks.',
+      'The leadership, core team, engineering fellows, and collaborators building INFERENCE Lab.',
   },
   {
     href: '/about/founder',

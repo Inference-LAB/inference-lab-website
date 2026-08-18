@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
+import Script from 'next/script'
 import { WhatsAppButton } from '@/components/whatsapp-button'
 import './globals.css'
 
@@ -144,7 +145,7 @@ const jsonLd = {
   '@graph': [
     // 1. The organization itself
     {
-      '@type': 'Organization',
+      '@type': ['Organization', 'EducationalOrganization', 'ResearchOrganization'],
       '@id': `${SITE_URL}/#organization`,
       name: 'INFERENCE Lab',
       alternateName: 'Inference Lab',
@@ -168,7 +169,7 @@ const jsonLd = {
         '@id': `${SITE_URL}/#founder`,
         name: 'Muhammad Khubaib Ahmad',
         jobTitle: 'Founder & Director',
-        url: `${SITE_URL}/about/team`,
+        url: `${SITE_URL}/about/founder`,
         sameAs: [
           'https://github.com/Khubaib8281',
           'https://huggingface.co/Khubaib01',
@@ -179,20 +180,25 @@ const jsonLd = {
         'https://github.com/Inference-LAB',
         'https://huggingface.co/Inferencelab',
         'https://linkedin.com/company/inference-lab',
+        'https://www.instagram.com/inference.lab/',
+        'https://web.facebook.com/profile.php?id=61592782978869',
       ],
       contactPoint: {
         '@type': 'ContactPoint',
         email: 'contact@inference-lab.org',
-        contactType: 'general inquiry',
+        contactType: 'customer support',
       },
       knowsAbout: [
         'Artificial Intelligence',
         'Machine Learning',
         'Natural Language Processing',
         'Speech Recognition',
+        'Speech Intelligence',
         'Low-Resource NLP',
         'LLM Engineering',
+        'RAG Systems',
         'MLOps',
+        'AI Engineering Education',
       ],
     },
     // 2. The website itself
@@ -246,6 +252,7 @@ const jsonLd = {
   ],
 }
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -261,6 +268,18 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-V2BRK654WR"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-V2BRK654WR');
+          `}
+        </Script>
       </head>
 
       <body className="font-sans antialiased">

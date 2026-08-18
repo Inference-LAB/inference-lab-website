@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "auralis-vfs-clinical-vocal-fatigue-scoring",
+    "projectName": "auralis-vfs",
+    "journalTitle": "Engineering a Clinical-Grade Vocal Fatigue Scoring Pipeline from Raw Speech",
+    "summary": "How we designed, benchmarked, and packaged ECAPA-TDNN-VHE into a pip-installable Python library with sub-second inference latency.",
+    "coverImage": "/images/journals/auralis-vfs-cover.png",
+    "programBadge": "Engineering Fellowship",
+    "cohortBadge": "Cohort 2026",
+    "publishedDate": "2026-05-15",
+    "readingTime": "8 min read",
+    "tags": ["Speech AI", "PyPI", "ECAPA-TDNN", "PyTorch", "Audio Processing"],
+    "contributors": [
+      {
+        "name": "Muhammad Khubaib Ahmad",
+        "role": "Lead Architect & Mentor",
+        "github": "https://github.com/Khubaib8281",
+        "linkedin": "https://linkedin.com/in/muhammad-khubaib-ahmad-"
+      },
+      {
+        "name": "Muzammil Shadab",
+        "role": "Engineering Fellow",
+        "github": "https://github.com/MuzammilShadab",
+        "linkedin": "https://linkedin.com"
+      }
+    ],
+    "repositoryLinks": {
+      "github": "https://github.com/Inference-LAB/auralis-vfs",
+      "pypi": "https://pypi.org/project/auralis-vfs/",
+      "docs": "https://github.com/Inference-LAB/auralis-vfs#readme"
+    },
+    "labNote": "## Executive Summary\nContinuous vocal load monitoring requires instantaneous, clinical-grade acoustic processing. Standard MFCC-based feature extractors often fail under diverse recording noise and acoustic environments.\n\n### Architectural Approach\nWe leveraged **ECAPA-TDNN** pre-trained representations fine-tuned with a supervised contrastive loss objective (VHE). The output vector is mapped through a lightweight calibration head to yield normalized fatigue index values (0.00 to 1.00).\n\n```python\nfrom auralis_vfs import VocalFatigueScorer\n\nscorer = VocalFatigueScorer.from_pretrained('inference-lab/ecapa-vfs')\nscore = scorer.score_audio('audio_sample.wav')\nprint(f'Fatigue Index: {score.index:.2f}')\n```\n\n### Benchmarks & Latency\n- **Inference Speed**: 42ms per 5-second window on standard CPU.\n- **Accuracy**: 78% overall fatigue classification accuracy (2.5x baseline improvement).\n- **F1 Scores**: 0.85 (Normal), 0.78 (Moderate), 0.70 (Severe)."
+  },
+  {
+    "slug": "ruemocorp-roman-urdu-emotion-benchmark",
+    "projectName": "RUEmoCorp",
+    "journalTitle": "Building RUEmoCorp: Annotation Pipelines & Privacy-Preserving Dataset Curation for Roman Urdu",
+    "summary": "Engineering a 134K-sample multi-class emotion dataset and Transformer benchmark suite for low-resource South Asian NLP.",
+    "coverImage": "/images/journals/ruemocorp-cover.png",
+    "programBadge": "Engineering Fellowship",
+    "cohortBadge": "Cohort 2026",
+    "publishedDate": "2026-04-10",
+    "readingTime": "12 min read",
+    "tags": ["NLP", "Roman Urdu", "Dataset Curation", "HuggingFace", "Transformers"],
+    "contributors": [
+      {
+        "name": "Muhammad Khubaib Ahmad",
+        "role": "Lab Director",
+        "github": "https://github.com/Khubaib8281",
+        "linkedin": "https://linkedin.com/in/muhammad-khubaib-ahmad-"
+      },
+      {
+        "name": "Khadija Faisal",
+        "role": "Research Fellow",
+        "github": "https://github.com",
+        "linkedin": "https://linkedin.com"
+      },
+      {
+        "name": "Faiez Ahmad",
+        "role": "Data Engineer",
+        "github": "https://github.com",
+        "linkedin": "https://linkedin.com"
+      }
+    ],
+    "repositoryLinks": {
+      "github": "https://github.com/Inference-LAB/RUEmoCorp",
+      "pypi": "",
+      "docs": "https://huggingface.co/datasets/Inferencelab/RUEmoCorp"
+    },
+    "labNote": "## Background & Problem Statement\nRoman Urdu is widely spoken across digital channels in South Asia, yet lacks curated multi-class emotion benchmarks. Existing datasets suffer from noisy transcriptions, inconsistent spelling variants, and lack of annotator agreement metrics.\n\n### Key Pipeline Highlights\n1. **Fleiss Kappa Verification**: Achieved Inter-Annotator Agreement of Fleiss κ = 0.658 (substantial agreement) across 5 annotator pools.\n2. **Differential Privacy Filtration**: Synthetic embeddings generated to strip PII before publishing.\n3. **HuggingFace Hub Release**: Instant integration with `datasets.load_dataset('Inferencelab/RUEmoCorp')`."
+  }
+]

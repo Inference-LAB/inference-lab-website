@@ -48,7 +48,7 @@ export const tracks: Track[] = [
 export type Publication = {
   title: string
   venue: string
-  status: 'Under Review' | 'Published Preprint' | 'Accepted' | 'In Progress'
+  status: 'Under Review' | 'Published Preprint' | 'Published' | 'In Progress'
   year: string
   doi?: string
   highlight: string
@@ -58,7 +58,7 @@ export const publications: Publication[] = [
     {
     title: 'Automated Vocal Fatigue Screening in Professional Voice Users: Development and Occupational Validation of an Automated Assessment System',
     venue: 'Journal of Voice · Hanyang University, Republic of Korea',
-    status: 'Accepted',
+    status: 'Published',
     year: '2026',
     highlight:
       'Development and occupational validation of an automated vocal load assessment tool for professional voice users — clinical-grade speech analysis in production.',
@@ -66,11 +66,12 @@ export const publications: Publication[] = [
   {
     title:
       'Disagreement-Weighted Classification and Calibration-Aware Training for Subjective NLP Tasks: A Multi-Seed Empirical Study',
-    venue: 'Language Resources and Evaluation · National University of Singapore',
+    venue: 'Language Resources and Evaluation • National University of Singapore',
     status: 'Under Review',
     year: '2026',
+    doi: '10.5281/zenodo.18305757',
     highlight:
-      'Introduces a disagreement-weighted classification framework that explicitly models annotator disagreement to improve learning in subjective NLP task.',
+      'ECAPA-TDNN-VHE designed from scratch with supervised contrastive loss — 2.5× accuracy over baseline (78% vs 36%), F1 scores 0.85 / 0.78 / 0.70 across three fatigue classes.',
   },
     {
     title:
@@ -80,15 +81,15 @@ export const publications: Publication[] = [
     status: 'Under Review',
     year: '2026',
     highlight:
-      'Explores ergonomic intervention as a joint cognitive system reconfiguration to improve coordination between healthcare professionals, technologies, and work environments.',
+      'Multi-institutional international study applying Cognitive Systems Engineering to healthcare ergonomics — systematic analysis of workload, safety, and intervention efficacy.',
   },
   {
     title:
       'RUEmoCorp: A Large-Scale Roman Urdu Emotion Corpus & Benchmark Suite',
     venue: 'Language Resources and Evaluation (Springer)',
-    status: 'Published Preprint',
+    status: 'Under Review',
     year: '2026',
-    doi:'https://doi.org/10.21203/rs.3.rs-9759243/v1',
+    doi: '10.21203/rs.3.rs-9759243/v1',
     highlight:
       'First large-scale Roman Urdu emotion corpus — 134K labeled samples with Fleiss κ = 0.658 (substantial agreement), multi-institute annotation, fully open-source on HuggingFace and Harvard Dataverse.',
   },
@@ -97,8 +98,8 @@ export const publications: Publication[] = [
       'RUDaSA: Roman Urdu Dataset for Sentiment Analysis — A Large-Scale, Curated Corpus with Privacy-Preserving Embeddings and Competitive Benchmarking of Transformer Models',
     venue: 'Research Square · Preprint',
     status: 'Published Preprint',
-    year: '2025',
-    doi: 'https://doi.org/10.21203/rs.3.rs-9827763/v1',
+    year: '2026',
+    doi: '10.21203/rs.3.rs-9827763/v1',
     highlight:
       'Large-scale Roman Urdu sentiment corpus built via privacy-preserving embedding pipelines. Benchmarks state-of-the-art Transformer models — addressing a critical gap in low-resource South Asian NLP.',
   },
@@ -116,7 +117,7 @@ export const publications: Publication[] = [
     venue: 'Zenodo · Preprint',
     status: 'Published Preprint',
     year: '2025',
-    doi: 'https://doi.org/10.5281/zenodo.16090477',
+    doi: '10.5281/zenodo.16090477',
     highlight:
       'Time-series forecasting and smart-agriculture DSS — demonstrated 50–60% yield improvement through data-driven intervention.',
   },
@@ -124,7 +125,8 @@ export const publications: Publication[] = [
     title: 'DASER-Net: Disentangled Adversarial Speech Emotion Recognition with Hierarchical Bottleneck Fusion for Cross-Corpus Generalization',
     venue: 'Open to collaboration',
     status: 'In Progress',
-    year: '2026',
+    year: '2025',
+    doi: '10.5281/zenodo.16090477',
     highlight:
       'Cross-corpus speech emotion recognition study developing disentangled and domain-invariant representations for robust emotion classification across unseen acoustic domains.',
   },
@@ -132,18 +134,14 @@ export const publications: Publication[] = [
     title: 'Cursor Kinematics as a Privacy-Preserving Indicator of Cognitive Fatigue and Stress in Knowledge Work: An Explainability-Driven Analysis of Within-Person Interaction Logs',
     venue: 'Open to collaboration',
     status: 'In Progress',
-    year: '2026',
+    year: '2025',
+    doi: '10.5281/zenodo.16090477',
     highlight:
       'Within-person study investigating cursor kinematics as a privacy-preserving indicator of cognitive fatigue and acute stress using explainable machine learning on workplace interaction logs.',
   },
-  {
-    title: 'A Post-Quantum Hybrid Key Encapsulation Mechanism with Lorenz Chaotic Diffusion for Authenticated Medical Image Encryption',
-    venue: 'Open to collaboration',
-    status: 'In Progress',
-    year: '2026',
-    highlight:
-      'Combines post-quantum cryptography and chaos-based diffusion to provide strong confidentiality, integrity, and resistance against quantum-enabled attacks.',
-  },
+    
+  
+
 ]
 
 export type Software = {
@@ -333,7 +331,7 @@ export const phases: Phase[] = [
     feePerMonth: 10000, 
     totalFee:15000, 
     blurb:
-      'Containerize, automate, ship, and monitor. The difference between a notebook and a product.',
+      'Containerize, automate, ship and monitor. The difference between a notebook and a product.',
     weeks: [
       'Docker for AI Systems',
       'GitHub Actions: CI/CD for AI Projects',

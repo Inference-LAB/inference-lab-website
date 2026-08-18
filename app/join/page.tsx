@@ -5,8 +5,11 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { SectionLabel } from "@/components/section-label";
 import { PositionCard } from "@/components/position-card";
-import { positions } from "@/lib/positions";
+import { getPositions } from "@/lib/data-store";
 import { siteConfig } from "@/lib/site";
+
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 export const metadata: Metadata = {
   title: "Join the Lab",
@@ -68,7 +71,8 @@ const process = [
   },
 ];
 
-export default function JoinPage() {
+export default async function JoinPage() {
+  const positions = await getPositions();
   const openCount = positions.filter((p) => p.status === "open").length;
   return (
     <div className="flex min-h-screen flex-col">

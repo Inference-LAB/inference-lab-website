@@ -1,0 +1,278 @@
+[
+  {
+    "id": "faq-1786611430248",
+    "category": "General",
+    "question": "Test Q?",
+    "answer": "Test A"
+  },
+  {
+    "id": "faq-rs-1",
+    "category": "Research Services",
+    "question": "What types of research does INFERENCE Lab support?",
+    "answer": "We provide end-to-end research support across Artificial Intelligence, Machine Learning, Deep Learning, Natural Language Processing, Computer Vision, Speech AI, Large Language Models, Data Science, human-computer interaction, ergonomics, human factors and related interdisciplinary domains. Our services range from research planning to publication and deployment."
+  },
+  {
+    "id": "faq-rs-2",
+    "category": "Research Services",
+    "question": "Can you help with MS and PhD research?",
+    "answer": "Yes. We support master's and doctoral students throughout the research lifecycle, including topic selection, literature review, methodology design, implementation, experimentation, evaluation, thesis preparation, and publication guidance."
+  },
+  {
+    "id": "faq-rs-3",
+    "category": "Research Services",
+    "question": "Do you provide methodology design and review?",
+    "answer": "Yes. We help design rigorous and reproducible research methodologies that align with the objectives of the study and the expectations of academic journals. We also review existing methodologies and provide recommendations for improvement."
+  },
+  {
+    "id": "faq-rs-4",
+    "category": "Research Services",
+    "question": "Can you help identify research gaps and research ideas?",
+    "answer": "Yes. We assist researchers in identifying meaningful research gaps through structured literature analysis and help refine research questions that are novel, practical, and publication-ready."
+  },
+  {
+    "id": "faq-rs-5",
+    "category": "Research Services",
+    "question": "Do you provide implementation and experimentation support?",
+    "answer": "Yes. We assist with model development, experimentation, benchmarking, statistical evaluation, ablation studies, reproducibility, and performance analysis using appropriate research practices."
+  },
+  {
+    "id": "faq-rs-6",
+    "category": "Research Services",
+    "question": "Can you review research manuscripts before submission?",
+    "answer": "Yes. We provide comprehensive manuscript reviews covering technical quality, methodology, experimental design, scientific writing, structure, clarity, and journal readiness."
+  },
+  {
+    "id": "faq-rs-7",
+    "category": "Research Services",
+    "question": "Do you assist with publication in international journals?",
+    "answer": "Yes. We provide publication guidance for reputable conferences and journals, including manuscript preparation, journal selection, formatting, revision support, and response to reviewer comments."
+  },
+  {
+    "id": "faq-rs-8",
+    "category": "Research Services",
+    "question": "Does INFERENCE Lab offer research collaboration?",
+    "answer": "Yes. We actively collaborate with researchers, universities, laboratories, startups, and industry partners on research projects with shared objectives and mutual contributions."
+  },
+  {
+    "id": "faq-rs-9",
+    "category": "Research Services",
+    "question": "Do you offer co-authorship opportunities?",
+    "answer": "Co-authorship may be considered when contributors make substantial intellectual and technical contributions in accordance with accepted academic authorship standards. Authorship is never guaranteed and follows established research ethics."
+  },
+  {
+    "id": "faq-rs-10",
+    "category": "Research Services",
+    "question": "How can I start a research collaboration?",
+    "answer": "You can contact us through the Research Services page or the Contact page with a brief description of your research objectives. Our team will review your request and discuss the most appropriate collaboration approach."
+  },
+  {
+    "id": "faq-es-1",
+    "category": "Engineering Services",
+    "question": "What AI solutions does INFERENCE Lab develop?",
+    "answer": "We design and build production-grade AI systems, including intelligent applications, APIs, AI agents, LLM-powered solutions, computer vision systems, speech technologies, document intelligence platforms, and custom machine learning solutions."
+  },
+  {
+    "id": "faq-es-2",
+    "category": "Engineering Services",
+    "question": "Do you develop custom AI applications?",
+    "answer": "Yes. Every engineering engagement is tailored to the client's requirements, infrastructure, and deployment environment rather than using generic templates."
+  },
+  {
+    "id": "faq-es-3",
+    "category": "Engineering Services",
+    "question": "Can you deploy AI systems into production?",
+    "answer": "Yes. We build deployment-ready AI systems with scalable architectures, APIs, monitoring, testing, and production best practices."
+  },
+  {
+    "id": "faq-es-4",
+    "category": "Engineering Services",
+    "question": "Do you work with startups?",
+    "answer": "Yes. We collaborate with startups by helping validate ideas, develop MVPs, build scalable AI systems, and support product development."
+  },
+  {
+    "id": "faq-es-5",
+    "category": "Engineering Services",
+    "question": "Do you work with established organizations?",
+    "answer": "Yes. We work with companies, institutions, and organizations seeking custom AI solutions, research collaborations, automation, or intelligent software systems."
+  },
+  {
+    "id": "faq-es-6",
+    "category": "Engineering Services",
+    "question": "Can you improve existing AI systems?",
+    "answer": "Yes. We help optimize existing models, improve performance, modernize architectures, enhance deployment pipelines, and increase system reliability."
+  },
+  {
+    "id": "faq-es-7",
+    "category": "Engineering Services",
+    "question": "Do you provide deployment and MLOps support?",
+    "answer": "Yes. Our engineering services include deployment strategies, API development, containerization, monitoring, CI/CD workflows, model management, and production support where applicable."
+  },
+  {
+    "id": "faq-es-8",
+    "category": "Engineering Services",
+    "question": "Do you provide post-deployment support?",
+    "answer": "Yes. Depending on the engagement, we provide maintenance, monitoring, performance improvements, and feature enhancements after deployment."
+  },
+  {
+    "id": "faq-es-9",
+    "category": "Engineering Services",
+    "question": "Can confidential projects be handled?",
+    "answer": "Yes. Confidentiality is respected throughout every engagement. Non-disclosure agreements (NDAs) can be signed whenever required."
+  },
+  {
+    "id": "faq-es-10",
+    "category": "Engineering Services",
+    "question": "How do engineering projects begin?",
+    "answer": "Projects typically begin with an initial consultation where requirements, objectives, technical feasibility, timelines, and expected deliverables are discussed."
+  },
+  {
+    "id": "faq-edu-1",
+    "category": "Applied AI Engineering Program",
+    "question": "What is the Applied AI Engineering Program?",
+    "answer": "The Applied AI Engineering Program is a structured 12.5-month mentorship program designed to prepare participants for real-world AI engineering through hands-on learning, production systems, research exposure, and practical projects."
+  },
+  {
+    "id": "faq-edu-2",
+    "category": "Applied AI Engineering Program",
+    "question": "Who should apply?",
+    "answer": "The program is intended for motivated university students, recent graduates, and early-career professionals interested in becoming AI engineers."
+  },
+  {
+    "id": "faq-edu-3",
+    "category": "Applied AI Engineering Program",
+    "question": "Do I need prior AI experience?",
+    "answer": "Applicants should possess fundamental programming knowledge and a willingness to learn. Specific prerequisites may vary depending on the cohort."
+  },
+  {
+    "id": "faq-edu-4",
+    "category": "Applied AI Engineering Program",
+    "question": "Is the program project-based?",
+    "answer": "Yes. Practical implementation forms the core of the program. Participants work on real engineering projects, research activities, and production-oriented systems."
+  },
+  {
+    "id": "faq-edu-5",
+    "category": "Applied AI Engineering Program",
+    "question": "Is the program fully online?",
+    "answer": "Program delivery depends on the current cohort. Details regarding online or hybrid participation are announced during each application cycle."
+  },
+  {
+    "id": "faq-edu-6",
+    "category": "Applied AI Engineering Program",
+    "question": "How are participants selected?",
+    "answer": "Applications undergo a structured evaluation process based on motivation, technical readiness, commitment, and program fit."
+  },
+  {
+    "id": "faq-edu-7",
+    "category": "Applied AI Engineering Program",
+    "question": "Will I receive mentorship?",
+    "answer": "Yes. Participants receive mentorship throughout the program, including technical guidance, project reviews, engineering best practices, and career support."
+  },
+  {
+    "id": "faq-edu-8",
+    "category": "Applied AI Engineering Program",
+    "question": "Is a certificate awarded?",
+    "answer": "Participants who successfully complete the program receive an official INFERENCE Lab certificate that can be verified through the Certificate Verification system."
+  },
+  {
+    "id": "faq-edu-9",
+    "category": "Applied AI Engineering Program",
+    "question": "When are applications open?",
+    "answer": "Application periods are announced on the website and through INFERENCE Lab's official communication channels."
+  },
+  {
+    "id": "faq-edu-10",
+    "category": "Applied AI Engineering Program",
+    "question": "Is there any fee?",
+    "answer": "Program details, including fees (if applicable), are announced separately for each cohort during the application period."
+  },
+  {
+    "id": "faq-ej-1",
+    "category": "Engineering Journal",
+    "question": "What is an Engineering Journal?",
+    "answer": "An Engineering Journal is a technical report documenting the complete engineering process behind an AI project, including design decisions, implementation details, architecture, experiments, lessons learned, and deployment considerations."
+  },
+  {
+    "id": "faq-ej-2",
+    "category": "Engineering Journal",
+    "question": "What is a Lab Note?",
+    "answer": "A Lab Note is the technical documentation accompanying an engineering project. It records the development process, challenges encountered, solutions implemented, and technical insights gained throughout the project."
+  },
+  {
+    "id": "faq-ej-3",
+    "category": "Engineering Journal",
+    "question": "Who writes the Engineering Journals?",
+    "answer": "Engineering Journals are written by Engineering Fellows and contributors under the supervision and review of the INFERENCE Lab engineering team."
+  },
+  {
+    "id": "faq-ej-4",
+    "category": "Engineering Journal",
+    "question": "Are Engineering Journals research papers?",
+    "answer": "No. Engineering Journals focus on practical engineering implementation rather than formal scientific publication, although some projects may later evolve into research papers."
+  },
+  {
+    "id": "faq-ej-5",
+    "category": "Engineering Journal",
+    "question": "Are the associated projects open source?",
+    "answer": "Where appropriate, Engineering Journals include links to publicly available repositories and documentation. Some projects may remain private depending on project requirements."
+  },
+  {
+    "id": "faq-ej-6",
+    "category": "Engineering Journal",
+    "question": "Can I contribute to Engineering Journals?",
+    "answer": "Contributions are generally made through participation in the Engineering Fellowship or approved engineering collaborations."
+  },
+  {
+    "id": "faq-ej-7",
+    "category": "Engineering Journal",
+    "question": "How are Engineering Journals reviewed?",
+    "answer": "Every journal undergoes an internal technical review to ensure clarity, reproducibility, engineering quality, and documentation standards before publication."
+  },
+  {
+    "id": "faq-ej-8",
+    "category": "Engineering Journal",
+    "question": "How frequently are new journals published?",
+    "answer": "Engineering Journals are published as projects reach completion. Publication frequency depends on ongoing engineering activities and fellowship cohorts."
+  },
+  {
+    "id": "faq-cert-1",
+    "category": "Certificates",
+    "question": "How can I verify an INFERENCE Lab certificate?",
+    "answer": "Every certificate includes a unique verification identifier. Visitors can use the Certificate Verification page to confirm its authenticity."
+  },
+  {
+    "id": "faq-cert-2",
+    "category": "Certificates",
+    "question": "What information is displayed during verification?",
+    "answer": "The verification system displays essential certificate information, including the participant's name, program, issue date, certificate status, and verification details."
+  },
+  {
+    "id": "faq-cert-3",
+    "category": "Certificates",
+    "question": "Can certificates be revoked?",
+    "answer": "Yes. INFERENCE Lab reserves the right to revoke certificates in cases involving academic misconduct, fraudulent activity, or policy violations."
+  },
+  {
+    "id": "faq-gen-1",
+    "category": "General",
+    "question": "Who can work with INFERENCE Lab?",
+    "answer": "We welcome collaborations with researchers, universities, startups, companies, government organizations, and non-profit institutions seeking expertise in AI research or engineering."
+  },
+  {
+    "id": "faq-gen-2",
+    "category": "General",
+    "question": "Where is INFERENCE Lab located?",
+    "answer": "INFERENCE Lab is based in Multan, Punjab, Pakistan, and collaborates with researchers and organizations nationally and internationally."
+  },
+  {
+    "id": "faq-gen-3",
+    "category": "General",
+    "question": "How can I contact INFERENCE Lab?",
+    "answer": "You can reach us through the Contact page on our website or by emailing the official contact address listed there."
+  },
+  {
+    "id": "faq-gen-4",
+    "category": "General",
+    "question": "How can I stay informed about new programs and opportunities?",
+    "answer": "Updates regarding programs, fellowships, research, engineering projects, and publications are shared through the INFERENCE Lab website and official social media channels."
+  }
+]
