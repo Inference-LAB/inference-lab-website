@@ -30,6 +30,7 @@ import {
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { MarkdownTextarea } from '@/components/markdown-textarea'
+import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 import type {
   PublicationItem,
   SoftwareItem,
@@ -105,19 +106,41 @@ export default function AdminPage() {
   })
   const [tagsInput, setTagsInput] = useState('')
 
-  const [newJournal, setNewJournal] = useState({
+  const [newJournal, setNewJournal] = useState<{
+    projectName: string
+    journalTitle: string
+    summary: string
+    coverImage: string
+    programBadge: string
+    cohortBadge: string
+    publishedDate: string
+    readingTime: string
+    tags: string
+    contributors: Array<{
+      name: string
+      role: string
+      photo?: string
+      github?: string
+      linkedin?: string
+    }>
+    githubLink: string
+    pypiLink: string
+    docsLink: string
+    labNote: string
+  }>({
     projectName: '',
     journalTitle: '',
     summary: '',
+    coverImage: '',
     programBadge: 'Engineering Fellowship',
     cohortBadge: 'Cohort 2026',
     publishedDate: new Date().toISOString().split('T')[0],
     readingTime: '6 min read',
     tags: '',
-    contributorName: 'Muhammad Khubaib Ahmad',
-    contributorRole: 'Lead Architect',
+    contributors: [],
     githubLink: '',
     pypiLink: '',
+    docsLink: '',
     labNote: '',
   })
 
@@ -420,21 +443,97 @@ export default function AdminPage() {
     }
   }
 
+  function addContributorFromTeam(personName: string) {
+    const foundPerson = people.find((p) => p.name === personName)
+    if (!foundPerson) return
+    if (newJournal.contributors.some((c) => c.name.toLowerCase().trim() === foundPerson.name.toLowerCase().trim())) {
+      flashStatus(`${foundPerson.name} is already in the contributors list`)
+      return
+    }
+    setNewJournal((prev) => ({
+      ...prev,
+      contributors: [
+        ...prev.contributors,
+        {
+          name: foundPerson.name,
+          role: foundPerson.rank || foundPerson.roles?.[0] || 'Engineering Fellow',
+          photo: foundPerson.photo || '',
+          github: foundPerson.github || '',
+          linkedin: foundPerson.linkedin || '',
+        },
+      ],
+    }))
+  }
+
+  function addNewCustomContributor() {
+    setNewJournal((prev) => ({
+      ...prev,
+      contributors: [
+        ...prev.contributors,
+        {
+          name: '',
+          role: 'Engineering Fellow',
+          photo: '',
+          github: '',
+          linkedin: '',
+        },
+      ],
+    }))
+  }
+
+  function updateContributor(index: number, field: string, value: string) {
+    setNewJournal((prev) => {
+      const updated = [...prev.contributors]
+      if (updated[index]) {
+        updated[index] = { ...updated[index], [field]: value }
+      }
+      return { ...prev, contributors: updated }
+    })
+  }
+
+  function removeContributor(index: number) {
+    setNewJournal((prev) => ({
+      ...prev,
+      contributors: prev.contributors.filter((_, i) => i !== index),
+    }))
+  }
+
+  function moveContributor(index: number, direction: 'up' | 'down') {
+    setNewJournal((prev) => {
+      const list = [...prev.contributors]
+      const targetIdx = direction === 'up' ? index - 1 : index + 1
+      if (targetIdx < 0 || targetIdx >= list.length) return prev
+      const temp = list[index]
+      list[index] = list[targetIdx]
+      list[targetIdx] = temp
+      return { ...prev, contributors: list }
+    })
+  }
+
   function startEditingJournal(j: JournalItem) {
     setEditingJournalSlug(j.slug)
     setNewJournal({
       projectName: j.projectName,
       journalTitle: j.journalTitle,
       summary: j.summary,
+      coverImage: j.coverImage || '',
       programBadge: j.programBadge || 'Engineering Fellowship',
       cohortBadge: j.cohortBadge || 'Cohort 2026',
       publishedDate: j.publishedDate || new Date().toISOString().split('T')[0],
       readingTime: j.readingTime || '6 min read',
-      tags: j.tags ? j.tags.join(', ') : '',
-      contributorName: j.contributors?.[0]?.name || 'Muhammad Khubaib Ahmad',
-      contributorRole: j.contributors?.[0]?.role || 'Lead Architect',
+      tags: Array.isArray(j.tags) ? j.tags.join(', ') : '',
+      contributors: Array.isArray(j.contributors)
+        ? j.contributors.map((c) => ({
+            name: c.name || '',
+            role: c.role || '',
+            photo: c.photo || '',
+            github: c.github || '',
+            linkedin: c.linkedin || '',
+          }))
+        : [],
       githubLink: j.repositoryLinks?.github || '',
       pypiLink: j.repositoryLinks?.pypi || '',
+      docsLink: j.repositoryLinks?.docs || '',
       labNote: j.labNote || '',
     })
   }
@@ -445,15 +544,16 @@ export default function AdminPage() {
       projectName: '',
       journalTitle: '',
       summary: '',
+      coverImage: '',
       programBadge: 'Engineering Fellowship',
       cohortBadge: 'Cohort 2026',
       publishedDate: new Date().toISOString().split('T')[0],
       readingTime: '6 min read',
       tags: '',
-      contributorName: 'Muhammad Khubaib Ahmad',
-      contributorRole: 'Lead Architect',
+      contributors: [],
       githubLink: '',
       pypiLink: '',
+      docsLink: '',
       labNote: '',
     })
   }
@@ -464,31 +564,33 @@ export default function AdminPage() {
     const isEdit = Boolean(editingJournalSlug)
     const method = isEdit ? 'PUT' : 'POST'
 
-    // Look up contributor photo and social links from people if available
-    const foundPerson = people.find(
-      (p) => p.name.trim().toLowerCase() === newJournal.contributorName.trim().toLowerCase()
-    )
+    const validContributors = newJournal.contributors
+      .map((c) => ({
+        name: c.name.trim(),
+        role: c.role.trim() || 'Contributor',
+        photo: c.photo?.trim() || '',
+        github: c.github?.trim() || '',
+        linkedin: c.linkedin?.trim() || '',
+      }))
+      .filter((c) => c.name.length > 0)
 
     const payload = {
       ...(isEdit ? { slug: editingJournalSlug } : {}),
       projectName: newJournal.projectName,
       journalTitle: newJournal.journalTitle,
       summary: newJournal.summary,
+      coverImage: newJournal.coverImage || '',
       programBadge: newJournal.programBadge,
       cohortBadge: newJournal.cohortBadge,
       publishedDate: newJournal.publishedDate,
       readingTime: newJournal.readingTime,
       tags: newJournal.tags.split(',').map((t) => t.trim()).filter(Boolean),
-      contributors: [
-        {
-          name: newJournal.contributorName,
-          role: newJournal.contributorRole,
-          photo: foundPerson?.photo || '',
-          github: foundPerson?.github || newJournal.githubLink || '',
-          linkedin: foundPerson?.linkedin || '',
-        },
-      ],
-      repositoryLinks: { github: newJournal.githubLink, pypi: newJournal.pypiLink },
+      contributors: validContributors,
+      repositoryLinks: {
+        github: newJournal.githubLink.trim() || undefined,
+        pypi: newJournal.pypiLink.trim() || undefined,
+        docs: newJournal.docsLink.trim() || undefined,
+      },
       labNote: newJournal.labNote,
     }
     const res = await fetch('/api/admin/journals', {
@@ -1351,62 +1453,172 @@ export default function AdminPage() {
                   />
                 </div>
 
-                {/* Contributor Dropdown (Core + Fellowship Team Members) */}
-                <div>
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Select Contributor (Team Member)</label>
-                  <select
-                    value={newJournal.contributorName}
-                    onChange={(e) => {
-                      const val = e.target.value
-                      const foundPerson = people.find((p) => p.name === val)
-                      setNewJournal({
-                        ...newJournal,
-                        contributorName: val,
-                        contributorRole: foundPerson
-                          ? (foundPerson.rank || (foundPerson.roles?.[0]) || 'Contributor')
-                          : newJournal.contributorRole,
-                      })
-                    }}
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
-                  >
-                    <option value="">-- Select Team Member --</option>
-                    {people.map((person) => {
-                      const typeLabel = 
-                        person.teamType === 'core' || person.isCoreTeam ? 'Core Team' :
-                        person.teamType === 'fellow' || person.teamType === 'fellowship' || person.isFellow ? 'Engineering Fellow' :
-                        person.teamType === 'research' ? 'Research Collaboration' :
-                        person.teamType === 'opensource' ? 'Open-Source Collaborator' : 'Team'
-                      return (
-                        <option key={person.slug || person.name} value={person.name}>
-                          {person.name} ({typeLabel})
-                        </option>
-                      )
-                    })}
-                  </select>
-                </div>
+                {/* MULTI-CONTRIBUTORS MANAGER */}
+                <div className="sm:col-span-2 rounded-xl border border-border bg-muted/10 p-5 space-y-4">
+                  <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-border pb-3">
+                    <div>
+                      <h3 className="font-mono text-xs font-bold uppercase tracking-wider text-foreground flex items-center gap-1.5">
+                        <Users className="h-4 w-4 text-brand" /> Project Contributors &amp; Authors ({newJournal.contributors.length})
+                      </h3>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        Add multiple contributors. Select from team members or add custom authors, and edit their specific role, GitHub, and LinkedIn links.
+                      </p>
+                    </div>
 
-                <div>
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Contributor Name (Custom / Override) *</label>
-                  <input
-                    type="text"
-                    required
-                    value={newJournal.contributorName}
-                    onChange={(e) => setNewJournal({ ...newJournal, contributorName: e.target.value })}
-                    placeholder="Muhammad Khubaib Ahmad"
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
-                  />
-                </div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <select
+                        value=""
+                        onChange={(e) => {
+                          if (e.target.value) {
+                            addContributorFromTeam(e.target.value)
+                          }
+                        }}
+                        className="rounded border border-border bg-background px-2.5 py-1.5 font-mono text-xs text-foreground"
+                      >
+                        <option value="">+ Add From Team Members...</option>
+                        {people.map((p) => (
+                          <option key={p.slug || p.name} value={p.name}>
+                            {p.name} ({p.rank || p.teamType || 'Team'})
+                          </option>
+                        ))}
+                      </select>
 
-                <div>
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Contributor Role *</label>
-                  <input
-                    type="text"
-                    required
-                    value={newJournal.contributorRole}
-                    onChange={(e) => setNewJournal({ ...newJournal, contributorRole: e.target.value })}
-                    placeholder="Lead Architect"
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
-                  />
+                      <button
+                        type="button"
+                        onClick={addNewCustomContributor}
+                        className="inline-flex items-center gap-1 rounded bg-brand/10 hover:bg-brand/20 text-brand px-3 py-1.5 font-mono text-xs font-semibold transition-colors"
+                      >
+                        <Plus className="h-3.5 w-3.5" /> Add Custom
+                      </button>
+                    </div>
+                  </div>
+
+                  {newJournal.contributors.length === 0 ? (
+                    <div className="rounded-lg border border-dashed border-border py-8 text-center bg-background/50">
+                      <Users className="mx-auto h-8 w-8 text-muted-foreground/50" />
+                      <p className="mt-2 text-xs font-medium text-foreground">No contributors added to this journal yet</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        Select a team member from the dropdown or click &quot;+ Add Custom&quot; to add an author.
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="space-y-3">
+                      {newJournal.contributors.map((contrib, idx) => (
+                        <div
+                          key={idx}
+                          className="rounded-lg border border-border bg-background p-4 shadow-sm space-y-3 transition-all"
+                        >
+                          <div className="flex items-center justify-between border-b border-border/60 pb-2.5">
+                            <div className="flex items-center gap-2.5">
+                              <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand/10 font-mono text-xs font-bold text-brand">
+                                {idx + 1}
+                              </span>
+                              <span className="font-semibold text-sm text-foreground">
+                                {contrib.name || 'Unnamed Contributor'}
+                              </span>
+                              {contrib.role && (
+                                <span className="font-mono text-xs text-muted-foreground">
+                                  ({contrib.role})
+                                </span>
+                              )}
+                            </div>
+
+                            <div className="flex items-center gap-1">
+                              {idx > 0 && (
+                                <button
+                                  type="button"
+                                  onClick={() => moveContributor(idx, 'up')}
+                                  className="rounded p-1 text-muted-foreground hover:text-foreground hover:bg-muted text-xs font-mono"
+                                  title="Move Up"
+                                >
+                                  ↑
+                                </button>
+                              )}
+                              {idx < newJournal.contributors.length - 1 && (
+                                <button
+                                  type="button"
+                                  onClick={() => moveContributor(idx, 'down')}
+                                  className="rounded p-1 text-muted-foreground hover:text-foreground hover:bg-muted text-xs font-mono"
+                                  title="Move Down"
+                                >
+                                  ↓
+                                </button>
+                              )}
+                              <button
+                                type="button"
+                                onClick={() => removeContributor(idx)}
+                                className="rounded p-1 text-destructive hover:bg-destructive/10 transition-colors"
+                                title="Remove Contributor"
+                              >
+                                <Trash2 className="h-3.5 w-3.5" />
+                              </button>
+                            </div>
+                          </div>
+
+                          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+                            <div>
+                              <label className="mb-1 block font-mono text-[11px] text-muted-foreground">Name *</label>
+                              <input
+                                type="text"
+                                required
+                                value={contrib.name}
+                                onChange={(e) => updateContributor(idx, 'name', e.target.value)}
+                                placeholder="e.g. Muzammil Shadab"
+                                className="w-full rounded border border-border bg-background px-2.5 py-1.5 text-xs text-foreground"
+                              />
+                            </div>
+
+                            <div>
+                              <label className="mb-1 block font-mono text-[11px] text-muted-foreground">Role / Title *</label>
+                              <input
+                                type="text"
+                                required
+                                value={contrib.role}
+                                onChange={(e) => updateContributor(idx, 'role', e.target.value)}
+                                placeholder="e.g. Engineering Fellow"
+                                className="w-full rounded border border-border bg-background px-2.5 py-1.5 text-xs text-foreground"
+                              />
+                            </div>
+
+                            <div>
+                              <label className="mb-1 block font-mono text-[11px] text-muted-foreground">GitHub Profile URL</label>
+                              <input
+                                type="text"
+                                value={contrib.github || ''}
+                                onChange={(e) => updateContributor(idx, 'github', e.target.value)}
+                                placeholder="https://github.com/..."
+                                className="w-full rounded border border-border bg-background px-2.5 py-1.5 font-mono text-[11px] text-foreground"
+                              />
+                            </div>
+
+                            <div>
+                              <label className="mb-1 block font-mono text-[11px] text-muted-foreground">LinkedIn Profile URL</label>
+                              <input
+                                type="text"
+                                value={contrib.linkedin || ''}
+                                onChange={(e) => updateContributor(idx, 'linkedin', e.target.value)}
+                                placeholder="https://linkedin.com/in/..."
+                                className="w-full rounded border border-border bg-background px-2.5 py-1.5 font-mono text-[11px] text-foreground"
+                              />
+                            </div>
+                          </div>
+
+                          <div>
+                            <label className="mb-1 block font-mono text-[11px] text-muted-foreground">
+                              Photo URL (optional - leave empty to use team photo or default avatar)
+                            </label>
+                            <input
+                              type="text"
+                              value={contrib.photo || ''}
+                              onChange={(e) => updateContributor(idx, 'photo', e.target.value)}
+                              placeholder="https://... or paste image URL"
+                              className="w-full rounded border border-border bg-background px-2.5 py-1.5 font-mono text-[11px] text-foreground"
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 <div>
@@ -1452,7 +1664,7 @@ export default function AdminPage() {
                   />
                 </div>
 
-                <div>
+                <div className="sm:col-span-2">
                   <label className="mb-1 block font-mono text-xs text-muted-foreground">Tags (comma separated)</label>
                   <input
                     type="text"
@@ -1464,13 +1676,13 @@ export default function AdminPage() {
                 </div>
 
                 <div>
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">GitHub Link (optional)</label>
+                  <label className="mb-1 block font-mono text-xs text-muted-foreground">GitHub Repository Link (optional)</label>
                   <input
                     type="text"
                     value={newJournal.githubLink}
                     onChange={(e) => setNewJournal({ ...newJournal, githubLink: e.target.value })}
                     placeholder="https://github.com/Inference-LAB/..."
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
+                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground font-mono text-xs"
                   />
                 </div>
 
@@ -1481,7 +1693,18 @@ export default function AdminPage() {
                     value={newJournal.pypiLink}
                     onChange={(e) => setNewJournal({ ...newJournal, pypiLink: e.target.value })}
                     placeholder="https://pypi.org/project/..."
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
+                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground font-mono text-xs"
+                  />
+                </div>
+
+                <div className="sm:col-span-2">
+                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Documentation Link (optional)</label>
+                  <input
+                    type="text"
+                    value={newJournal.docsLink}
+                    onChange={(e) => setNewJournal({ ...newJournal, docsLink: e.target.value })}
+                    placeholder="https://huggingface.co/... or https://github.com/..."
+                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground font-mono text-xs"
                   />
                 </div>
 
@@ -1525,6 +1748,7 @@ export default function AdminPage() {
             <div className="divide-y divide-border rounded-xl border border-border bg-card">
               {journals.map((j) => {
                 const isEditing = editingJournalSlug === j.slug
+                const contributorsList = Array.isArray(j.contributors) ? j.contributors : []
                 return (
                   <div
                     key={j.slug}
@@ -1533,11 +1757,29 @@ export default function AdminPage() {
                       isEditing && 'bg-brand/5 border-l-4 border-l-brand'
                     )}
                   >
-                    <div>
-                      <span className="font-mono text-xs font-bold text-brand uppercase">{j.projectName}</span>
+                    <div className="space-y-1 max-w-2xl">
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-xs font-bold text-brand uppercase">{j.projectName}</span>
+                        <span className="rounded-full border border-border px-2 py-0.5 font-mono text-[10px] text-muted-foreground uppercase">
+                          {j.programBadge}
+                        </span>
+                      </div>
                       <h4 className="font-semibold text-foreground text-sm">{j.journalTitle}</h4>
+                      {contributorsList.length > 0 && (
+                        <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                          <span className="font-mono text-[10px] uppercase text-muted-foreground">Authors:</span>
+                          {contributorsList.map((c, i) => (
+                            <span
+                              key={i}
+                              className="inline-flex items-center gap-1 rounded bg-muted/60 px-2 py-0.5 font-mono text-[10px] text-foreground"
+                            >
+                              {c.name} {c.role ? `(${c.role})` : ''}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                    <div className="flex items-center gap-1">
+                    <div className="flex items-center gap-1 shrink-0 ml-4">
                       <button
                         onClick={() => startEditingJournal(j)}
                         className="rounded p-2 text-muted-foreground hover:text-brand hover:bg-brand/10 transition-colors"
@@ -1909,6 +2151,36 @@ export default function AdminPage() {
                     className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
                   />
                 </div>
+                <div>
+                  <label className="mb-1 block font-mono text-xs text-muted-foreground">GitHub Profile URL</label>
+                  <input
+                    type="url"
+                    value={newPerson.github}
+                    onChange={(e) => setNewPerson({ ...newPerson, github: e.target.value })}
+                    placeholder="https://github.com/username"
+                    className="w-full rounded border border-border bg-background px-3 py-2 font-mono text-xs text-foreground"
+                  />
+                </div>
+                <div>
+                  <label className="mb-1 block font-mono text-xs text-muted-foreground">LinkedIn Profile URL</label>
+                  <input
+                    type="url"
+                    value={newPerson.linkedin}
+                    onChange={(e) => setNewPerson({ ...newPerson, linkedin: e.target.value })}
+                    placeholder="https://linkedin.com/in/username"
+                    className="w-full rounded border border-border bg-background px-3 py-2 font-mono text-xs text-foreground"
+                  />
+                </div>
+                <div className="sm:col-span-2">
+                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Expertise Tags (Comma separated)</label>
+                  <input
+                    type="text"
+                    value={newPerson.expertise}
+                    onChange={(e) => setNewPerson({ ...newPerson, expertise: e.target.value })}
+                    placeholder="Speech AI, PyTorch, Low-Resource NLP, LLM Engineering"
+                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
+                  />
+                </div>
                 <div className="sm:col-span-2">
                   <label className="mb-1 block font-mono text-xs text-muted-foreground">
                     Profile Photo (File Upload OR Paste Image URL)
@@ -2006,6 +2278,30 @@ export default function AdminPage() {
                           <h4 className="font-semibold text-foreground text-sm">{p.name}</h4>
                         </div>
                         <p className="text-xs text-muted-foreground mt-0.5">{p.rank || p.roles.join(' · ')}</p>
+                        {(p.github || p.linkedin) && (
+                          <div className="flex items-center gap-2.5 mt-1.5 font-mono text-[11px] text-muted-foreground">
+                            {p.github && (
+                              <a
+                                href={p.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
+                              >
+                                <GithubIcon className="h-3 w-3" /> GitHub
+                              </a>
+                            )}
+                            {p.linkedin && (
+                              <a
+                                href={p.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 hover:text-foreground transition-colors"
+                              >
+                                <LinkedinIcon className="h-3 w-3" /> LinkedIn
+                              </a>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </div>
                     <div className="flex items-center gap-1">
