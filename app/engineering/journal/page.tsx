@@ -4,6 +4,7 @@ import { ArrowLeft, BookOpen, Clock, Calendar, ArrowRight, User } from 'lucide-r
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { SectionLabel } from '@/components/section-label'
+import { MarkdownRenderer } from '@/components/markdown-renderer'
 import { getJournals } from '@/lib/data-store'
 
 export const dynamic = 'force-dynamic';
@@ -91,9 +92,10 @@ export default async function EngineeringJournalListingPage() {
                     <h2 className="mt-1 text-xl font-semibold leading-tight tracking-tight text-foreground group-hover:text-brand transition-colors">
                       {j.journalTitle}
                     </h2>
-                    <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                      {j.summary}
-                    </p>
+                    <MarkdownRenderer 
+                      content={j.summary} 
+                      className="mt-3 text-sm text-muted-foreground [&>p]:leading-relaxed [&>p:first-child]:mt-0 [&>p:last-child]:mb-0" 
+                    />
                   </div>
 
                   {/* Contributors */}

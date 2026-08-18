@@ -29,6 +29,7 @@ import {
   Sparkles,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { MarkdownTextarea } from '@/components/markdown-textarea'
 import type {
   PublicationItem,
   SoftwareItem,
@@ -1132,12 +1133,11 @@ export default function AdminPage() {
                   />
                 </div>
                 <div className="sm:col-span-2">
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Highlight</label>
-                  <textarea
+                  <MarkdownTextarea
+                    label="Highlight"
                     rows={2}
                     value={newPub.highlight}
-                    onChange={(e) => setNewPub({ ...newPub, highlight: e.target.value })}
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
+                    onChange={(val) => setNewPub({ ...newPub, highlight: val })}
                   />
                 </div>
                 <div className="flex items-center gap-3 sm:col-span-2">
@@ -1236,13 +1236,12 @@ export default function AdminPage() {
                   />
                 </div>
                 <div className="sm:col-span-2">
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Description *</label>
-                  <textarea
-                    rows={2}
+                  <MarkdownTextarea
+                    label="Description"
                     required
+                    rows={2}
                     value={newSoft.description}
-                    onChange={(e) => setNewSoft({ ...newSoft, description: e.target.value })}
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
+                    onChange={(val) => setNewSoft({ ...newSoft, description: val })}
                   />
                 </div>
                 <div className="sm:col-span-2">
@@ -1487,24 +1486,22 @@ export default function AdminPage() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Summary *</label>
-                  <textarea
-                    rows={2}
+                  <MarkdownTextarea
+                    label="Summary"
                     required
+                    rows={2}
                     value={newJournal.summary}
-                    onChange={(e) => setNewJournal({ ...newJournal, summary: e.target.value })}
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
+                    onChange={(val) => setNewJournal({ ...newJournal, summary: val })}
                   />
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Lab Note & Technical Report Content</label>
-                  <textarea
+                  <MarkdownTextarea
+                    label="Lab Note & Technical Report Content"
                     rows={6}
                     value={newJournal.labNote}
-                    onChange={(e) => setNewJournal({ ...newJournal, labNote: e.target.value })}
+                    onChange={(val) => setNewJournal({ ...newJournal, labNote: val })}
                     placeholder="Detailed engineering notes, architectural specs, benchmarks, and implementation details..."
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground font-mono"
                   />
                 </div>
 
@@ -1629,14 +1626,13 @@ export default function AdminPage() {
                   />
                 </div>
                 <div className="sm:col-span-2">
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Description / Summary *</label>
-                  <textarea
-                    rows={3}
+                  <MarkdownTextarea
+                    label="Description / Summary"
                     required
+                    rows={3}
                     value={newPos.summary}
-                    onChange={(e) => setNewPos({ ...newPos, summary: e.target.value })}
+                    onChange={(val) => setNewPos({ ...newPos, summary: val })}
                     placeholder="Work on real AI systems alongside the lab..."
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
                   />
                 </div>
                 <div className="sm:col-span-2">
@@ -1944,13 +1940,12 @@ export default function AdminPage() {
                   </div>
                 </div>
                 <div className="sm:col-span-2">
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Description / Biography *</label>
-                  <textarea
-                    rows={2}
+                  <MarkdownTextarea
+                    label="Description / Biography"
                     required
+                    rows={2}
                     value={newPerson.bio}
-                    onChange={(e) => setNewPerson({ ...newPerson, bio: e.target.value })}
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
+                    onChange={(val) => setNewPerson({ ...newPerson, bio: val })}
                   />
                 </div>
                 <div className="flex items-center gap-3 sm:col-span-2">
@@ -2133,14 +2128,13 @@ export default function AdminPage() {
                   </p>
                 </div>
                 <div className="sm:col-span-2">
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Program Description *</label>
-                  <textarea
-                    rows={3}
+                  <MarkdownTextarea
+                    label="Program Description"
                     required
+                    rows={3}
                     value={newProgram.description}
-                    onChange={(e) => setNewProgram({ ...newProgram, description: e.target.value })}
+                    onChange={(val) => setNewProgram({ ...newProgram, description: val })}
                     placeholder="A structured mentorship program designed to train production-ready AI engineers..."
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
                   />
                 </div>
 
@@ -2364,13 +2358,12 @@ export default function AdminPage() {
                   />
                 </div>
                 <div className="sm:col-span-2">
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Answer *</label>
-                  <textarea
-                    rows={3}
+                  <MarkdownTextarea
+                    label="Answer"
                     required
+                    rows={3}
                     value={newFaq.answer}
-                    onChange={(e) => setNewFaq({ ...newFaq, answer: e.target.value })}
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
+                    onChange={(val) => setNewFaq({ ...newFaq, answer: val })}
                   />
                 </div>
                 <div className="flex items-center gap-3 sm:col-span-2">
@@ -2529,14 +2522,13 @@ export default function AdminPage() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="mb-1 block font-mono text-xs text-muted-foreground">Description *</label>
-                  <textarea
-                    rows={3}
+                  <MarkdownTextarea
+                    label="Description"
                     required
+                    rows={3}
                     value={newInitiative.description}
-                    onChange={(e) => setNewInitiative({ ...newInitiative, description: e.target.value })}
+                    onChange={(val) => setNewInitiative({ ...newInitiative, description: val })}
                     placeholder="Rigorous scientific output spanning vocal biomarkers, low-resource Roman Urdu corpora..."
-                    className="w-full rounded border border-border bg-background px-3 py-2 text-sm text-foreground"
                   />
                 </div>
 

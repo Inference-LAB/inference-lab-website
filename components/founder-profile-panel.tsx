@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { SectionLabel } from '@/components/section-label'
+import { MarkdownRenderer } from '@/components/markdown-renderer'
 
 type ProfileRow = { k: string; v: string }
 
@@ -57,9 +58,10 @@ export function FounderProfilePanel({
                 <span className="absolute left-0 top-0 h-full w-0.5 bg-brand/40 transition-colors duration-300 group-hover:bg-brand" />
                 <div className="grid gap-4 sm:grid-cols-[140px_1fr] sm:gap-8">
                   <SectionLabel>Bio</SectionLabel>
-                  <p className="text-pretty text-sm leading-relaxed text-foreground sm:text-base">
-                    {bioRow.v}
-                  </p>
+                  <MarkdownRenderer 
+                    content={bioRow.v} 
+                    className="text-pretty text-sm text-foreground sm:text-base [&>p]:leading-relaxed [&>p:first-child]:mt-0 [&>p:last-child]:mb-0" 
+                  />
                 </div>
               </div>
             )}
@@ -88,9 +90,10 @@ export function FounderProfilePanel({
                         {String(i + 1).padStart(2, '0')}
                       </span> */}
                     </div>
-                    <p className="mt-2 text-sm leading-relaxed text-foreground">
-                      {row.v}
-                    </p>
+                    <MarkdownRenderer 
+                      content={row.v} 
+                      className="mt-2 text-sm text-foreground [&>p]:leading-relaxed [&>p:first-child]:mt-0 [&>p:last-child]:mb-0" 
+                    />
                   </div>
                 ))}
               </div>
