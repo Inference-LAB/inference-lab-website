@@ -33,6 +33,14 @@ export interface ProgramFaq {
   answer: string
 }
 
+export interface PaymentOption {
+  option: string
+  totalInvestment: string
+  paymentTiming: string
+  flexibility: string
+  savings: string
+}
+
 export interface AIBuilderProgramData {
   id: string
   slug: string
@@ -94,12 +102,23 @@ export interface AIBuilderProgramData {
     intro: string
     phases: Array<{
       phase: string
+      whatYouLearn?: string
+      duration: string
+      monthlyFee: string
       fee: string
+      totalFee?: string
+      note?: string
     }>
     phaseTotal: string
     bundleFee: string
     bundleDiscountText: string
     notes: string[]
+    paymentOptions?: PaymentOption[]
+    whatIsIncluded?: string[]
+    howToEnroll?: Array<{
+      step: string
+      text: string
+    }>
   }
   faqs: ProgramFaq[]
 }
@@ -114,7 +133,7 @@ export const aiBuilderData: AIBuilderProgramData = {
     'A practical, beginner-friendly program where you learn by building. Start with Python, build a web application, add useful AI capabilities, deploy your product online, and learn how to present your work beyond the classroom.',
   formUrl: 'https://forms.gle/S2rzk2vfzVFpNhM69',
   metadata: {
-    duration: '5.5 Months*',
+    duration: '5.5 Months',
     phasesCount: '6 Phases',
     format: 'Project-Based',
     mentorship: 'Live Mentorship',
@@ -188,8 +207,11 @@ export const aiBuilderData: AIBuilderProgramData = {
     {
       number: 'PHASE 0',
       title: 'Learning to Talk to a Computer',
+      duration: '1.5 Months / 6 Weeks',
+      monthlyFee: 'PKR 5,000 / mo',
+      fee: 'PKR 7,500',
       description:
-        'Start with Python, your development environment, Git, and AI-assisted coding. Build your first useful tool.',
+        'Start with Python, your development environment, Git, and AI-assisted coding. Build your first useful tool. Lowest entry point — intentionally priced to lower the barrier for complete beginners.',
       skills: [
         'Python Fundamentals',
         'Git & GitHub',
@@ -207,8 +229,11 @@ export const aiBuilderData: AIBuilderProgramData = {
     {
       number: 'PHASE 1',
       title: 'Building Something People Can Use',
+      duration: '1.5 Months / 6 Weeks',
+      monthlyFee: 'PKR 5,000 / mo',
+      fee: 'PKR 7,500',
       description:
-        'Move from standalone Python scripts to a usable web application with a backend, database, authentication, and APIs.',
+        'Move from standalone Python scripts to a usable web application with a backend, database, authentication, and APIs. You now have your first live web API. Commitment step up as scope increases.',
       skills: [
         'FastAPI Framework',
         'Backend Architecture',
@@ -227,8 +252,11 @@ export const aiBuilderData: AIBuilderProgramData = {
     {
       number: 'PHASE 2',
       title: 'Making It Look Real',
+      duration: '1 Month / 4 Weeks',
+      monthlyFee: 'PKR 5,000 / mo',
+      fee: 'PKR 5,000',
       description:
-        'Build the user-facing side of your application and connect it cleanly to your backend.',
+        'Build the user-facing side of your application and connect it cleanly to your backend. Shortest paid phase. Focused on frontend — 4 weeks to get a real UI built and connected.',
       skills: [
         'HTML5 & Modern CSS',
         'JavaScript Fundamentals',
@@ -247,8 +275,11 @@ export const aiBuilderData: AIBuilderProgramData = {
     {
       number: 'PHASE 3',
       title: 'Adding the AI Brain',
+      duration: '1.5 Months / 6 Weeks',
+      monthlyFee: 'PKR 7,000 / mo',
+      fee: 'PKR 10,500',
       description:
-        'Connect real AI models to your application and build features that solve useful problems rather than adding AI for its own sake.',
+        'Connect real AI models to your application and build features that solve useful problems rather than adding AI for its own sake. Covers AI APIs with real usage costs (OpenAI, Anthropic), RAG pipelines, and agents.',
       skills: [
         'OpenAI & Anthropic APIs',
         'Prompt Engineering',
@@ -270,8 +301,11 @@ export const aiBuilderData: AIBuilderProgramData = {
     {
       number: 'PHASE 4',
       title: 'Shipping It',
+      duration: '0.75 Months / 3 Weeks',
+      monthlyFee: 'PKR 7,000 / mo',
+      fee: 'PKR 5,250',
       description:
-        'Move from "it works on my laptop" to a real product that people can access online across the internet.',
+        'Move from "it works on my laptop" to a real product that people can access online across the internet. Production infrastructure, cloud deployment, custom domains, and going live.',
       skills: [
         'Production Configuration',
         'Environment Variables & Secrets',
@@ -291,8 +325,11 @@ export const aiBuilderData: AIBuilderProgramData = {
     {
       number: 'PHASE 5',
       title: 'Making It Matter',
+      duration: '0.75 Months / 3 Weeks',
+      monthlyFee: 'PKR 7,000 / mo',
+      fee: 'PKR 5,250',
       description:
-        'Learn how to present your product, build a public presence, understand basic analytics, and explore what you can do with your skills.',
+        'Learn how to present your product, build a public presence, understand basic analytics, and explore what you can do with your skills. Portfolio, freelancing strategy, Demo Day. Mentorship intensity at its highest.',
       skills: [
         'Product Presentation & Storytelling',
         'Landing Page Optimization',
@@ -384,23 +421,111 @@ export const aiBuilderData: AIBuilderProgramData = {
       'For learners who want deeper machine learning, deep learning, and advanced AI engineering skills, the Applied AI Engineering Program provides a natural next stage.',
   },
   investment: {
-    heading: 'Program Investment',
-    intro: 'AI Builder is structured so that you can progress phase by phase rather than committing to the entire program upfront.',
+    heading: 'Fee Structure & Pricing Guide',
+    intro:
+      'Billing is per phase. You commit to one phase at a time. Pay when you join each phase — not the full program upfront. Continuation is confirmed after each capstone review.',
     phases: [
-      { phase: 'Phase 0 · Learning to Talk to a Computer', fee: 'PKR 6,000' },
-      { phase: 'Phase 1 · Building Something People Can Use', fee: 'PKR 7,500' },
-      { phase: 'Phase 2 · Making It Look Real', fee: 'PKR 5,000' },
-      { phase: 'Phase 3 · Adding the AI Brain', fee: 'PKR 10,500' },
-      { phase: 'Phase 4 · Shipping It', fee: 'PKR 5,250' },
-      { phase: 'Phase 5 · Making It Matter', fee: 'PKR 5,250' },
+      {
+        phase: 'Phase 0',
+        whatYouLearn: 'Learning to Talk to a Computer',
+        duration: '1.5 months / 6 weeks',
+        monthlyFee: 'PKR 5,000/mo',
+        fee: 'PKR 7,500',
+        totalFee: 'PKR 7,500',
+        note: 'Intentionally the lowest entry point at PKR 5,000/month. Once a student finishes Phase 0 and builds their first tool, continuing becomes an easy yes.',
+      },
+      {
+        phase: 'Phase 1',
+        whatYouLearn: 'Building Something People Can Use',
+        duration: '1.5 months / 6 weeks',
+        monthlyFee: 'PKR 5,000/mo',
+        fee: 'PKR 7,500',
+        totalFee: 'PKR 7,500',
+        note: 'You now have your first live web API. Commitment step up as scope increases.',
+      },
+      {
+        phase: 'Phase 2',
+        whatYouLearn: 'Making It Look Real',
+        duration: '1 month / 4 weeks',
+        monthlyFee: 'PKR 5,000/mo',
+        fee: 'PKR 5,000',
+        totalFee: 'PKR 5,000',
+        note: 'Shortest paid phase. Focused on frontend — 4 weeks to get a real UI built and connected.',
+      },
+      {
+        phase: 'Phase 3',
+        whatYouLearn: 'Adding the AI Brain',
+        duration: '1.5 months / 6 weeks',
+        monthlyFee: 'PKR 7,000/mo',
+        fee: 'PKR 10,500',
+        totalFee: 'PKR 10,500',
+        note: 'Covers AI APIs with real usage costs (OpenAI, Anthropic), RAG pipelines, and agents.',
+      },
+      {
+        phase: 'Phase 4',
+        whatYouLearn: 'Shipping It',
+        duration: '0.75 months / 3 weeks',
+        monthlyFee: 'PKR 7,000/mo',
+        fee: 'PKR 5,250',
+        totalFee: 'PKR 5,250',
+        note: 'Production infrastructure, cloud deployment, custom domains, and going live.',
+      },
+      {
+        phase: 'Phase 5',
+        whatYouLearn: 'Making It Matter',
+        duration: '0.75 months / 3 weeks',
+        monthlyFee: 'PKR 7,000/mo',
+        fee: 'PKR 5,250',
+        totalFee: 'PKR 5,250',
+        note: 'Portfolio, freelancing strategy, Demo Day. Mentorship intensity at its highest.',
+      },
     ],
-    phaseTotal: 'PKR 39,500',
-    bundleFee: 'PKR 35,000',
-    bundleDiscountText: 'Full-program upfront payment includes a 10% bundle discount.',
+    phaseTotal: 'PKR 41,000',
+    bundleFee: 'PKR 36,900',
+    bundleDiscountText: '⭐ FULL PROGRAM BUNDLE — Save PKR 4,100: PKR 36,900 one payment · full 5.5-month access · 10% discount',
     notes: [
-      'Fees are billed per phase before starting each phase.',
-      'Continuation into the next phase is confirmed after completing the phase milestone.',
-      'Payment plans are available — discussed during the onboarding conversation.',
+      'Phase 0 note: Intentionally the lowest entry point at PKR 5,000/month. Once a student finishes Phase 0 and builds their first tool, continuing becomes an easy yes.',
+      'Phases 3–5 note: Priced higher because they cover production infrastructure, and mentorship intensity increases.',
+      'Bundle note: PKR 36,900 — saves PKR 4,100 vs phase-by-phase. One clean number, easy to communicate.',
+      'Billing is per phase. You commit to one phase at a time. Pay when you join each phase — not the full program upfront. Continuation is confirmed after each capstone review.',
+    ],
+    paymentOptions: [
+      {
+        option: 'Phase-by-Phase',
+        totalInvestment: 'PKR 41,000',
+        paymentTiming: 'Pay before each phase',
+        flexibility: 'Can pause between phases',
+        savings: '—',
+      },
+      {
+        option: 'Full Bundle',
+        totalInvestment: 'PKR 36,900',
+        paymentTiming: 'Pay once upfront',
+        flexibility: 'Full commitment required',
+        savings: 'PKR 4,100 saved (10%)',
+      },
+    ],
+    whatIsIncluded: [
+      '2 live mentor-led sessions per week (Saturday + Sunday, 1 hour each)',
+      'Weekly assignments reviewed via GitHub',
+      'Dedicated mentor support for debugging and questions',
+      'Access to all course materials and code examples',
+      'End-of-phase capstone review with written feedback',
+      'Certificate of completion upon finishing Phase 5 (Demo Day)',
+    ],
+    howToEnroll: [
+      {
+        step: 'Step 1',
+        text: 'Contact us at contact@inference-lab.org or visit inference-lab.org to express interest.',
+      },
+      {
+        step: 'Step 2',
+        text: 'Attend a free 20-minute onboarding call. We confirm fit and answer any questions.',
+      },
+      {
+        step: 'Step 3',
+        text: 'Pay Phase 0 fee (or full bundle). Receive your welcome kit and join the first session.',
+      },
     ],
   },
   faqs: [
@@ -408,6 +533,21 @@ export const aiBuilderData: AIBuilderProgramData = {
       question: 'Do I need prior programming experience?',
       answer:
         'No. AI Builder is designed as a beginner-friendly starting point and does not assume any prior coding or technical background.',
+    },
+    {
+      question: 'Can I join mid-program?',
+      answer:
+        'No. The program is sequential — each phase builds on the previous one. Students must start from Phase 0.',
+    },
+    {
+      question: 'What if I need to pause between phases?',
+      answer:
+        'Phase-by-phase students may take a break between phases. Full bundle students have 8 months from purchase to complete the program.',
+    },
+    {
+      question: 'Is there a refund policy?',
+      answer:
+        'Phase fees are non-refundable once the phase has begun. Students who do not meet capstone criteria will not proceed to the next phase and will be offered remedial sessions.',
     },
     {
       question: 'Is this only about AI?',

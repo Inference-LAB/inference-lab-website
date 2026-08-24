@@ -9,8 +9,10 @@ export function ProgramHero({
   description,
   formUrl,
   metadata,
-  secondaryAnchor = '#program-structure',
+  secondaryAnchor = '#program-journey',
   secondaryText = 'View Program Structure ↓',
+  investmentAnchor = '#program-investment',
+  investmentText = 'View Fee Structure ↓',
 }: {
   label: string
   title: string
@@ -20,7 +22,15 @@ export function ProgramHero({
   metadata: Record<string, string>
   secondaryAnchor?: string
   secondaryText?: string
+  investmentAnchor?: string
+  investmentText?: string
 }) {
+  const programShortName = title.includes('AI Builder')
+    ? 'AI Builder'
+    : title.includes('Applied AI')
+    ? 'Applied AI'
+    : 'Program'
+
   return (
     <section className="relative overflow-hidden border-b border-border bg-background">
       <div className="absolute inset-0 bg-grid [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]" />
@@ -57,23 +67,32 @@ export function ProgramHero({
           ))}
         </div>
 
-        {/* CTA Actions */}
-        <div className="mt-10 flex flex-wrap items-center gap-4">
+        {/* CTA Actions: Apply, View Program Structure, View Fee Structure / Program Investment */}
+        <div className="mt-10 flex flex-wrap items-center gap-3.5">
           <a
             href={formUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-7 py-3 font-mono text-xs font-bold uppercase tracking-wider text-brand-foreground shadow-lg transition-all hover:opacity-90 hover:shadow-xl"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand px-6 py-3 font-mono text-xs font-bold uppercase tracking-wider text-brand-foreground shadow-lg transition-all hover:opacity-90 hover:shadow-xl"
           >
-            Apply to {title.includes('AI Builder') ? 'AI Builder' : 'Program'} <ExternalLink className="h-4 w-4" />
+            Apply to {programShortName} <ExternalLink className="h-4 w-4" />
           </a>
 
           {secondaryAnchor && (
             <a
               href={secondaryAnchor}
-              className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-6 py-3 font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+              className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-5 py-3 font-mono text-xs font-semibold uppercase tracking-wider text-foreground transition-colors hover:bg-muted hover:border-brand/40"
             >
               {secondaryText}
+            </a>
+          )}
+
+          {investmentAnchor && (
+            <a
+              href={investmentAnchor}
+              className="inline-flex items-center justify-center rounded-lg border border-border bg-card px-5 py-3 font-mono text-xs font-semibold uppercase tracking-wider text-brand transition-colors hover:bg-brand/10 hover:border-brand/50"
+            >
+              {investmentText}
             </a>
           )}
         </div>
