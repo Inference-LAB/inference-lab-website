@@ -91,10 +91,13 @@ export default function ProgramsHubPage() {
                 title="AI Builder Program"
                 tagline="Build and ship a real AI-powered product."
                 description="A practical, beginner-friendly program for students, teachers, professionals, and curious builders who want to learn by creating real software. Start with Python, build a web application, add useful AI capabilities, deploy it online, and finish with a product you can demonstrate."
-                duration="5.5 Months*"
+                duration="5.5 Months"
                 trackType="Beginner-Friendly"
                 outcome="A live AI-powered product, a public GitHub portfolio, and practical experience building and deploying software."
                 href="/programs/ai-builder"
+                formUrl="https://forms.gle/S2rzk2vfzVFpNhM69"
+                structureHref="/programs/ai-builder#program-journey"
+                feeHref="/programs/ai-builder#program-investment"
               />
 
               {/* Card 02: Applied AI Engineering */}
@@ -107,6 +110,9 @@ export default function ProgramsHubPage() {
                 trackType="Technical Track"
                 outcome="A portfolio of progressively more advanced AI projects covering data, machine learning, deep learning, NLP, LLM engineering, and deployment."
                 href="/programs/applied-ai-engineering"
+                formUrl="https://forms.gle/YQ1kiyvqYiu8TAho9"
+                structureHref="/programs/applied-ai-engineering#engineering-journey"
+                feeHref="/programs/applied-ai-engineering#program-investment"
               />
             </div>
           </section>

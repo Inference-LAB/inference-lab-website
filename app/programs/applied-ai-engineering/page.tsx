@@ -86,7 +86,9 @@ export default function AppliedAIEngineeringPage() {
           formUrl={data.formUrl}
           metadata={data.metadata}
           secondaryAnchor="#engineering-journey"
-          secondaryText="View 12.5-Month Journey ↓"
+          secondaryText="View Program Structure ↓"
+          investmentAnchor="#program-investment"
+          investmentText="Program Investment ↓"
         />
 
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
@@ -315,7 +317,7 @@ export default function AppliedAIEngineeringPage() {
           </section>
 
           {/* Section 12: Investment */}
-          <section className="space-y-8">
+          <section id="program-investment" className="space-y-8">
             <div>
               <SectionLabel>Tuition &amp; Fee Structure</SectionLabel>
               <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">

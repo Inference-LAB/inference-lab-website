@@ -56,7 +56,7 @@ export default function AIBuilderPage() {
     occupationalCredentialAwarded: 'AI Builder Certificate',
     offers: {
       '@type': 'Offer',
-      price: '35000',
+      price: '36900',
       priceCurrency: 'PKR',
       category: 'Paid',
     },
@@ -85,6 +85,8 @@ export default function AIBuilderPage() {
           metadata={data.metadata}
           secondaryAnchor="#program-journey"
           secondaryText="View Program Structure ↓"
+          investmentAnchor="#program-investment"
+          investmentText="View Fee Structure ↓"
         />
 
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8 space-y-20 sm:space-y-28">
@@ -270,7 +272,7 @@ export default function AIBuilderPage() {
           </section>
 
           {/* Section 10: Investment */}
-          <section className="space-y-8">
+          <section id="program-investment" className="space-y-8">
             <div>
               <SectionLabel>Tuition &amp; Fees</SectionLabel>
               <h2 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -284,6 +286,9 @@ export default function AIBuilderPage() {
               bundleFee={data.investment.bundleFee}
               bundleDiscountText={data.investment.bundleDiscountText}
               notes={data.investment.notes}
+              paymentOptions={data.investment.paymentOptions}
+              whatIsIncluded={data.investment.whatIsIncluded}
+              howToEnroll={data.investment.howToEnroll}
             />
           </section>
 
